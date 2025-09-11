@@ -48,6 +48,7 @@ namespace ST
                     //MessageBox.Show(UserSession.LoggedUserID.ToString());
                     f.salerLogin.Text = userInfo.userPhone;
                     f.comName.Text = userInfo.comName;
+                    f.Text = userInfo.comName;
                     f.labelControl1.Text = userInfo.userAlbantushaal;
                     f.salerName.Text = userInfo.userName;
                     f.saveLogg(f.comName.Text, "Нэвтэрсэн");
@@ -59,6 +60,7 @@ namespace ST
                     {
                         ClearLoginInfo();
                     }
+                    
                     f.Show();
                     this.Hide();
                 }

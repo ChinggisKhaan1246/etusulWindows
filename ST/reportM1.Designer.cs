@@ -59,11 +59,12 @@
             // 
             // xrRichText1
             // 
-            this.xrRichText1.Font = new System.Drawing.Font("Times New Roman", 9.75F);
+            this.xrRichText1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrRichText1.LocationFloat = new DevExpress.Utils.PointFloat(5.000082F, 9.99999F);
             this.xrRichText1.Name = "xrRichText1";
             this.xrRichText1.SerializableRtfString = resources.GetString("xrRichText1.SerializableRtfString");
             this.xrRichText1.SizeF = new System.Drawing.SizeF(675.9999F, 890.6254F);
+            this.xrRichText1.StylePriority.UseFont = false;
             // 
             // xrPictureBox1
             // 

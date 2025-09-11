@@ -55,26 +55,26 @@
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
-            this.groupControl8 = new DevExpress.XtraEditors.GroupControl();
-            this.panelControl33 = new DevExpress.XtraEditors.PanelControl();
-            this.radioGroup1 = new DevExpress.XtraEditors.RadioGroup();
-            this.splitterControl20 = new DevExpress.XtraEditors.SplitterControl();
-            this.gridControl8 = new DevExpress.XtraGrid.GridControl();
-            this.gridView8 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.panelControl24 = new DevExpress.XtraEditors.PanelControl();
             this.splitterControl5 = new DevExpress.XtraEditors.SplitterControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.checkedListBoxControl1 = new DevExpress.XtraEditors.CheckedListBoxControl();
             this.panelControl40 = new DevExpress.XtraEditors.PanelControl();
             this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
-            this.panelControl41 = new DevExpress.XtraEditors.PanelControl();
+            this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
+            this.panelControl21 = new DevExpress.XtraEditors.PanelControl();
             this.honog = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.une = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.signAlbantushaal = new DevExpress.XtraEditors.TextEdit();
+            this.une = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.signNames = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl10 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl23 = new DevExpress.XtraEditors.PanelControl();
@@ -159,27 +159,24 @@
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
             this.panelControl5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).BeginInit();
-            this.groupControl8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl33)).BeginInit();
-            this.panelControl33.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
             this.panelControl6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl24)).BeginInit();
+            this.panelControl24.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkedListBoxControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl40)).BeginInit();
             this.panelControl40.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl41)).BeginInit();
-            this.panelControl41.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl21)).BeginInit();
+            this.panelControl21.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.honog.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.signAlbantushaal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.une.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.signNames.Properties)).BeginInit();
             this.xtraTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl10)).BeginInit();
             this.panelControl10.SuspendLayout();
@@ -403,14 +400,14 @@
             // ChbatTime
             // 
             this.ChbatTime.EditValue = "1 жил";
-            this.ChbatTime.Location = new System.Drawing.Point(88, 14);
+            this.ChbatTime.Location = new System.Drawing.Point(130, 31);
             this.ChbatTime.Name = "ChbatTime";
             this.ChbatTime.Size = new System.Drawing.Size(59, 20);
             this.ChbatTime.TabIndex = 1;
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(18, 17);
+            this.labelControl7.Location = new System.Drawing.Point(62, 38);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(62, 13);
             this.labelControl7.TabIndex = 13;
@@ -418,19 +415,19 @@
             // 
             // turgen
             // 
-            this.turgen.EditValue = "$$$$";
-            this.turgen.Location = new System.Drawing.Point(340, 14);
+            this.turgen.EditValue = "";
+            this.turgen.Location = new System.Drawing.Point(130, 76);
             this.turgen.Name = "turgen";
-            this.turgen.Size = new System.Drawing.Size(271, 20);
+            this.turgen.Size = new System.Drawing.Size(152, 20);
             this.turgen.TabIndex = 2;
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(164, 17);
+            this.labelControl6.Location = new System.Drawing.Point(45, 57);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(170, 13);
+            this.labelControl6.Size = new System.Drawing.Size(222, 13);
             this.labelControl6.TabIndex = 10;
-            this.labelControl6.Text = "Түргэн хөрвөх хөрөнгийн хэмжээ:";
+            this.labelControl6.Text = "Түргэн хөрвөх хөрөнгийн хэмжээ: /тоогоор/";
             // 
             // xtraTabControl1
             // 
@@ -459,7 +456,6 @@
             // 
             this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl2.Controls.Add(this.panelControl3);
-            this.panelControl2.Controls.Add(this.panelControl41);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(0, 0);
             this.panelControl2.Name = "panelControl2";
@@ -470,95 +466,32 @@
             // 
             this.panelControl3.Controls.Add(this.panelControl5);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl3.Location = new System.Drawing.Point(0, 47);
+            this.panelControl3.Location = new System.Drawing.Point(0, 0);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(1103, 391);
+            this.panelControl3.Size = new System.Drawing.Size(1103, 438);
             this.panelControl3.TabIndex = 33;
             // 
             // panelControl5
             // 
             this.panelControl5.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl5.Controls.Add(this.groupControl8);
+            this.panelControl5.Controls.Add(this.panelControl6);
             this.panelControl5.Controls.Add(this.splitterControl1);
-            this.panelControl5.Controls.Add(this.groupControl1);
+            this.panelControl5.Controls.Add(this.panelControl21);
             this.panelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl5.Location = new System.Drawing.Point(2, 2);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(1099, 387);
+            this.panelControl5.Size = new System.Drawing.Size(1099, 434);
             this.panelControl5.TabIndex = 30;
             // 
-            // groupControl8
+            // panelControl6
             // 
-            this.groupControl8.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 8.5F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
-            this.groupControl8.AppearanceCaption.ForeColor = System.Drawing.Color.Blue;
-            this.groupControl8.AppearanceCaption.Options.UseFont = true;
-            this.groupControl8.AppearanceCaption.Options.UseForeColor = true;
-            this.groupControl8.Controls.Add(this.panelControl33);
-            this.groupControl8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl8.Location = new System.Drawing.Point(516, 0);
-            this.groupControl8.Name = "groupControl8";
-            this.groupControl8.Size = new System.Drawing.Size(583, 387);
-            this.groupControl8.TabIndex = 25;
-            this.groupControl8.Text = "Гэрээг хэрэгжүүлэгч (Гарын үсгийн баталгаа)";
-            // 
-            // panelControl33
-            // 
-            this.panelControl33.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl33.Controls.Add(this.radioGroup1);
-            this.panelControl33.Controls.Add(this.splitterControl20);
-            this.panelControl33.Controls.Add(this.gridControl8);
-            this.panelControl33.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl33.Location = new System.Drawing.Point(2, 21);
-            this.panelControl33.Name = "panelControl33";
-            this.panelControl33.Size = new System.Drawing.Size(579, 364);
-            this.panelControl33.TabIndex = 4;
-            // 
-            // radioGroup1
-            // 
-            this.radioGroup1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radioGroup1.Location = new System.Drawing.Point(0, 0);
-            this.radioGroup1.Name = "radioGroup1";
-            this.radioGroup1.Size = new System.Drawing.Size(579, 306);
-            this.radioGroup1.TabIndex = 10;
-            // 
-            // splitterControl20
-            // 
-            this.splitterControl20.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitterControl20.Location = new System.Drawing.Point(0, 265);
-            this.splitterControl20.Name = "splitterControl20";
-            this.splitterControl20.Size = new System.Drawing.Size(579, 5);
-            this.splitterControl20.TabIndex = 9;
-            this.splitterControl20.TabStop = false;
-            // 
-            // gridControl8
-            // 
-            this.gridControl8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridControl8.Location = new System.Drawing.Point(0, 270);
-            this.gridControl8.MainView = this.gridView8;
-            this.gridControl8.Name = "gridControl8";
-            this.gridControl8.Size = new System.Drawing.Size(579, 94);
-            this.gridControl8.TabIndex = 8;
-            this.gridControl8.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView8});
-            this.gridControl8.Visible = false;
-            // 
-            // gridView8
-            // 
-            this.gridView8.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.gridView8.GridControl = this.gridControl8;
-            this.gridView8.GroupPanelText = "Явсан бичгийн бүртгэл";
-            this.gridView8.Name = "gridView8";
-            this.gridView8.OptionsBehavior.Editable = false;
-            this.gridView8.OptionsView.ShowColumnHeaders = false;
-            this.gridView8.OptionsView.ShowGroupPanel = false;
-            // 
-            // splitterControl1
-            // 
-            this.splitterControl1.Location = new System.Drawing.Point(511, 0);
-            this.splitterControl1.Name = "splitterControl1";
-            this.splitterControl1.Size = new System.Drawing.Size(5, 387);
-            this.splitterControl1.TabIndex = 7;
-            this.splitterControl1.TabStop = false;
+            this.panelControl6.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl6.Controls.Add(this.groupControl1);
+            this.panelControl6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl6.Location = new System.Drawing.Point(355, 0);
+            this.panelControl6.Name = "panelControl6";
+            this.panelControl6.Size = new System.Drawing.Size(744, 434);
+            this.panelControl6.TabIndex = 25;
             // 
             // groupControl1
             // 
@@ -566,44 +499,43 @@
             this.groupControl1.AppearanceCaption.ForeColor = System.Drawing.Color.Blue;
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
             this.groupControl1.AppearanceCaption.Options.UseForeColor = true;
-            this.groupControl1.Controls.Add(this.panelControl6);
+            this.groupControl1.Controls.Add(this.panelControl24);
             this.groupControl1.Controls.Add(this.panelControl40);
-            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(511, 387);
-            this.groupControl1.TabIndex = 6;
+            this.groupControl1.Size = new System.Drawing.Size(744, 434);
+            this.groupControl1.TabIndex = 7;
             this.groupControl1.Text = "Албан бичиг";
-            this.groupControl1.DoubleClick += new System.EventHandler(this.groupControl1_DoubleClick);
             // 
-            // panelControl6
+            // panelControl24
             // 
-            this.panelControl6.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl6.Controls.Add(this.splitterControl5);
-            this.panelControl6.Controls.Add(this.gridControl1);
-            this.panelControl6.Controls.Add(this.checkedListBoxControl1);
-            this.panelControl6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl6.Location = new System.Drawing.Point(2, 43);
-            this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Size = new System.Drawing.Size(507, 342);
-            this.panelControl6.TabIndex = 4;
+            this.panelControl24.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl24.Controls.Add(this.splitterControl5);
+            this.panelControl24.Controls.Add(this.gridControl1);
+            this.panelControl24.Controls.Add(this.checkedListBoxControl1);
+            this.panelControl24.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl24.Location = new System.Drawing.Point(2, 43);
+            this.panelControl24.Name = "panelControl24";
+            this.panelControl24.Size = new System.Drawing.Size(740, 389);
+            this.panelControl24.TabIndex = 4;
             // 
             // splitterControl5
             // 
             this.splitterControl5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitterControl5.Location = new System.Drawing.Point(0, 243);
+            this.splitterControl5.Location = new System.Drawing.Point(0, 290);
             this.splitterControl5.Name = "splitterControl5";
-            this.splitterControl5.Size = new System.Drawing.Size(507, 5);
+            this.splitterControl5.Size = new System.Drawing.Size(740, 5);
             this.splitterControl5.TabIndex = 9;
             this.splitterControl5.TabStop = false;
             // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridControl1.Location = new System.Drawing.Point(0, 248);
+            this.gridControl1.Location = new System.Drawing.Point(0, 295);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(507, 94);
+            this.gridControl1.Size = new System.Drawing.Size(740, 94);
             this.gridControl1.TabIndex = 8;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -628,7 +560,7 @@
             this.checkedListBoxControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.checkedListBoxControl1.Location = new System.Drawing.Point(0, 0);
             this.checkedListBoxControl1.Name = "checkedListBoxControl1";
-            this.checkedListBoxControl1.Size = new System.Drawing.Size(507, 342);
+            this.checkedListBoxControl1.Size = new System.Drawing.Size(740, 389);
             this.checkedListBoxControl1.TabIndex = 1;
             // 
             // panelControl40
@@ -640,7 +572,7 @@
             this.panelControl40.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl40.Location = new System.Drawing.Point(2, 21);
             this.panelControl40.Name = "panelControl40";
-            this.panelControl40.Size = new System.Drawing.Size(507, 22);
+            this.panelControl40.Size = new System.Drawing.Size(740, 22);
             this.panelControl40.TabIndex = 3;
             // 
             // checkEdit1
@@ -651,57 +583,109 @@
             this.checkEdit1.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.checkEdit1.Properties.Appearance.Options.UseBackColor = true;
             this.checkEdit1.Properties.Caption = "Бүгд";
-            this.checkEdit1.Size = new System.Drawing.Size(507, 19);
+            this.checkEdit1.Size = new System.Drawing.Size(740, 19);
             this.checkEdit1.TabIndex = 3;
-            this.checkEdit1.CheckedChanged += new System.EventHandler(this.checkEdit1_CheckedChanged);
             // 
-            // panelControl41
+            // splitterControl1
             // 
-            this.panelControl41.Controls.Add(this.honog);
-            this.panelControl41.Controls.Add(this.labelControl8);
-            this.panelControl41.Controls.Add(this.une);
-            this.panelControl41.Controls.Add(this.labelControl1);
-            this.panelControl41.Controls.Add(this.ChbatTime);
-            this.panelControl41.Controls.Add(this.turgen);
-            this.panelControl41.Controls.Add(this.labelControl7);
-            this.panelControl41.Controls.Add(this.labelControl6);
-            this.panelControl41.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl41.Location = new System.Drawing.Point(0, 0);
-            this.panelControl41.Name = "panelControl41";
-            this.panelControl41.Size = new System.Drawing.Size(1103, 47);
-            this.panelControl41.TabIndex = 31;
+            this.splitterControl1.Location = new System.Drawing.Point(350, 0);
+            this.splitterControl1.Name = "splitterControl1";
+            this.splitterControl1.Size = new System.Drawing.Size(5, 434);
+            this.splitterControl1.TabIndex = 24;
+            this.splitterControl1.TabStop = false;
+            // 
+            // panelControl21
+            // 
+            this.panelControl21.Controls.Add(this.honog);
+            this.panelControl21.Controls.Add(this.labelControl11);
+            this.panelControl21.Controls.Add(this.labelControl1);
+            this.panelControl21.Controls.Add(this.signAlbantushaal);
+            this.panelControl21.Controls.Add(this.une);
+            this.panelControl21.Controls.Add(this.labelControl6);
+            this.panelControl21.Controls.Add(this.labelControl9);
+            this.panelControl21.Controls.Add(this.labelControl8);
+            this.panelControl21.Controls.Add(this.ChbatTime);
+            this.panelControl21.Controls.Add(this.turgen);
+            this.panelControl21.Controls.Add(this.signNames);
+            this.panelControl21.Controls.Add(this.labelControl10);
+            this.panelControl21.Controls.Add(this.labelControl7);
+            this.panelControl21.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelControl21.Location = new System.Drawing.Point(0, 0);
+            this.panelControl21.Name = "panelControl21";
+            this.panelControl21.Size = new System.Drawing.Size(350, 434);
+            this.panelControl21.TabIndex = 23;
             // 
             // honog
             // 
             this.honog.EditValue = "";
-            this.honog.Location = new System.Drawing.Point(875, 14);
+            this.honog.Location = new System.Drawing.Point(130, 128);
             this.honog.Name = "honog";
             this.honog.Size = new System.Drawing.Size(152, 20);
             this.honog.TabIndex = 4;
             // 
-            // labelControl8
+            // labelControl11
             // 
-            this.labelControl8.Location = new System.Drawing.Point(836, 17);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(33, 13);
-            this.labelControl8.TabIndex = 17;
-            this.labelControl8.Text = "Хоног:";
+            this.labelControl11.Location = new System.Drawing.Point(79, 190);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(43, 13);
+            this.labelControl11.TabIndex = 22;
+            this.labelControl11.Text = "овог нэр";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(46, 105);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(78, 13);
+            this.labelControl1.TabIndex = 15;
+            this.labelControl1.Text = "Тендерийн үнэ:";
+            // 
+            // signAlbantushaal
+            // 
+            this.signAlbantushaal.EditValue = "";
+            this.signAlbantushaal.Location = new System.Drawing.Point(130, 213);
+            this.signAlbantushaal.Name = "signAlbantushaal";
+            this.signAlbantushaal.Size = new System.Drawing.Size(152, 20);
+            this.signAlbantushaal.TabIndex = 19;
             // 
             // une
             // 
             this.une.EditValue = "";
-            this.une.Location = new System.Drawing.Point(645, 14);
+            this.une.Location = new System.Drawing.Point(130, 102);
             this.une.Name = "une";
             this.une.Size = new System.Drawing.Size(152, 20);
             this.une.TabIndex = 3;
             // 
-            // labelControl1
+            // labelControl9
             // 
-            this.labelControl1.Location = new System.Drawing.Point(618, 17);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(21, 13);
-            this.labelControl1.TabIndex = 15;
-            this.labelControl1.Text = "Үнэ:";
+            this.labelControl9.Location = new System.Drawing.Point(53, 216);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(71, 13);
+            this.labelControl9.TabIndex = 21;
+            this.labelControl9.Text = "албан тушаал";
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Location = new System.Drawing.Point(38, 135);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(86, 13);
+            this.labelControl8.TabIndex = 17;
+            this.labelControl8.Text = "Гүйцэтгэх хоног:";
+            // 
+            // signNames
+            // 
+            this.signNames.EditValue = "";
+            this.signNames.Location = new System.Drawing.Point(130, 187);
+            this.signNames.Name = "signNames";
+            this.signNames.Size = new System.Drawing.Size(152, 20);
+            this.signNames.TabIndex = 18;
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Location = new System.Drawing.Point(38, 168);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(157, 13);
+            this.labelControl10.TabIndex = 20;
+            this.labelControl10.Text = "Итгэмжлэгдсэн төлөөлөгчийн: ";
             // 
             // xtraTabPage2
             // 
@@ -765,7 +749,7 @@
             // splitterControl4
             // 
             this.splitterControl4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitterControl4.Location = new System.Drawing.Point(0, 218);
+            this.splitterControl4.Location = new System.Drawing.Point(0, 263);
             this.splitterControl4.Name = "splitterControl4";
             this.splitterControl4.Size = new System.Drawing.Size(355, 5);
             this.splitterControl4.TabIndex = 9;
@@ -774,10 +758,10 @@
             // gridControl3
             // 
             this.gridControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridControl3.Location = new System.Drawing.Point(0, 223);
+            this.gridControl3.Location = new System.Drawing.Point(0, 268);
             this.gridControl3.MainView = this.gridView3;
             this.gridControl3.Name = "gridControl3";
-            this.gridControl3.Size = new System.Drawing.Size(355, 166);
+            this.gridControl3.Size = new System.Drawing.Size(355, 121);
             this.gridControl3.TabIndex = 8;
             this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3,
@@ -810,6 +794,7 @@
             this.checkedListBoxControl3.Name = "checkedListBoxControl3";
             this.checkedListBoxControl3.Size = new System.Drawing.Size(355, 389);
             this.checkedListBoxControl3.TabIndex = 1;
+            this.checkedListBoxControl3.ItemCheck += new DevExpress.XtraEditors.Controls.ItemCheckEventHandler(this.checkedListBoxControl3_ItemCheck);
             // 
             // panelControl9
             // 
@@ -857,6 +842,7 @@
             this.groupControl4.Size = new System.Drawing.Size(389, 434);
             this.groupControl4.TabIndex = 20;
             this.groupControl4.Text = "Хүний нөөц - Мэргэжилтэй ажилтан";
+            this.groupControl4.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl4_Paint);
             this.groupControl4.DoubleClick += new System.EventHandler(this.groupControl4_DoubleClick);
             // 
             // panelControl11
@@ -874,7 +860,7 @@
             // splitterControl6
             // 
             this.splitterControl6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitterControl6.Location = new System.Drawing.Point(0, 218);
+            this.splitterControl6.Location = new System.Drawing.Point(0, 268);
             this.splitterControl6.Name = "splitterControl6";
             this.splitterControl6.Size = new System.Drawing.Size(385, 5);
             this.splitterControl6.TabIndex = 9;
@@ -883,10 +869,10 @@
             // gridControl4
             // 
             this.gridControl4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridControl4.Location = new System.Drawing.Point(0, 223);
+            this.gridControl4.Location = new System.Drawing.Point(0, 273);
             this.gridControl4.MainView = this.gridView4;
             this.gridControl4.Name = "gridControl4";
-            this.gridControl4.Size = new System.Drawing.Size(385, 166);
+            this.gridControl4.Size = new System.Drawing.Size(385, 116);
             this.gridControl4.TabIndex = 8;
             this.gridControl4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
@@ -913,6 +899,7 @@
             this.checkedListBoxControl4.Name = "checkedListBoxControl4";
             this.checkedListBoxControl4.Size = new System.Drawing.Size(385, 389);
             this.checkedListBoxControl4.TabIndex = 1;
+            this.checkedListBoxControl4.ItemCheck += new DevExpress.XtraEditors.Controls.ItemCheckEventHandler(this.checkedListBoxControl4_ItemCheck);
             // 
             // panelControl22
             // 
@@ -977,7 +964,7 @@
             // splitterControl2
             // 
             this.splitterControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitterControl2.Location = new System.Drawing.Point(0, 109);
+            this.splitterControl2.Location = new System.Drawing.Point(0, 273);
             this.splitterControl2.Name = "splitterControl2";
             this.splitterControl2.Size = new System.Drawing.Size(337, 5);
             this.splitterControl2.TabIndex = 9;
@@ -986,10 +973,10 @@
             // gridControl2
             // 
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridControl2.Location = new System.Drawing.Point(0, 114);
+            this.gridControl2.Location = new System.Drawing.Point(0, 278);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(337, 275);
+            this.gridControl2.Size = new System.Drawing.Size(337, 111);
             this.gridControl2.TabIndex = 8;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -1016,6 +1003,7 @@
             this.checkedListBoxControl2.Name = "checkedListBoxControl2";
             this.checkedListBoxControl2.Size = new System.Drawing.Size(337, 389);
             this.checkedListBoxControl2.TabIndex = 1;
+            this.checkedListBoxControl2.ItemCheck += new DevExpress.XtraEditors.Controls.ItemCheckEventHandler(this.checkedListBoxControl2_ItemCheck);
             // 
             // panelControl7
             // 
@@ -1124,8 +1112,9 @@
             this.checkedListBoxControl5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.checkedListBoxControl5.Location = new System.Drawing.Point(0, 20);
             this.checkedListBoxControl5.Name = "checkedListBoxControl5";
-            this.checkedListBoxControl5.Size = new System.Drawing.Size(512, 296);
+            this.checkedListBoxControl5.Size = new System.Drawing.Size(512, 254);
             this.checkedListBoxControl5.TabIndex = 13;
+            this.checkedListBoxControl5.ItemCheck += new DevExpress.XtraEditors.Controls.ItemCheckEventHandler(this.checkedListBoxControl5_ItemCheck);
             // 
             // panelControl14
             // 
@@ -1153,7 +1142,7 @@
             // splitterControl7
             // 
             this.splitterControl7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitterControl7.Location = new System.Drawing.Point(0, 316);
+            this.splitterControl7.Location = new System.Drawing.Point(0, 274);
             this.splitterControl7.Name = "splitterControl7";
             this.splitterControl7.Size = new System.Drawing.Size(512, 5);
             this.splitterControl7.TabIndex = 9;
@@ -1162,10 +1151,10 @@
             // gridControl5
             // 
             this.gridControl5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridControl5.Location = new System.Drawing.Point(0, 321);
+            this.gridControl5.Location = new System.Drawing.Point(0, 279);
             this.gridControl5.MainView = this.gridView5;
             this.gridControl5.Name = "gridControl5";
-            this.gridControl5.Size = new System.Drawing.Size(512, 94);
+            this.gridControl5.Size = new System.Drawing.Size(512, 136);
             this.gridControl5.TabIndex = 8;
             this.gridControl5.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView5});
@@ -1262,6 +1251,8 @@
             this.checkedListBoxControl7.Name = "checkedListBoxControl7";
             this.checkedListBoxControl7.Size = new System.Drawing.Size(907, 393);
             this.checkedListBoxControl7.TabIndex = 11;
+            this.checkedListBoxControl7.ItemCheck += new DevExpress.XtraEditors.Controls.ItemCheckEventHandler(this.checkedListBoxControl7_ItemCheck);
+            this.checkedListBoxControl7.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxControl7_SelectedIndexChanged);
             // 
             // panelControl19
             // 
@@ -1359,16 +1350,17 @@
             this.checkedListBoxControl6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.checkedListBoxControl6.Location = new System.Drawing.Point(2, 43);
             this.checkedListBoxControl6.Name = "checkedListBoxControl6";
-            this.checkedListBoxControl6.Size = new System.Drawing.Size(907, 307);
+            this.checkedListBoxControl6.Size = new System.Drawing.Size(907, 256);
             this.checkedListBoxControl6.TabIndex = 1;
+            this.checkedListBoxControl6.ItemCheck += new DevExpress.XtraEditors.Controls.ItemCheckEventHandler(this.checkedListBoxControl6_ItemCheck);
             // 
             // gridControl6
             // 
             this.gridControl6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridControl6.Location = new System.Drawing.Point(2, 350);
+            this.gridControl6.Location = new System.Drawing.Point(2, 299);
             this.gridControl6.MainView = this.gridView6;
             this.gridControl6.Name = "gridControl6";
-            this.gridControl6.Size = new System.Drawing.Size(907, 86);
+            this.gridControl6.Size = new System.Drawing.Size(907, 137);
             this.gridControl6.TabIndex = 8;
             this.gridControl6.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView6});
@@ -1420,6 +1412,7 @@
             this.Name = "tendermat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "+";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.tendermat_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -1443,28 +1436,25 @@
             this.panelControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
             this.panelControl5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).EndInit();
-            this.groupControl8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl33)).EndInit();
-            this.panelControl33.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
             this.panelControl6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl24)).EndInit();
+            this.panelControl24.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkedListBoxControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl40)).EndInit();
             this.panelControl40.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl41)).EndInit();
-            this.panelControl41.ResumeLayout(false);
-            this.panelControl41.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl21)).EndInit();
+            this.panelControl21.ResumeLayout(false);
+            this.panelControl21.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.honog.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.signAlbantushaal.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.une.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.signNames.Properties)).EndInit();
             this.xtraTabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl10)).EndInit();
             this.panelControl10.ResumeLayout(false);
@@ -1580,24 +1570,7 @@
         private DevExpress.XtraTab.XtraTabPage xtraTabPage5;
         private DevExpress.XtraEditors.PanelControl panelControl15;
         private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.XtraEditors.PanelControl panelControl41;
         private DevExpress.XtraEditors.PanelControl panelControl3;
-        private DevExpress.XtraEditors.PanelControl panelControl5;
-        private DevExpress.XtraEditors.GroupControl groupControl8;
-        private DevExpress.XtraEditors.PanelControl panelControl33;
-        private DevExpress.XtraEditors.RadioGroup radioGroup1;
-        private DevExpress.XtraEditors.SplitterControl splitterControl20;
-        private DevExpress.XtraGrid.GridControl gridControl8;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView8;
-        private DevExpress.XtraEditors.SplitterControl splitterControl1;
-        private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.PanelControl panelControl6;
-        private DevExpress.XtraEditors.SplitterControl splitterControl5;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraEditors.CheckedListBoxControl checkedListBoxControl1;
-        private DevExpress.XtraEditors.PanelControl panelControl40;
-        private DevExpress.XtraEditors.CheckEdit checkEdit1;
         private DevExpress.XtraEditors.PanelControl panelControl25;
         private DevExpress.XtraEditors.PanelControl panelControl32;
         private DevExpress.XtraEditors.SplitterControl splitterControl18;
@@ -1659,5 +1632,22 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         public DevExpress.XtraEditors.TextEdit honog;
         private DevExpress.XtraEditors.LabelControl labelControl8;
+        public DevExpress.XtraEditors.TextEdit signAlbantushaal;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
+        public DevExpress.XtraEditors.TextEdit signNames;
+        private DevExpress.XtraEditors.LabelControl labelControl10;
+        private DevExpress.XtraEditors.PanelControl panelControl5;
+        private DevExpress.XtraEditors.LabelControl labelControl11;
+        private DevExpress.XtraEditors.PanelControl panelControl6;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.XtraEditors.PanelControl panelControl24;
+        private DevExpress.XtraEditors.SplitterControl splitterControl5;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraEditors.CheckedListBoxControl checkedListBoxControl1;
+        private DevExpress.XtraEditors.PanelControl panelControl40;
+        private DevExpress.XtraEditors.CheckEdit checkEdit1;
+        private DevExpress.XtraEditors.SplitterControl splitterControl1;
+        private DevExpress.XtraEditors.PanelControl panelControl21;
     }
 }

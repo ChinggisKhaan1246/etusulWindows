@@ -87,7 +87,6 @@
             this.doctype.Name = "doctype";
             this.doctype.Size = new System.Drawing.Size(130, 20);
             this.doctype.TabIndex = 42;
-            this.doctype.Visible = false;
             // 
             // ajillsan
             // 
@@ -306,7 +305,6 @@
             this.itaID.Name = "itaID";
             this.itaID.Size = new System.Drawing.Size(130, 20);
             this.itaID.TabIndex = 43;
-            this.itaID.Visible = false;
             // 
             // simpleButton1
             // 

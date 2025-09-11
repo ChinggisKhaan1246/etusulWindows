@@ -40,6 +40,7 @@
             this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
             this.zakiname = new DevExpress.XtraReports.UI.XRLabel();
             this.zaki = new DevExpress.XtraReports.UI.XRLabel();
+            this.stamp = new DevExpress.XtraReports.UI.XRPictureBox();
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
@@ -51,7 +52,6 @@
             this.ReportHeader1 = new DevExpress.XtraReports.UI.ReportHeaderBand();
             this.ReportFooter1 = new DevExpress.XtraReports.UI.ReportFooterBand();
             this.reportFooterBand1 = new DevExpress.XtraReports.UI.ReportFooterBand();
-            this.stamp = new DevExpress.XtraReports.UI.XRPictureBox();
             this.signature = new DevExpress.XtraReports.UI.XRPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
@@ -71,7 +71,7 @@
             // projectName
             // 
             this.projectName.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.projectName.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.projectName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectName.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.projectName.Name = "projectName";
             this.projectName.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -85,7 +85,7 @@
             // zahialagch
             // 
             this.zahialagch.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.zahialagch.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.zahialagch.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.zahialagch.LocationFloat = new DevExpress.Utils.PointFloat(294.3334F, 0F);
             this.zahialagch.Name = "zahialagch";
             this.zahialagch.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -99,7 +99,7 @@
             // budget
             // 
             this.budget.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.budget.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.budget.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.budget.LocationFloat = new DevExpress.Utils.PointFloat(486.0001F, 0F);
             this.budget.Name = "budget";
             this.budget.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -113,7 +113,7 @@
             // ognoo1
             // 
             this.ognoo1.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.ognoo1.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ognoo1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ognoo1.LocationFloat = new DevExpress.Utils.PointFloat(578.7084F, 0F);
             this.ognoo1.Name = "ognoo1";
             this.ognoo1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -128,7 +128,7 @@
             // 
             this.ognoo2.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.ognoo2.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ognoo2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ognoo2.LocationFloat = new DevExpress.Utils.PointFloat(640.0833F, 0F);
             this.ognoo2.Name = "ognoo2";
             this.ognoo2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -156,20 +156,20 @@
             // ReportFooter
             // 
             this.ReportFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.signature,
             this.zakiname,
             this.zaki,
-            this.stamp,
-            this.signature});
+            this.stamp});
             this.ReportFooter.HeightF = 196.4583F;
             this.ReportFooter.Name = "ReportFooter";
             // 
             // zakiname
             // 
             this.zakiname.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.zakiname.LocationFloat = new DevExpress.Utils.PointFloat(409.7292F, 10.00001F);
+            this.zakiname.LocationFloat = new DevExpress.Utils.PointFloat(472.375F, 10.00001F);
             this.zakiname.Name = "zakiname";
             this.zakiname.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.zakiname.SizeF = new System.Drawing.SizeF(263.5416F, 85.41669F);
+            this.zakiname.SizeF = new System.Drawing.SizeF(167.7083F, 85.41669F);
             this.zakiname.StylePriority.UseFont = false;
             this.zakiname.StylePriority.UseTextAlignment = false;
             this.zakiname.Text = "П.МӨНХЖАРГАЛ";
@@ -178,7 +178,7 @@
             // zaki
             // 
             this.zaki.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.zaki.LocationFloat = new DevExpress.Utils.PointFloat(28.64586F, 10.00001F);
+            this.zaki.LocationFloat = new DevExpress.Utils.PointFloat(0.0001271566F, 10.00001F);
             this.zaki.Name = "zaki";
             this.zaki.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.zaki.SizeF = new System.Drawing.SizeF(223.7917F, 85.41669F);
@@ -187,11 +187,19 @@
             this.zaki.Text = "ЗАХИРАЛ ";
             this.zaki.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomRight;
             // 
+            // stamp
+            // 
+            this.stamp.Image = ((System.Drawing.Image)(resources.GetObject("stamp.Image")));
+            this.stamp.LocationFloat = new DevExpress.Utils.PointFloat(252.4376F, 0.9375255F);
+            this.stamp.Name = "stamp";
+            this.stamp.SizeF = new System.Drawing.SizeF(157.2917F, 158.3333F);
+            this.stamp.Sizing = DevExpress.XtraPrinting.ImageSizeMode.AutoSize;
+            // 
             // xrLabel2
             // 
             this.xrLabel2.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrLabel2.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(0.0001271566F, 61.38391F);
             this.xrLabel2.Name = "xrLabel2";
             this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -206,7 +214,7 @@
             // 
             this.xrLabel3.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrLabel3.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(294.3335F, 61.38391F);
             this.xrLabel3.Name = "xrLabel3";
             this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -221,7 +229,7 @@
             // 
             this.xrLabel1.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrLabel1.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(486.0002F, 61.38391F);
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -236,7 +244,7 @@
             // 
             this.xrLabel4.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrLabel4.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(578.7085F, 61.3839F);
             this.xrLabel4.Name = "xrLabel4";
             this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -252,7 +260,7 @@
             this.xrLabel5.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrLabel5.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel5.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(640.0834F, 61.38391F);
             this.xrLabel5.Name = "xrLabel5";
             this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -265,7 +273,7 @@
             // 
             // titletext
             // 
-            this.titletext.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titletext.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titletext.LocationFloat = new DevExpress.Utils.PointFloat(0.0001271566F, 31.25F);
             this.titletext.Name = "titletext";
             this.titletext.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -277,7 +285,7 @@
             // 
             // mayagtnumber
             // 
-            this.mayagtnumber.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mayagtnumber.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mayagtnumber.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.mayagtnumber.Name = "mayagtnumber";
             this.mayagtnumber.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -313,18 +321,10 @@
             this.reportFooterBand1.HeightF = 196.4583F;
             this.reportFooterBand1.Name = "reportFooterBand1";
             // 
-            // stamp
-            // 
-            this.stamp.Image = ((System.Drawing.Image)(resources.GetObject("stamp.Image")));
-            this.stamp.LocationFloat = new DevExpress.Utils.PointFloat(252.4376F, 0.9375255F);
-            this.stamp.Name = "stamp";
-            this.stamp.SizeF = new System.Drawing.SizeF(157.2917F, 158.3333F);
-            this.stamp.Sizing = DevExpress.XtraPrinting.ImageSizeMode.AutoSize;
-            // 
             // signature
             // 
             this.signature.Image = ((System.Drawing.Image)(resources.GetObject("signature.Image")));
-            this.signature.LocationFloat = new DevExpress.Utils.PointFloat(237.4583F, 32.91667F);
+            this.signature.LocationFloat = new DevExpress.Utils.PointFloat(237.5F, 37.5F);
             this.signature.Name = "signature";
             this.signature.SizeF = new System.Drawing.SizeF(235.4166F, 111.4583F);
             this.signature.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;

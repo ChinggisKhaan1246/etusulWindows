@@ -160,6 +160,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>G:\install\VS2012\htmlagilitypack\htmlagilitypack.dll</HintPath>
     </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\..\..\..\..\..\..\nuget\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Office.InfoPath.Permission, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Office.Interop.Access, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
@@ -638,11 +641,11 @@
     <Compile Include="tender.Designer.cs">
       <DependentUpon>tender.cs</DependentUpon>
     </Compile>
-    <Compile Include="reportA4.cs">
+    <Compile Include="reportM7.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="reportA4.Designer.cs">
-      <DependentUpon>reportA4.cs</DependentUpon>
+    <Compile Include="reportM7.Designer.cs">
+      <DependentUpon>reportM7.cs</DependentUpon>
     </Compile>
     <Compile Include="addtender.cs">
       <SubType>Form</SubType>
@@ -951,8 +954,8 @@
     <EmbeddedResource Include="tender.resx">
       <DependentUpon>tender.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="reportA4.resx">
-      <DependentUpon>reportA4.cs</DependentUpon>
+    <EmbeddedResource Include="reportM7.resx">
+      <DependentUpon>reportM7.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="addtender.resx">
       <DependentUpon>addtender.cs</DependentUpon>

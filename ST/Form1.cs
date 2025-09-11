@@ -26,6 +26,7 @@ using DevExpress.Utils;
 using DevExpress.XtraReports.UI;
 using DevExpress.XtraGrid.Views.Grid;
 using Newtonsoft.Json;
+using ICSharpCode.SharpZipLib.Zip;
 
 
 
@@ -1570,7 +1571,7 @@ namespace ST
             finally { }
         }
 
-        private void navBarItem23_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+ private void navBarItem23_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             try
             {
@@ -1583,57 +1584,139 @@ namespace ST
         }
 
 
-      
-        private void CheckForUpdates()
+private void CheckForUpdates()
+{
+    // Сервер дээрх ZIP-ийн зөв зам (tail slash-ыг зохицуулна)
+    string updateUrl    = url.GetUrl().TrimEnd('/') + "/downloads/updates/DS.zip";
+    string tempFilePath = Path.Combine(Path.GetTempPath(), "DS_temp.zip"); // түр таталт
+
+    try
+    {
+        using (var client = new WebClient())
         {
-            string updateUrl = url.GetUrl()+"downloads/updates/DS.rar"; // Сервер дээрх файл
-            string localFilePath = "DS.rar"; // Локал RAR файл
-            string tempFilePath = "DS_temp.rar"; // Түр татах файл
+            // Хэрэв HTTPS бол TLS 1.2 хэрэг болж магадгүй:
+            // ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072; // Tls12
 
             try
             {
-                using (WebClient client = new WebClient())
-                {
-                    // Серверээс `DS.rar` татаж авах
-                    try
-                    {
-                        client.DownloadFile(updateUrl, tempFilePath);
-                    }
-                    catch (WebException)
-                    {
-                        MessageBox.Show("Одоогоор шинэчлэл хийгдээгүй байна. Сервер дээр файл байхгүй.", "Шинэчлэл", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
-
-                    // Локал болон серверээс татсан файлуудын хэш кодыг харьцуулах
-                    if (File.Exists(localFilePath) && GetFileHash(localFilePath) == GetFileHash(tempFilePath))
-                    {
-                        MessageBox.Show("Одоогоор шинэчлэл хийгдээгүй байна.", "Шинэчлэл", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        File.Delete(tempFilePath); // Түр файлыг устгана
-                        return;
-                    }
-
-                    // Хэрэв шинэчлэлт байгаа бол Updater.exe-г ажиллуулна
-                    MessageBox.Show("Шинэ хувилбар олдлоо! Шинэчлэл хийгдэнэ.", "Шинэчлэл", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Process.Start("E:\\Future Innovation\\software projects\\etusul.com\\desktop\\DS\\updater\\updater\\updater\\bin\\Debug\\Updater.exe");
-                    Application.Exit(); // Програмыг хаана
-                }
+                client.DownloadFile(updateUrl, tempFilePath);
             }
-            catch (Exception ex)
+            catch (WebException wex)
             {
-                MessageBox.Show("Алдаа гарлаа: " + ex.Message, "Алдаа", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                var resp = wex.Response as HttpWebResponse;
+                string http = resp != null ? ((int)resp.StatusCode + " " + resp.StatusCode) : "no HTTP response";
+                MessageBox.Show("Шинэчлэлийн файлыг татаж чадсангүй. " + http,
+                                "Шинэчлэл", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                SafeDelete(tempFilePath);
+                return;
             }
         }
-        private string GetFileHash(string filePath)
+
+        // Татсан файл хоосон биш эсэх
+        var fi = new FileInfo(tempFilePath);
+        if (!fi.Exists || fi.Length == 0)
         {
-            using (var md5 = MD5.Create())
+            MessageBox.Show("Татсан ZIP файл буруу эсвэл хоосон байна.", "Шинэчлэл",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+            SafeDelete(tempFilePath);
+            return;
+        }
+
+        // 1) Локаль ажиллаж буй DS.exe-ийн хэш
+        string localExePath = Application.ExecutablePath;
+        string localExeHash = GetFileHash(localExePath);
+
+        // 2) Серверийн ZIP доторх DS.exe-ийн хэш
+        string serverExeHash = GetZipEntryHash(tempFilePath, "DS.exe");
+        if (serverExeHash == null)
+        {
+            MessageBox.Show("ZIP дотор DS.exe олдсонгүй.", "Шинэчлэл",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+            SafeDelete(tempFilePath);
+            return;
+        }
+
+        // 3) Харьцуулалт: ижил бол шинэчлэл алга, өөр бол updater ажиллуулна
+        if (string.Equals(localExeHash, serverExeHash, StringComparison.OrdinalIgnoreCase))
+        {
+            MessageBox.Show("Одоогоор шинэчлэл хийгдээгүй байна.", "Шинэчлэл",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+            SafeDelete(tempFilePath);
+            return;
+        }
+        else
+        {
+            // Updater.exe-ээ дуудах
+            string updaterPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "updater", "Updater.exe");
+            if (!File.Exists(updaterPath))
             {
-                using (var stream = File.OpenRead(filePath))
-                {
-                    return BitConverter.ToString(md5.ComputeHash(stream)).Replace("-", "").ToLower();
-                }
+                MessageBox.Show("Updater.exe олдсонгүй. 'updater' хавтсанд байршуулна уу.", "Шинэчлэл",  MessageBoxButtons.OK, MessageBoxIcon.Error);
+                SafeDelete(tempFilePath);
+                return;
+            }
+            DialogResult dr = MessageBox.Show("Шинэ хувилбар олдлоо! Шинэчлэлийг суулгах уу?", "Шинэчлэл", MessageBoxButtons.YesNo,  MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                Process.Start(updaterPath); 
+                SafeDelete(tempFilePath);
+                Application.Exit(); // үндсэн аппыг хаана
+            }
+            else
+            {
+                SafeDelete(tempFilePath); // түр татсан файлыг устгаад зогсоно
             }
         }
+    }
+    catch (Exception ex)
+    {
+        SafeDelete(tempFilePath);
+        MessageBox.Show("Алдаа гарлаа: " + ex.Message, "Алдаа",  MessageBoxButtons.OK, MessageBoxIcon.Error);
+    }
+}
+
+// ---- Туслах функцууд ----
+
+// Файлын SHA-256 хэш
+private static string GetFileHash(string path)
+{
+    using (var sha = SHA256.Create())
+    using (var fs = File.OpenRead(path))
+    {
+        var hash = sha.ComputeHash(fs);
+        return BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
+    }
+}
+
+// ZIP доторх тодорхой entry-г (энд DS.exe) уншаад SHA-256 хэшийг нь буцаана
+private static string GetZipEntryHash(string zipPath, string entryFileName)
+{
+    using (var fs = File.OpenRead(zipPath))
+    using (var zis = new ZipInputStream(fs))
+    using (var sha = SHA256.Create())
+    {
+        ZipEntry entry;
+        while ((entry = zis.GetNextEntry()) != null)
+        {
+            if (!entry.IsFile) continue;
+
+            // Фолдерийн бүтцийг үл харгалзан зөвхөн файлын нэрээр шүүнэ
+            if (!string.Equals(Path.GetFileName(entry.Name), entryFileName, StringComparison.OrdinalIgnoreCase))
+                continue;
+
+            var hash = sha.ComputeHash(zis); // тухайн entry-г дуустал уншаад хэш тооцно
+            return BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
+        }
+    }
+    return null; // олдсонгүй
+}
+
+// Аюулгүй устгал
+private static void SafeDelete(string path)
+{
+    try { if (File.Exists(path)) File.Delete(path); } catch { }
+}
+
+       
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
         {
             if (gridView1.RowCount == 0)

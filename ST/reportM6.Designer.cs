@@ -38,6 +38,8 @@
             DevExpress.XtraPrinting.Shape.ShapeRectangle shapeRectangle1 = new DevExpress.XtraPrinting.Shape.ShapeRectangle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reportM6));
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
+            this.winControlContainer1 = new DevExpress.XtraReports.UI.WinControlContainer();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.xrShape7 = new DevExpress.XtraReports.UI.XRShape();
             this.xrShape6 = new DevExpress.XtraReports.UI.XRShape();
             this.xrShape5 = new DevExpress.XtraReports.UI.XRShape();
@@ -64,8 +66,6 @@
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrPictureBox1 = new DevExpress.XtraReports.UI.XRPictureBox();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.winControlContainer1 = new DevExpress.XtraReports.UI.WinControlContainer();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -92,6 +92,24 @@
             this.Detail.Name = "Detail";
             this.Detail.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // winControlContainer1
+            // 
+            this.winControlContainer1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.winControlContainer1.Name = "winControlContainer1";
+            this.winControlContainer1.SizeF = new System.Drawing.SizeF(16F, 15F);
+            this.winControlContainer1.WinControl = this.checkBox1;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Location = new System.Drawing.Point(0, 0);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // xrShape7
             // 
@@ -151,7 +169,7 @@
             // 
             // zahialagch
             // 
-            this.zahialagch.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Underline);
+            this.zahialagch.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.zahialagch.ForeColor = System.Drawing.Color.Black;
             this.zahialagch.LocationFloat = new DevExpress.Utils.PointFloat(21F, 22.99997F);
             this.zahialagch.Name = "zahialagch";
@@ -165,7 +183,7 @@
             // 
             // projectName
             // 
-            this.projectName.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Underline);
+            this.projectName.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectName.ForeColor = System.Drawing.Color.Black;
             this.projectName.LocationFloat = new DevExpress.Utils.PointFloat(21.00001F, 55.50002F);
             this.projectName.Name = "projectName";
@@ -179,7 +197,7 @@
             // 
             // gereeNo
             // 
-            this.gereeNo.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Underline);
+            this.gereeNo.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gereeNo.ForeColor = System.Drawing.Color.Black;
             this.gereeNo.LocationFloat = new DevExpress.Utils.PointFloat(21.00001F, 88.79173F);
             this.gereeNo.Name = "gereeNo";
@@ -193,7 +211,7 @@
             // 
             // ognoo1
             // 
-            this.ognoo1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Underline);
+            this.ognoo1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ognoo1.ForeColor = System.Drawing.Color.Black;
             this.ognoo1.LocationFloat = new DevExpress.Utils.PointFloat(21.00001F, 121.5834F);
             this.ognoo1.Name = "ognoo1";
@@ -207,7 +225,7 @@
             // 
             // ognoo2
             // 
-            this.ognoo2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Underline);
+            this.ognoo2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ognoo2.ForeColor = System.Drawing.Color.Black;
             this.ognoo2.LocationFloat = new DevExpress.Utils.PointFloat(21.00001F, 152.7501F);
             this.ognoo2.Name = "ognoo2";
@@ -221,7 +239,7 @@
             // 
             // budget
             // 
-            this.budget.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Underline);
+            this.budget.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.budget.ForeColor = System.Drawing.Color.Black;
             this.budget.LocationFloat = new DevExpress.Utils.PointFloat(21.00001F, 184.7084F);
             this.budget.Name = "budget";
@@ -235,7 +253,7 @@
             // 
             // locationP
             // 
-            this.locationP.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Underline);
+            this.locationP.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.locationP.ForeColor = System.Drawing.Color.Black;
             this.locationP.LocationFloat = new DevExpress.Utils.PointFloat(21.00001F, 216.7917F);
             this.locationP.Name = "locationP";
@@ -249,7 +267,7 @@
             // 
             // undsenesex
             // 
-            this.undsenesex.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Underline);
+            this.undsenesex.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.undsenesex.ForeColor = System.Drawing.Color.Black;
             this.undsenesex.LocationFloat = new DevExpress.Utils.PointFloat(21.00001F, 249.1667F);
             this.undsenesex.Name = "undsenesex";
@@ -292,7 +310,7 @@
             // 
             // titletext
             // 
-            this.titletext.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titletext.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titletext.LocationFloat = new DevExpress.Utils.PointFloat(0F, 22.91667F);
             this.titletext.Name = "titletext";
             this.titletext.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -304,7 +322,7 @@
             // 
             // mayagtnumber
             // 
-            this.mayagtnumber.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
+            this.mayagtnumber.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mayagtnumber.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.mayagtnumber.Name = "mayagtnumber";
             this.mayagtnumber.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -327,7 +345,7 @@
             // xrPictureBox2
             // 
             this.xrPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("xrPictureBox2.Image")));
-            this.xrPictureBox2.LocationFloat = new DevExpress.Utils.PointFloat(270.1042F, 0F);
+            this.xrPictureBox2.LocationFloat = new DevExpress.Utils.PointFloat(243.9896F, 9.999974F);
             this.xrPictureBox2.Name = "xrPictureBox2";
             this.xrPictureBox2.SizeF = new System.Drawing.SizeF(290.625F, 133.3333F);
             this.xrPictureBox2.Sizing = DevExpress.XtraPrinting.ImageSizeMode.AutoSize;
@@ -335,10 +353,10 @@
             // xrLabel2
             // 
             this.xrLabel2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(420.1042F, 29.16667F);
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(534.6146F, 29.16667F);
             this.xrLabel2.Name = "xrLabel2";
             this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel2.SizeF = new System.Drawing.SizeF(236.4583F, 58.33334F);
+            this.xrLabel2.SizeF = new System.Drawing.SizeF(140.625F, 58.33334F);
             this.xrLabel2.StylePriority.UseFont = false;
             this.xrLabel2.StylePriority.UseTextAlignment = false;
             this.xrLabel2.Text = "П.МӨНХЖАРГАЛ";
@@ -347,14 +365,14 @@
             // xrPictureBox1
             // 
             this.xrPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("xrPictureBox1.Image")));
-            this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(255.5209F, 0F);
+            this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(243.9896F, 2.083333F);
             this.xrPictureBox1.Name = "xrPictureBox1";
             this.xrPictureBox1.SizeF = new System.Drawing.SizeF(164.5833F, 156.25F);
             // 
             // xrLabel1
             // 
             this.xrLabel1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(18.02085F, 29.16667F);
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(6.489595F, 29.16667F);
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel1.SizeF = new System.Drawing.SizeF(237.5F, 57.29167F);
@@ -362,24 +380,6 @@
             this.xrLabel1.StylePriority.UseTextAlignment = false;
             this.xrLabel1.Text = "ЗАХИРАЛ";
             this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomRight;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(0, 0);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // winControlContainer1
-            // 
-            this.winControlContainer1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
-            this.winControlContainer1.Name = "winControlContainer1";
-            this.winControlContainer1.SizeF = new System.Drawing.SizeF(16F, 15F);
-            this.winControlContainer1.WinControl = this.checkBox1;
             // 
             // reportM6
             // 

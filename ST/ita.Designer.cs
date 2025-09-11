@@ -51,6 +51,7 @@
             this.gridColumn34 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn36 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn38 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn41 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -67,6 +68,7 @@
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn39 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn42 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
@@ -84,6 +86,7 @@
             this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn40 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn43 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn37 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.printingSystem1 = new DevExpress.XtraPrinting.PrintingSystem(this.components);
             this.printableComponentLink1 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
@@ -204,6 +207,7 @@
             this.gridColumn34,
             this.gridColumn36,
             this.gridColumn38,
+            this.gridColumn41,
             this.docu});
             this.gridView5.GridControl = this.gridControl5;
             this.gridView5.GroupPanelText = "Бичиг баримтууд";
@@ -216,6 +220,8 @@
             this.gridcolumn25.Caption = "id";
             this.gridcolumn25.FieldName = "id";
             this.gridcolumn25.Name = "gridcolumn25";
+            this.gridcolumn25.Visible = true;
+            this.gridcolumn25.VisibleIndex = 13;
             // 
             // dd5
             // 
@@ -344,6 +350,14 @@
             this.gridColumn38.Visible = true;
             this.gridColumn38.VisibleIndex = 7;
             // 
+            // gridColumn41
+            // 
+            this.gridColumn41.Caption = "Төрөл";
+            this.gridColumn41.FieldName = "itatype";
+            this.gridColumn41.Name = "gridColumn41";
+            this.gridColumn41.Visible = true;
+            this.gridColumn41.VisibleIndex = 12;
+            // 
             // xtraTabPage1
             // 
             this.xtraTabPage1.Controls.Add(this.gridControl1);
@@ -382,6 +396,7 @@
             this.gridColumn11,
             this.gridColumn12,
             this.gridColumn39,
+            this.gridColumn42,
             this.gridColumn13});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.GroupPanelText = "Бичиг баримтууд";
@@ -394,6 +409,8 @@
             this.gridColumn1.Caption = "id";
             this.gridColumn1.FieldName = "id";
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 13;
             // 
             // gridColumn2
             // 
@@ -522,6 +539,14 @@
             this.gridColumn39.Visible = true;
             this.gridColumn39.VisibleIndex = 5;
             // 
+            // gridColumn42
+            // 
+            this.gridColumn42.Caption = "Төрөл";
+            this.gridColumn42.FieldName = "itatype";
+            this.gridColumn42.Name = "gridColumn42";
+            this.gridColumn42.Visible = true;
+            this.gridColumn42.VisibleIndex = 12;
+            // 
             // gridColumn13
             // 
             this.gridColumn13.Caption = "docu";
@@ -567,6 +592,7 @@
             this.gridColumn24,
             this.gridColumn26,
             this.gridColumn40,
+            this.gridColumn43,
             this.gridColumn37});
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.GroupPanelText = "Бичиг баримтууд";
@@ -579,6 +605,8 @@
             this.gridColumn14.Caption = "id";
             this.gridColumn14.FieldName = "id";
             this.gridColumn14.Name = "gridColumn14";
+            this.gridColumn14.Visible = true;
+            this.gridColumn14.VisibleIndex = 13;
             // 
             // gridColumn15
             // 
@@ -706,6 +734,14 @@
             this.gridColumn40.Name = "gridColumn40";
             this.gridColumn40.Visible = true;
             this.gridColumn40.VisibleIndex = 7;
+            // 
+            // gridColumn43
+            // 
+            this.gridColumn43.Caption = "Төрөл";
+            this.gridColumn43.FieldName = "itatype";
+            this.gridColumn43.Name = "gridColumn43";
+            this.gridColumn43.Visible = true;
+            this.gridColumn43.VisibleIndex = 12;
             // 
             // gridColumn37
             // 
@@ -975,5 +1011,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn38;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn39;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn40;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn41;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn42;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn43;
     }
 }

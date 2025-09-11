@@ -91,18 +91,21 @@ namespace ST
                 //ad.projectID.Text = "0";
                 ad.doctype.Text = "ITA";
                 ad.Text = "Инженер техникийн ажилтан нэмэх";
+                
             }
             if (xtraTabControl1.SelectedTabPageIndex == 1)
             {
                 //ad.projectID.Text = "0";
                 ad.doctype.Text = "MA";
                 ad.Text = "Мэргэжилтэй ажилтан нэмэх";
+                
             }
             if (xtraTabControl1.SelectedTabPageIndex == 2)
             {
                 //ad.projectID.Text = "0";
                 ad.doctype.Text = "OP";
                 ad.Text = "Тоног төхөөрөмж дээр ажиллах ажилтан нэмэх";
+               
             }
             ad.ShowDialog();
         }
@@ -176,6 +179,7 @@ namespace ST
                     eita.zereg.Text = gridView5.GetFocusedRowCellValue("zereg").ToString();
                     eita.ajillsan.Text = gridView5.GetFocusedRowCellValue("ajillsan").ToString();
                     eita.niitAjilsan.Text = gridView5.GetFocusedRowCellValue("niitAjilsan").ToString();
+                    eita.doctype.Text = gridView5.GetFocusedRowCellValue("itatype").ToString();
                 }
                 if (xtraTabControl1.SelectedTabPageIndex == 1)
                 {
@@ -190,6 +194,7 @@ namespace ST
                     eita.zereg.Text = gridView1.GetFocusedRowCellValue("zereg").ToString();
                     eita.ajillsan.Text = gridView1.GetFocusedRowCellValue("ajillsan").ToString();
                     eita.niitAjilsan.Text = gridView1.GetFocusedRowCellValue("niitAjilsan").ToString();
+                    eita.doctype.Text = gridView1.GetFocusedRowCellValue("itatype").ToString();
                 }
                 if (xtraTabControl1.SelectedTabPageIndex == 2)
                 {
@@ -204,7 +209,9 @@ namespace ST
                     eita.zereg.Text = gridView2.GetFocusedRowCellValue("zereg").ToString();
                     eita.ajillsan.Text = gridView2.GetFocusedRowCellValue("ajillsan").ToString();
                     eita.niitAjilsan.Text = gridView2.GetFocusedRowCellValue("niitAjilsan").ToString();
-                }
+                    eita.doctype.Text = gridView2.GetFocusedRowCellValue("itatype").ToString();
+                } 
+                
                 eita.ShowDialog();
             }
             catch (Exception ee)
@@ -222,7 +229,7 @@ namespace ST
                 var encode = gridView1.GetFocusedRowCellValue("docu").ToString().Replace(" ", "%20");
                 if (encode != "")
                 {
-                    FileViewer vvr = new FileViewer(Url.GetUrl() + "dist/uploads/ita/docu/" + encode);
+                    FileViewer vvr = new FileViewer(Url.GetUrl() + "dist/uploads/ita/docu/MA/" + gridView1.GetFocusedRowCellValue("id").ToString() + "/" + encode);
                 }
                 else
                 {
@@ -242,7 +249,7 @@ namespace ST
                 var encode = gridView2.GetFocusedRowCellValue("docu").ToString().Replace(" ", "%20");
                 if (encode != "")
                 {
-                    FileViewer vvr = new FileViewer(Url.GetUrl() + "dist/uploads/ita/docu/" + encode);
+                    FileViewer vvr = new FileViewer(Url.GetUrl() + "dist/uploads/ita/docu/OP/" + gridView2.GetFocusedRowCellValue("id").ToString() + "/" + encode);
                 }
                 else
                 {
@@ -262,7 +269,7 @@ namespace ST
                 var encode = gridView5.GetFocusedRowCellValue("docu").ToString().Replace(" ", "%20");
                 if (encode != "")
                 {
-                    FileViewer vvr = new FileViewer(Url.GetUrl() + "dist/uploads/ita/docu/" + encode);
+                    FileViewer vvr = new FileViewer(Url.GetUrl() + "dist/uploads/ita/docu/ITA/" + gridView5.GetFocusedRowCellValue("id").ToString() + "/" + encode);
                 }
                 else
                 {

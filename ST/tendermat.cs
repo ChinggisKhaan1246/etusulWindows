@@ -20,7 +20,9 @@ using DevExpress.XtraPrinting;
 using DevExpress.XtraReports.UI;
 using DevExpress.XtraPrintingLinks;
 using DevExpress.Utils;
-
+using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Controls;
+//using DevExpress.Pdf; // DevExpress.XtraPdfProcessing багц хэрэгтэй
 using PdfSharp.Pdf;
 using PdfSharp.Pdf.IO;
 
@@ -33,34 +35,25 @@ namespace ST
         {
             InitializeComponent();
         }
+        private readonly Dictionary<int, HashSet<string>> _projDocs =
+            new Dictionary<int, HashSet<string>>();
 
+        // Сонгосон файлуудыг projectID-тэй нь дамжуулахад хэрэглэх жижиг модель
+        private class SelectedDoc
+        {
+            public int ProjectId;
+            public string FileName;
+        }
         dataSetFill ds = new dataSetFill();
+        BaseUrl url = new BaseUrl();
+        baseinfo userInfo = new baseinfo(UserSession.LoggedUserID);
+        DataTable result;
         private void simpleButton1_Click_1(object sender, EventArgs e)
         {
             
         }
-        private void FillRadioGroup(DataTable dataTable)
-        {
-            if (dataTable == null || dataTable.Rows.Count == 0)
-            {
-                MessageBox.Show("Хүснэгтэд өгөгдөл алга.");
-                return;
-            }
-
-            // dxRadioGroup-ыг цэвэрлэх
-            radioGroup1.Properties.Items.Clear();
-
-            // DataTable-ийн listname баганаас утгуудыг авах
-            foreach (DataRow row in dataTable.Rows)
-            {
-                if (row["ner"] != DBNull.Value)
-                {
-                    string listName = row["ner"].ToString() + " : " + row["atushaal"].ToString();
-                    radioGroup1.Properties.Items.Add(new DevExpress.XtraEditors.Controls.RadioGroupItem(null, listName));
-                }
-            }
-        }
-        DataTable result;
+        
+        
         private void fillchecklistAlban()
         {
             result = ds.gridFill("getbooktender", "status=0");
@@ -81,12 +74,12 @@ namespace ST
 
                 foreach (DataRow row in result.Rows)
                 {
-                    row["DisplayValue"] = row["ner"].ToString() + " : " + row["proff"].ToString()+ " : "+ row["docu"];
+                    row["DisplayValue"] = row["id"].ToString() + " : " + row["ner"].ToString() + " : " + row["proff"].ToString() + " : " + row["docu"];
 
                 }
                 checkedListBoxControl2.DisplayMember = "DisplayValue";
                 checkedListBoxControl2.ValueMember = "id";
-                FillRadioGroup(result);
+              
             }
         }
         private void fillchecklistMA()
@@ -99,7 +92,7 @@ namespace ST
                 foreach (DataRow row in result.Rows)
                 {
 
-                    row["DisplayValue"] = row["ner"].ToString() + " : " + row["proff"].ToString();
+                    row["DisplayValue"] = row["id"].ToString() + " : " + row["ner"].ToString() + " : " + row["proff"].ToString() + " : " + row["docu"];
                 }
                 checkedListBoxControl4.DisplayMember = "DisplayValue";
                 checkedListBoxControl4.ValueMember = "id";
@@ -114,7 +107,7 @@ namespace ST
                 result.Columns.Add("DisplayValue", typeof(string));
                 foreach (DataRow row in result.Rows)
                 {
-                    row["DisplayValue"] = row["ner"].ToString() + " : " + row["proff"].ToString();
+                    row["DisplayValue"] = row["id"].ToString() + " : " + row["ner"].ToString() + " : " + row["proff"].ToString() + " : " + row["docu"];
                 }
                 checkedListBoxControl3.DisplayMember = "DisplayValue";
                 checkedListBoxControl3.ValueMember = "id";
@@ -125,13 +118,14 @@ namespace ST
             result = ds.gridFill("getdevices", "status=0");
             if (result != null)
             {
-                checkedListBoxControl5.DataSource = result;
+               
                 result.Columns.Add("DisplayValue", typeof(string));
                 foreach (DataRow row in result.Rows)
                 {
 
-                    row["DisplayValue"] = row["ner"].ToString() + " : " + row["mark"].ToString() + " : " + row["power"].ToString();
+                    row["DisplayValue"] = row["id"].ToString() + " : " + row["ner"].ToString() + " : " + row["mark"].ToString() + " : " + row["power"].ToString() + " : " + row["docURL"].ToString();
                 }
+                checkedListBoxControl5.DataSource = result;
                 checkedListBoxControl5.DisplayMember = "DisplayValue";
                 checkedListBoxControl5.ValueMember = "id";
             }
@@ -141,26 +135,30 @@ namespace ST
             try
             {
                 result = ds.gridFill("getproject", "status=4&comID=" + UserSession.LoggedComID);
-                if (result != null)
+                if (result != null && result.Columns.Contains("projectID"))
                 {
-                    checkedListBoxControl7.DataSource = result;
-                    result.Columns.Add("DisplayValue", typeof(string));
-                    long budgetValue;
+                    if (!result.Columns.Contains("DisplayValue"))
+                        result.Columns.Add("DisplayValue", typeof(string));
+
                     foreach (DataRow row in result.Rows)
                     {
-                        budgetValue = long.Parse(row["budget"].ToString());
+                        long budgetValue = 0;
+                        long.TryParse(Convert.ToString(row["budget"]), out budgetValue);
                         string budget = budgetValue.ToString("#,0");
-                        row["DisplayValue"] = row["projectName"].ToString() + " : " + budget + " : " + row["ognoo2"].ToString();
+                        row["DisplayValue"] = string.Format("{0} : {1} : {2} : {3}",  row["projectID"], row["projectName"], budget, row["ognoo2"]);
                     }
+
+                    checkedListBoxControl7.DataSource = result;
                     checkedListBoxControl7.DisplayMember = "DisplayValue";
-                    checkedListBoxControl7.ValueMember = "id";
+                    checkedListBoxControl7.ValueMember = "projectID";
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Алдаа: Дууссан гэрээний мэдээлэл татах үед алдаа гарлаа.", ex.ToString());
+                MessageBox.Show("Алдаа: Дууссан гэрээний мэдээлэл татах үед алдаа гарлаа.\n" + ex);
             }
         }
+
 
         private void fillcheckproject9()
         {
@@ -169,17 +167,18 @@ namespace ST
                 result = ds.gridFill("getproject", "status=9&comID=" + UserSession.LoggedComID);
                 if (result != null)
                 {
-                    checkedListBoxControl6.DataSource = result;
+                    
                     result.Columns.Add("DisplayValue", typeof(string));
                     long budgetValue;
                     foreach (DataRow row in result.Rows)
                     {
                         budgetValue = long.Parse(row["budget"].ToString());
                         string budget = budgetValue.ToString("#,0");
-                        row["DisplayValue"] = row["projectName"].ToString() + " : " + budget + " : " + row["ognoo2"].ToString();
+                        row["DisplayValue"] = string.Format("{0} : {1} : {2} : {3}", row["projectID"], row["projectName"], budget, row["ognoo2"]);
                     }
+                    checkedListBoxControl6.DataSource = result;
                     checkedListBoxControl6.DisplayMember = "DisplayValue";
-                    checkedListBoxControl6.ValueMember = "id";
+                    checkedListBoxControl6.ValueMember = "projectID";
                 }
             }
             catch (Exception ex)
@@ -362,6 +361,7 @@ namespace ST
                    // MessageBox.Show(status);
                     gridControl1.DataSource = ds.gridFill("getbooktender", "status=" + status + "");
                     reporttendermat rptT = new reporttendermat();
+                    
                     List<ReportData> reportDataList = new List<ReportData>();
                     for (int i = 0; i < gridView1.RowCount; i++)
                     {
@@ -444,19 +444,35 @@ namespace ST
                              .Replace("time", EscapeToRtf(honog.Text));
 
                     rpt1.xrRichText1.RtfText = new DevExpress.XtraReports.UI.SerializableString(rtf);
-                   
-                  //  rpt1.ShowPreview();
 
+                    reportM7 rptM7 = new reportM7();
+                    baseinfo userInfo = new baseinfo(UserSession.LoggedUserID);
+                    string albantushaal = signAlbantushaal.Text.Trim();
+                    string signName = signNames.Text.Trim();
+                    if (signNames.Text == "") signName = userInfo.userOvog + " овогтой " + (userInfo.userName.Contains(".") ? userInfo.userName.Substring(userInfo.userName.IndexOf('.') + 1) : userInfo.userName);
+                    if (signAlbantushaal.Text == "") albantushaal = "захирал";
+                    rptM7.ognoo.Text = ognoo.DateTime.ToString("yyyy-MM-dd");
+                    rptM7.dugaar.Text = "Г/01";
+                    rptM7.haashaa.Text = tendZahi.Text + "-Д";
+                    string rtfSign = rptM7.Utga.RtfText.Value;
+                    
+                    rtfSign = rtfSign.Replace("ognoo", EscapeToRtf(formattedOgnoo))
+                                     .Replace("comName", EscapeToRtf(userInfo.comName))
+                                     .Replace("albantushaal", EscapeToRtf(albantushaal))
+                                     .Replace("signName", EscapeToRtf(signName));
+                    rptM7.Utga.RtfText = new DevExpress.XtraReports.UI.SerializableString(rtfSign);
 
                     //нэгтгэж харуулах
 
                     // 1. XtraReport бүрийн Document үүсгэх
                     rptT.CreateDocument();
                     rpt1.CreateDocument();
+                    rptM7.CreateDocument();
 
                     // 2. Нэгэн шинэ PrintingSystem үүсгээд хоёуланг нэгтгэх
                     PrintingSystem ps = new PrintingSystem();
                     ps.Pages.AddRange(rpt1.PrintingSystem.Pages);
+                    ps.Pages.AddRange(rptM7.PrintingSystem.Pages);
                     ps.Pages.AddRange(rptT.PrintingSystem.Pages);
 
                     // 3. Preview
@@ -572,9 +588,6 @@ namespace ST
                 return string.Join(" ", words);
             }
         }
-
-
-
         private void groupControl2_DoubleClick(object sender, EventArgs e)
         {
             try
@@ -600,7 +613,7 @@ namespace ST
                 }
 
                 // Өгөгдөл татах
-                gridControl2.DataSource = ds.gridFill("getitaT", "condition=" + status);
+                gridControl2.DataSource = ds.gridFill("getitaT", "itatype=ITA&condition=" + status);
 
                 // Тайлангийн өгөгдөл цуглуулах
                 List<ReportData> reportDataList = new List<ReportData>();
@@ -640,7 +653,7 @@ namespace ST
                 rpt21.CreateDocument();
 
                 // Тайлан + хавсралт PDF-ийг нэгтгэх
-                MergeITAReportWithAttachments(rpt21, docuList); // энэ функц өмнө өгсөн
+                MergeReportWithAttachments(rpt21, docuList, "ITA"); // энэ функц өмнө өгсөн
 
             }
             catch (Exception ee)
@@ -650,16 +663,16 @@ namespace ST
         }
 
 
-private void MergeITAReportWithAttachments(XtraReport rpt21, List<string> docuList)
+private void MergeReportWithAttachments(XtraReport rpt, List<string> docuList, string type)
 {
     string basePath = @"C:\Temp\ITAReport\";
     if (!Directory.Exists(basePath)) Directory.CreateDirectory(basePath);
 
-    string reportPdfPath = Path.Combine(basePath, "rpt21.pdf");
-    string finalPdfPath = Path.Combine(basePath, "FinalMergedITAReport.pdf");
+    string reportPdfPath = Path.Combine(basePath, "rpt.pdf");
+    string finalPdfPath = Path.Combine(basePath, "FinalMergedReport.pdf");
 
     // 1. rpt тайланг PDF хэлбэрт хадгалах
-    rpt21.ExportToPdf(reportPdfPath);
+    rpt.ExportToPdf(reportPdfPath);
 
     // 2. Хавсралтуудыг татах
     List<string> attachmentPaths = new List<string>();
@@ -667,7 +680,29 @@ private void MergeITAReportWithAttachments(XtraReport rpt21, List<string> docuLi
     {
         if (string.IsNullOrWhiteSpace(fileName)) continue;
 
-        string fileUrl = "https://etusul.com/dist/uploads/ita/docu/" + fileName;
+        string fileUrl = "";
+        switch (type.ToUpper())
+        {
+            case "ITA":
+                fileUrl = url.GetUrl()+"dist/uploads/ita/docu/ITA/" + fileName;
+                break;
+            case "MA":
+                fileUrl = url.GetUrl() + "dist/uploads/ita/docu/MA/" + fileName;
+                break;
+            case "OP":
+                fileUrl = url.GetUrl() + "dist/uploads/ita/docu/OP/" + fileName;
+                break;
+            case "DEVICE":
+                fileUrl = url.GetUrl() + "dist/uploads/devices/" + fileName;
+                break;
+            case "PROJECT":
+                fileUrl = url.GetUrl() + "dist/uploads/projects/" + fileName;
+                break;
+            default:
+                MessageBox.Show("Тодорхойгүй төрөл: " + type);
+                continue;
+        }
+
         string localPath = Path.Combine(basePath, fileName);
 
         try
@@ -706,7 +741,8 @@ private void MergeITAReportWithAttachments(XtraReport rpt21, List<string> docuLi
     Process.Start(finalPdfPath);
 }
 
-        private void groupControl3_DoubleClick(object sender, EventArgs e)
+
+private void groupControl3_DoubleClick(object sender, EventArgs e)
         {
             try
             {
@@ -725,29 +761,39 @@ private void MergeITAReportWithAttachments(XtraReport rpt21, List<string> docuLi
                 if (status != "")
                 {
                     //MessageBox.Show(status);
-                    gridControl3.DataSource = ds.gridFill("getitaT", "condition=" + status);
-                      reportM2 rpt21 = new reportM2();
-                      List<ReportData> reportDataList = new List<ReportData>();
-                      for (int i = 0; i < gridView3.RowCount; i++)
-                      {
-                          reportDataList.Add(new ReportData
-                          {
-                              classatushaal = gridView3.GetRowCellValue(i, "atushaal").ToString(),
-                              classner = gridView3.GetRowCellValue(i, "ner").ToString(),
-                              classproff = gridView3.GetRowCellValue(i, "proff").ToString(),
-                              classniitAjilsan = gridView3.GetRowCellValue(i, "niitAjilsan").ToString(),
-                              classajillsan = gridView3.GetRowCellValue(i, "ajillsan").ToString(),
-                          });
-                      }
-                      rpt21.DataSource = reportDataList;
-                      rpt21.mayagtnumber.Text = "Маягт №2-2";
-                      rpt21.titletext.Text = "Машин механизм дээр ажиллах боловсон хүчний мэдээлэл";
-                      rpt21.atushaal.DataBindings.Add(new XRBinding("Text", null, "classatushaal"));
-                      rpt21.ner.DataBindings.Add(new XRBinding("Text", null, "classner"));
-                      rpt21.proff.DataBindings.Add(new XRBinding("Text", null, "classproff"));
-                      rpt21.niitAjilsan.DataBindings.Add(new XRBinding("Text", null, "classniitAjilsan"));
-                      rpt21.ajillsan.DataBindings.Add(new XRBinding("Text", null, "classajillsan"));
-                      rpt21.ShowPreview(); 
+                    gridControl3.DataSource = ds.gridFill("getitaT", "itatype=OP&condition=" + status);
+                    List<string> docuList = new List<string>();
+                    List<ReportData> reportDataList = new List<ReportData>();
+
+                    for (int i = 0; i < gridView3.RowCount; i++)
+                    {
+                        string docuName = gridView3.GetRowCellValue(i, "docu").ToString();
+                        reportDataList.Add(new ReportData
+                        {
+                            classatushaal = gridView3.GetRowCellValue(i, "atushaal").ToString(),
+                            classner = gridView3.GetRowCellValue(i, "ner").ToString(),
+                            classproff = gridView3.GetRowCellValue(i, "proff").ToString(),
+                            classniitAjilsan = gridView3.GetRowCellValue(i, "niitAjilsan").ToString(),
+                            classajillsan = gridView3.GetRowCellValue(i, "ajillsan").ToString(),
+                            classdocuITA = docuName
+                        });
+                        if (!string.IsNullOrWhiteSpace(docuName))
+                        {
+                            docuList.Add(docuName);
+                        }
+                    }
+                    reportM2 rpt21 = new reportM2();
+                    rpt21.DataSource = reportDataList;
+                    rpt21.mayagtnumber.Text = "Маягт №2-2";
+                    rpt21.titletext.Text = "Мэргэжилтэй ажилтнуудын мэдээлэл";
+                    rpt21.atushaal.DataBindings.Add(new XRBinding("Text", null, "classatushaal"));
+                    rpt21.ner.DataBindings.Add(new XRBinding("Text", null, "classner"));
+                    rpt21.proff.DataBindings.Add(new XRBinding("Text", null, "classproff"));
+                    rpt21.niitAjilsan.DataBindings.Add(new XRBinding("Text", null, "classniitAjilsan"));
+                    rpt21.ajillsan.DataBindings.Add(new XRBinding("Text", null, "classajillsan"));
+                    rpt21.CreateDocument();
+                    // Тайлан + хавсралт PDF-ийг нэгтгэх
+                    MergeReportWithAttachments(rpt21, docuList, "OP"); // энэ функц өмнө өгсөн
                 }
                 else
                 {
@@ -779,11 +825,13 @@ private void MergeITAReportWithAttachments(XtraReport rpt21, List<string> docuLi
                 if (status != "")
                 {
                     //MessageBox.Show(status);
-                    gridControl4.DataSource = ds.gridFill("getitaT", "condition=" + status);
-                    reportM2 rpt21 = new reportM2();
+                    gridControl4.DataSource = ds.gridFill("getitaT", "itatype=MA&condition=" + status);
+                    List<string> docuList = new List<string>();
                     List<ReportData> reportDataList = new List<ReportData>();
+
                     for (int i = 0; i < gridView4.RowCount; i++)
                     {
+                        string docuName = gridView4.GetRowCellValue(i, "docu").ToString();
                         reportDataList.Add(new ReportData
                         {
                             classatushaal = gridView4.GetRowCellValue(i, "atushaal").ToString(),
@@ -791,8 +839,14 @@ private void MergeITAReportWithAttachments(XtraReport rpt21, List<string> docuLi
                             classproff = gridView4.GetRowCellValue(i, "proff").ToString(),
                             classniitAjilsan = gridView4.GetRowCellValue(i, "niitAjilsan").ToString(),
                             classajillsan = gridView4.GetRowCellValue(i, "ajillsan").ToString(),
+                            classdocuITA = docuName
                         });
+                        if (!string.IsNullOrWhiteSpace(docuName))
+                        {
+                            docuList.Add(docuName);
+                        }
                     }
+                    reportM2 rpt21 = new reportM2();
                     rpt21.DataSource = reportDataList;
                     rpt21.mayagtnumber.Text = "Маягт №2-2";
                     rpt21.titletext.Text = "Мэргэжилтэй ажилтнуудын мэдээлэл";
@@ -801,7 +855,9 @@ private void MergeITAReportWithAttachments(XtraReport rpt21, List<string> docuLi
                     rpt21.proff.DataBindings.Add(new XRBinding("Text", null, "classproff"));
                     rpt21.niitAjilsan.DataBindings.Add(new XRBinding("Text", null, "classniitAjilsan"));
                     rpt21.ajillsan.DataBindings.Add(new XRBinding("Text", null, "classajillsan"));
-                    rpt21.ShowPreview(); 
+                    rpt21.CreateDocument();
+                    // Тайлан + хавсралт PDF-ийг нэгтгэх
+                    MergeReportWithAttachments(rpt21, docuList, "MA"); // энэ функц өмнө өгсөн
                 }
                 else
                 {
@@ -833,21 +889,29 @@ private void MergeITAReportWithAttachments(XtraReport rpt21, List<string> docuLi
                 }
                 if (status != "")
                 {
-                   // MessageBox.Show(status);
+                    //MessageBox.Show(status);
                     gridControl5.DataSource = ds.gridFill("getdevices", "condition=" + status);
-                    reportM3 rpt21 = new reportM3();
+                    List<string> docuList = new List<string>();
                     List<ReportData> reportDataList = new List<ReportData>();
+
                     for (int i = 0; i < gridView5.RowCount; i++)
                     {
+                        string docuName = gridView5.GetRowCellValue(i, "docURL").ToString();
                         reportDataList.Add(new ReportData
                         {
                             classner = gridView5.GetRowCellValue(i, "ner").ToString() + ":" + gridView5.GetRowCellValue(i, "mark").ToString(),
                             classpower = gridView5.GetRowCellValue(i, "power").ToString(),
                             classtoo = gridView5.GetRowCellValue(i, "too").ToString(),
                             classULSdugaar= gridView5.GetRowCellValue(i, "ULSdugaar").ToString(),
-                            classooriin = gridView5.GetRowCellValue(i, "ooriin").ToString()
+                            classooriin = gridView5.GetRowCellValue(i, "ooriin").ToString(),
+                            classdocuITA = docuName
                         });
+                        if (!string.IsNullOrWhiteSpace(docuName))
+                        {
+                            docuList.Add(docuName);
+                        }
                     }
+                    reportM3 rpt21 = new reportM3();
                     rpt21.DataSource = reportDataList;
                     rpt21.mayahtnumber.Text = "Маягт №3";
                     rpt21.titletext.Text = "Үндсэн тоног төхөөрөмж, техник хэрэгслийн мэдээлэл ";
@@ -856,7 +920,9 @@ private void MergeITAReportWithAttachments(XtraReport rpt21, List<string> docuLi
                     rpt21.too.DataBindings.Add(new XRBinding("Text", null, "classtoo"));
                     rpt21.ooriin.DataBindings.Add(new XRBinding("Text", null, "classooriin"));
                     rpt21.ULSdugaar.DataBindings.Add(new XRBinding("Text", null, "classULSdugaar"));
-                    rpt21.ShowPreview(); 
+                    rpt21.CreateDocument();
+                    MergeReportWithAttachments(rpt21, docuList, "DEVICE"); // энэ функц өмнө өгсөн
+
                 }
                 else
                 {
@@ -888,7 +954,7 @@ private void MergeITAReportWithAttachments(XtraReport rpt21, List<string> docuLi
                 }
                 if (status != "")
                 {
-                   // MessageBox.Show(status);
+                    //MessageBox.Show(status);
                     gridControl7.DataSource = ds.gridFill("getprojectT", "status=4&comID=" + UserSession.LoggedComID + "&condition=" + Uri.EscapeDataString(status));
                     reportM4 rpt21 = new reportM4();
                     List<ReportData> reportDataList = new List<ReportData>();
@@ -941,8 +1007,17 @@ private void MergeITAReportWithAttachments(XtraReport rpt21, List<string> docuLi
                     ps.Pages.AddRange(rpt6.PrintingSystem.Pages);
 
                     // 3. Preview
-                    PrintTool printTool = new PrintTool(ps);
-                    printTool.ShowPreviewDialog();
+                    // 1) Хоёр тайлангийн Document аль хэдийн үүсгэсэн
+                    // 2) Нэг PS-д нэгтгэсэн хэвээр
+                    var docs4 = GatherSelectedProjectFiles(checkedListBoxControl7);
+                    if (docs4.Count > 0)
+                        ExportPsAndMergeProjectDocs(ps, docs4);
+                    else
+                    {
+                        PrintTool printTool = new PrintTool(ps);
+                        printTool.ShowPreviewDialog();
+                    }
+
                    
                 }
                 else
@@ -975,7 +1050,7 @@ private void MergeITAReportWithAttachments(XtraReport rpt21, List<string> docuLi
                 }
                 if (status != "")
                 {
-                    //MessageBox.Show(status+""+UserSession.LoggedComID+"");
+                   // MessageBox.Show(status);
                     gridControl6.DataSource = ds.gridFill("getprojectT", "status=9&comID=" + UserSession.LoggedComID + "&condition=" + Uri.EscapeDataString(status));
 
                     reportM5 rpt5 = new reportM5();
@@ -1005,7 +1080,16 @@ private void MergeITAReportWithAttachments(XtraReport rpt21, List<string> docuLi
                     rpt5.ognoo1.DataBindings.Add(new XRBinding("Text", null, "classognoo1"));
                     rpt5.ognoo2.DataBindings.Add(new XRBinding("Text", null, "classognoo2"));
                     rpt5.huleegdejbui.Text = "99.9%";
-                    rpt5.ShowPreview();
+                    
+                    
+                   
+                    rpt5.CreateDocument();
+
+                    var docs9 = GatherSelectedProjectFiles(checkedListBoxControl6);
+                    if (docs9.Count > 0)
+                        MergeReportWithProjectDocs(rpt5, docs9);
+                    else
+                        rpt5.ShowPreview();
 
                 }
                 else
@@ -1045,5 +1129,376 @@ private void MergeITAReportWithAttachments(XtraReport rpt21, List<string> docuLi
             }
             finally { }
         }
+
+        private void checkedListBoxControl7_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void checkedListBoxControl7_ItemCheck(object sender, DevExpress.XtraEditors.Controls.ItemCheckEventArgs e)
+        {
+            try
+            {
+                if (e.Index >= 0 && e.State == CheckState.Checked)
+                {
+                    // ValueMember = "projectID" гэж тохируулсан
+                    object val = checkedListBoxControl7.GetItemValue(e.Index);
+                    int projectId;
+                    if (val != null && int.TryParse(val.ToString(), out projectId))
+                    {
+                        ShowDocPickerForProject(projectId);
+                    }
+                }
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show(ee.ToString());
+            }
+            finally { }
+
+        }
+        private void ShowDocPickerForProject(int projectId)
+        {
+            DataTable dt = ds.gridFill("getdocument", "projectID=" + projectId);
+            if (dt == null || dt.Rows.Count == 0)
+            {
+                XtraMessageBox.Show("Төсөл " + projectId + " дээр баримт олдсонгүй.", "Мэдээлэл");
+                return;
+            }
+
+            using (var dlg = new DocPickerForm(projectId))
+            {
+                dlg.Text = "Төсөл id:" + projectId + " — бичиг баримт сонгох";
+                dlg.List.Items.Clear();
+
+                // Өмнөх сонголтуудыг урьдчилж check-тэй гаргах
+                var pre = _projDocs.ContainsKey(projectId)
+                    ? _projDocs[projectId]
+                    : new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+                foreach (DataRow r in dt.Rows)
+                {
+                    string docType = Convert.ToString(r["doctype"]);
+                    string name = Convert.ToString(r["docname"]);
+                    string dateStr = Convert.ToString(r["ognoo"]);
+                    DateTime d; if (DateTime.TryParse(dateStr, out d)) dateStr = d.ToString("yyyy-MM-dd");
+
+                    // ⚠️ getdocument.php -> document.URL  (файлын нэр, ж: act_001.pdf)
+                    string fileName = Convert.ToString(r["URL"]);
+
+                    string display = string.Format("[{0}] {1} | {2}",
+                        string.IsNullOrWhiteSpace(docType) ? "Файл" : docType, name, dateStr);
+
+                    bool preChecked = !string.IsNullOrWhiteSpace(fileName) && pre.Contains(fileName);
+                    // Value = fileName  → дараа нь татаж merge хийхэд ашиглана
+                    dlg.List.Items.Add(new CheckedListBoxItem(fileName,  display, preChecked ? CheckState.Checked : CheckState.Unchecked ));
+                }
+
+                if (dlg.ShowDialog(this) != DialogResult.OK) return;
+
+                // ШИНЭ сонголтыг хадгална
+                var set = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+                foreach (CheckedListBoxItem it in dlg.List.CheckedItems)
+                {
+                    string fn = Convert.ToString(it.Value);
+                    if (!string.IsNullOrWhiteSpace(fn)) set.Add(fn);
+                }
+
+                if (set.Count > 0) _projDocs[projectId] = set;
+                else if (_projDocs.ContainsKey(projectId)) _projDocs.Remove(projectId);
+            }
+        }
+
+        public class DocPickerForm : XtraForm
+        {
+            private readonly int _projectId;
+            public DevExpress.XtraEditors.CheckedListBoxControl List { get; private set; }
+
+            public DocPickerForm(int projectId)
+            {
+                _projectId = projectId;
+
+                Text = "Бичиг баримт сонгох";
+                Width = 720; Height = 500;
+                StartPosition = FormStartPosition.CenterParent;
+
+                List = new DevExpress.XtraEditors.CheckedListBoxControl { Dock = DockStyle.Fill };
+                List.CheckOnClick = true;                 // 1 click → check/uncheck
+                List.DoubleClick += List_DoubleClick;     // 2 click → нээж харах
+
+                var ok = new Button { Text = "OK", DialogResult = DialogResult.OK, Width = 90 };
+                var cancel = new Button { Text = "Болих", DialogResult = DialogResult.Cancel, Width = 90 };
+                var panel = new FlowLayoutPanel { Dock = DockStyle.Bottom, Height = 46, FlowDirection = FlowDirection.RightToLeft };
+                panel.Controls.Add(ok); panel.Controls.Add(cancel);
+                Controls.Add(List);
+                Controls.Add(panel);
+
+                AcceptButton = ok;
+                CancelButton = cancel;
+            }
+
+            private void List_DoubleClick(object sender, EventArgs e)
+            {
+                int idx = List.SelectedIndex;
+                if (idx < 0) return;
+
+                var item = (CheckedListBoxItem)List.Items[idx];
+                string fileName = Convert.ToString(item.Value);   // бид Value = файл нэр гэж өгсөн
+                if (string.IsNullOrWhiteSpace(fileName)) return;
+
+                string urlD = "https://etusul.com/dist/uploads/documents/" + _projectId + "/" + Uri.EscapeDataString(fileName);
+
+                try
+                {
+                    // Таны FileViewer классыг ашиглаж нээнэ (PDF/зураг бол шууд үзүүлнэ)
+                    new FileViewer(urlD);
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show("Файл нээхэд алдаа:\n" + urlD + "\n" + ex.Message);
+                }
+            }
+        }
+
+       
+private void checkedListBoxControl6_ItemCheck(object sender, DevExpress.XtraEditors.Controls.ItemCheckEventArgs e)
+{
+    try
+    {
+        if (e.Index >= 0 && e.State == CheckState.Checked)
+        {
+            // ValueMember = "projectID" гэж тохируулсан
+            object val = checkedListBoxControl6.GetItemValue(e.Index);
+            int projectId;
+            if (val != null && int.TryParse(val.ToString(), out projectId))
+            {
+                ShowDocPickerForProject(projectId);
+            }
+        }
+    }
+    catch (Exception ee)
+    {
+        MessageBox.Show(ee.ToString());
+    }
+    finally { }
+}
+private List<SelectedDoc> GatherSelectedProjectFiles(DevExpress.XtraEditors.CheckedListBoxControl list)
+{
+    var result = new List<SelectedDoc>();
+    var seen = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+    for (int i = 0; i < list.CheckedIndices.Count; i++)
+    {
+        int idx = list.CheckedIndices[i];
+        object val = list.GetItemValue(idx); // ValueMember == "projectID"
+        int projectId;
+        if (val == null || !int.TryParse(val.ToString(), out projectId)) continue;
+
+        if (_projDocs.ContainsKey(projectId))
+        {
+            foreach (var file in _projDocs[projectId])
+            {
+                string key = projectId + "|" + file;
+                if (seen.Add(key))
+                {
+                    result.Add(new SelectedDoc
+                    {
+                        ProjectId = projectId,
+                        FileName = file
+                    });
+                }
+            }
+        }
+    }
+    return result;
+}
+private void MergeReportWithProjectDocs(XtraReport rpt, List<SelectedDoc> docs)
+{
+    string basePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "ProjectReport");
+    Directory.CreateDirectory(basePath);
+
+    string reportPdfPath = Path.Combine(basePath, "rpt.pdf");
+    string finalPdfPath = Path.Combine(basePath, "FinalMergedReport.pdf");
+
+    // 1) тайланг PDF болгох
+    rpt.ExportToPdf(reportPdfPath);
+
+    // 2) MERGE
+    var output = new PdfDocument();
+
+    var reportDoc = PdfReader.Open(reportPdfPath, PdfDocumentOpenMode.Import);
+    for (int i = 0; i < reportDoc.PageCount; i++) output.AddPage(reportDoc.Pages[i]);
+
+    using (var wc = new WebClient())
+    {
+        foreach (var doc in docs)
+        {
+            // зөвхөн PDF файлуудыг merge хийе
+            if (string.IsNullOrWhiteSpace(doc.FileName) || !doc.FileName.EndsWith(".pdf", StringComparison.OrdinalIgnoreCase))
+                continue;
+
+            string urlD = url.GetUrl()+"dist/uploads/documents/" + doc.ProjectId + "/" + Uri.EscapeDataString(doc.FileName);
+            string local = Path.Combine(basePath, doc.ProjectId + "_" + doc.FileName);
+
+            try
+            {
+                wc.DownloadFile(urlD, local);
+                var attach = PdfReader.Open(local, PdfDocumentOpenMode.Import);
+                for (int i = 0; i < attach.PageCount; i++) output.AddPage(attach.Pages[i]);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Файл татах/нээхэд алдаа:\n" + urlD + "\n" + ex.Message);
+            }
+        }
+    }
+
+    output.Save(finalPdfPath);
+    Process.Start(finalPdfPath);
+}
+
+private void ExportPsAndMergeProjectDocs(PrintingSystem ps, List<SelectedDoc> docs)
+{
+    string baseDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+                                  "ProjectReport", DateTime.Now.ToString("yyyyMMdd_HHmmss"));
+    Directory.CreateDirectory(baseDir);
+
+    string reportPdfPath = Path.Combine(baseDir, "Report.pdf");
+    string finalPdfPath = Path.Combine(baseDir, "FinalMergedReport.pdf");
+
+    // DevExpress PrintingSystem → PDF
+    ps.ExportToPdf(reportPdfPath);
+
+    var output = new PdfDocument();
+    var baseDoc = PdfReader.Open(reportPdfPath, PdfDocumentOpenMode.Import);
+    for (int i = 0; i < baseDoc.PageCount; i++) output.AddPage(baseDoc.Pages[i]);
+
+    using (var wc = new WebClient())
+    {
+        foreach (var doc in docs)
+        {
+            if (string.IsNullOrWhiteSpace(doc.FileName) || !doc.FileName.EndsWith(".pdf", StringComparison.OrdinalIgnoreCase))
+                continue;
+
+            string urlD = url.GetUrl()+"dist/uploads/documents/" + doc.ProjectId + "/" + Uri.EscapeDataString(doc.FileName);
+            string local = Path.Combine(baseDir, doc.ProjectId + "_" + doc.FileName);
+
+            try
+            {
+                wc.DownloadFile(urlD, local);
+                var attach = PdfReader.Open(local, PdfDocumentOpenMode.Import);
+                for (int i = 0; i < attach.PageCount; i++) output.AddPage(attach.Pages[i]);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Файл татах/нээхэд алдаа:\n" + urlD + "\n" + ex.Message);
+            }
+        }
+    }
+
+    output.Save(finalPdfPath);
+    Process.Start(finalPdfPath);
+}
+
+private void groupControl4_Paint(object sender, PaintEventArgs e)
+{
+
+}
+
+private void checkedListBoxControl2_ItemCheck(object sender, DevExpress.XtraEditors.Controls.ItemCheckEventArgs e)
+{
+    try
+    {
+        if (e.Index >= 0 && e.State == CheckState.Checked)
+        {
+            // ValueMember = "projectID" гэж тохируулсан
+            object val = checkedListBoxControl2.GetItemValue(e.Index);
+            int Id;
+            if (val != null && int.TryParse(val.ToString(), out Id))
+            {
+                string fileURL = url.GetUrl()+"dist/uploads/ita/docu/ITA/" + Id.ToString();
+                MessageBox.Show(fileURL);
+            }
+        }
+    }
+    catch (Exception ee)
+    {
+        MessageBox.Show(ee.ToString());
+    }
+    finally { }
+}
+
+private void checkedListBoxControl4_ItemCheck(object sender, DevExpress.XtraEditors.Controls.ItemCheckEventArgs e)
+{
+    try
+    {
+        if (e.Index >= 0 && e.State == CheckState.Checked)
+        {
+            // ValueMember = "projectID" гэж тохируулсан
+            object val = checkedListBoxControl4.GetItemValue(e.Index);
+            int Id;
+            if (val != null && int.TryParse(val.ToString(), out Id))
+            {
+                MessageBox.Show(Id.ToString());
+                //ShowDocPickerForProject(Id);
+            }
+        }
+    }
+    catch (Exception ee)
+    {
+        MessageBox.Show(ee.ToString());
+    }
+    finally { }
+}
+
+private void checkedListBoxControl3_ItemCheck(object sender, DevExpress.XtraEditors.Controls.ItemCheckEventArgs e)
+{
+    try
+    {
+        if (e.Index >= 0 && e.State == CheckState.Checked)
+        {
+            // ValueMember = "projectID" гэж тохируулсан
+            object val = checkedListBoxControl3.GetItemValue(e.Index);
+            int Id;
+            if (val != null && int.TryParse(val.ToString(), out Id))
+            {
+                MessageBox.Show(Id.ToString());
+                //ShowDocPickerForProject(Id);
+            }
+        }
+    }
+    catch (Exception ee)
+    {
+        MessageBox.Show(ee.ToString());
+    }
+    finally { }
+}
+
+private void checkedListBoxControl5_ItemCheck(object sender, DevExpress.XtraEditors.Controls.ItemCheckEventArgs e)
+{
+    try
+    {
+        if (e.Index >= 0 && e.State == CheckState.Checked)
+        {
+            // ValueMember = "projectID" гэж тохируулсан
+            object val = checkedListBoxControl5.GetItemValue(e.Index);
+            int Id;
+            if (val != null && int.TryParse(val.ToString(), out Id))
+            {
+                MessageBox.Show(Id.ToString());
+                ShowDocPickerForProject(Id);
+            }
+        }
+    }
+    catch (Exception ee)
+    {
+        MessageBox.Show(ee.ToString());
+    }
+    finally { }
+}
+
+
+
+
     }
 }

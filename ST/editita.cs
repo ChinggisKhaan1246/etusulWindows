@@ -60,7 +60,10 @@ namespace ST
                     WebClient Client = new System.Net.WebClient();
                     Client.Headers.Add("Content-Type", "binary/octet-stream");
                     string tusulid = "itadoc";
-                    byte[] result = Client.UploadFile(Url.GetUrl()+"api/fileupload.php?id=" + tusulid, "POST", openFileDialog1.FileName.ToString());
+                    if (doctype.Text.Trim() == "MA") tusulid = "itadocMA";
+                    if (doctype.Text.Trim() == "OP") tusulid = "itadocOP";
+
+                    byte[] result = Client.UploadFile(Url.GetUrl()+"api/fileupload.php?itaID="+itaID.Text.ToString().Trim()+"&id=" + tusulid, "POST", openFileDialog1.FileName.ToString());
                     string s = System.Text.Encoding.UTF8.GetString(result, 0, result.Length);
  
                 }

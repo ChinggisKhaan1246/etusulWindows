@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addita));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.label2 = new System.Windows.Forms.Label();
+            this.itaID = new DevExpress.XtraEditors.TextEdit();
             this.doctype = new DevExpress.XtraEditors.TextEdit();
             this.ajillsan = new DevExpress.XtraEditors.TextEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
@@ -50,6 +52,7 @@
             this.label18 = new System.Windows.Forms.Label();
             this.ognoo = new DevExpress.XtraEditors.DateEdit();
             this.email = new DevExpress.XtraEditors.TextEdit();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.atushaal = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.ner = new DevExpress.XtraEditors.TextEdit();
@@ -57,9 +60,9 @@
             this.ovog = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.itaID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.doctype.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ajillsan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.niitAjilsan.Properties)).BeginInit();
@@ -78,6 +81,8 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.label2);
+            this.panelControl1.Controls.Add(this.itaID);
             this.panelControl1.Controls.Add(this.doctype);
             this.panelControl1.Controls.Add(this.ajillsan);
             this.panelControl1.Controls.Add(this.labelControl10);
@@ -108,15 +113,34 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(507, 287);
+            this.panelControl1.Size = new System.Drawing.Size(507, 236);
             this.panelControl1.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 192);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(18, 13);
+            this.label2.TabIndex = 44;
+            this.label2.Text = "id:";
+            this.label2.Visible = false;
+            // 
+            // itaID
+            // 
+            this.itaID.Enabled = false;
+            this.itaID.Location = new System.Drawing.Point(48, 208);
+            this.itaID.Name = "itaID";
+            this.itaID.Size = new System.Drawing.Size(52, 20);
+            this.itaID.TabIndex = 43;
+            this.itaID.Visible = false;
             // 
             // doctype
             // 
             this.doctype.Enabled = false;
             this.doctype.Location = new System.Drawing.Point(119, 208);
             this.doctype.Name = "doctype";
-            this.doctype.Size = new System.Drawing.Size(130, 20);
+            this.doctype.Size = new System.Drawing.Size(54, 20);
             this.doctype.TabIndex = 42;
             this.doctype.Visible = false;
             // 
@@ -223,8 +247,9 @@
             this.URL11.Enabled = false;
             this.URL11.Location = new System.Drawing.Point(119, 173);
             this.URL11.Name = "URL11";
-            this.URL11.Size = new System.Drawing.Size(286, 20);
+            this.URL11.Size = new System.Drawing.Size(217, 20);
             this.URL11.TabIndex = 28;
+            this.URL11.Visible = false;
             // 
             // label1
             // 
@@ -234,14 +259,16 @@
             this.label1.Size = new System.Drawing.Size(39, 13);
             this.label1.TabIndex = 27;
             this.label1.Text = "Файл:";
+            this.label1.Visible = false;
             // 
             // simpleButton2
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(411, 171);
+            this.simpleButton2.Location = new System.Drawing.Point(265, 199);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(71, 22);
             this.simpleButton2.TabIndex = 26;
             this.simpleButton2.Text = "Файл...";
+            this.simpleButton2.Visible = false;
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // label18
@@ -276,6 +303,16 @@
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(144, 20);
             this.email.TabIndex = 16;
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(372, 159);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(110, 44);
+            this.simpleButton1.TabIndex = 5;
+            this.simpleButton1.Text = "Хадгалах";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // atushaal
             // 
@@ -328,21 +365,11 @@
             this.openFileDialog1.Title = "PDF, JPG";
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(372, 231);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(110, 44);
-            this.simpleButton1.TabIndex = 5;
-            this.simpleButton1.Text = "Хадгалах";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
             // addita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(507, 287);
+            this.ClientSize = new System.Drawing.Size(507, 236);
             this.Controls.Add(this.panelControl1);
             this.KeyPreview = true;
             this.Name = "addita";
@@ -353,6 +380,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.itaID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.doctype.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ajillsan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.niitAjilsan.Properties)).EndInit();
@@ -402,5 +430,7 @@
         public DevExpress.XtraEditors.LabelControl labelControl1;
         public DevExpress.XtraEditors.LabelControl labelControl9;
         public DevExpress.XtraEditors.TextEdit doctype;
+        public System.Windows.Forms.Label label2;
+        public DevExpress.XtraEditors.TextEdit itaID;
     }
 }
