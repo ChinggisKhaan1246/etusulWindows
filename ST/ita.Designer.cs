@@ -151,9 +151,11 @@
             // 
             // docu
             // 
-            this.docu.Caption = "docu";
+            this.docu.Caption = "Файл";
             this.docu.FieldName = "docu";
             this.docu.Name = "docu";
+            this.docu.Visible = true;
+            this.docu.VisibleIndex = 12;
             // 
             // xtraTabControl1
             // 
@@ -215,11 +217,11 @@
             // 
             // gridcolumn25
             // 
-            this.gridcolumn25.Caption = "id";
+            this.gridcolumn25.Caption = "ID";
             this.gridcolumn25.FieldName = "id";
             this.gridcolumn25.Name = "gridcolumn25";
             this.gridcolumn25.Visible = true;
-            this.gridcolumn25.VisibleIndex = 12;
+            this.gridcolumn25.VisibleIndex = 13;
             // 
             // dd5
             // 
@@ -353,8 +355,6 @@
             this.gridColumn41.Caption = "Төрөл";
             this.gridColumn41.FieldName = "itatype";
             this.gridColumn41.Name = "gridColumn41";
-            this.gridColumn41.Visible = true;
-            this.gridColumn41.VisibleIndex = 11;
             // 
             // xtraTabPage1
             // 
@@ -404,11 +404,11 @@
             // 
             // gridColumn1
             // 
-            this.gridColumn1.Caption = "id";
+            this.gridColumn1.Caption = "ID";
             this.gridColumn1.FieldName = "id";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 13;
+            this.gridColumn1.VisibleIndex = 12;
             // 
             // gridColumn2
             // 
@@ -542,12 +542,10 @@
             this.gridColumn42.Caption = "Төрөл";
             this.gridColumn42.FieldName = "itatype";
             this.gridColumn42.Name = "gridColumn42";
-            this.gridColumn42.Visible = true;
-            this.gridColumn42.VisibleIndex = 12;
             // 
             // gridColumn13
             // 
-            this.gridColumn13.Caption = "docu";
+            this.gridColumn13.Caption = "Файл";
             this.gridColumn13.FieldName = "docu";
             this.gridColumn13.Name = "gridColumn13";
             this.gridColumn13.Visible = true;
@@ -600,11 +598,11 @@
             // 
             // gridColumn14
             // 
-            this.gridColumn14.Caption = "id";
+            this.gridColumn14.Caption = "ID";
             this.gridColumn14.FieldName = "id";
             this.gridColumn14.Name = "gridColumn14";
             this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 13;
+            this.gridColumn14.VisibleIndex = 12;
             // 
             // gridColumn15
             // 
@@ -738,12 +736,10 @@
             this.gridColumn43.Caption = "Төрөл";
             this.gridColumn43.FieldName = "itatype";
             this.gridColumn43.Name = "gridColumn43";
-            this.gridColumn43.Visible = true;
-            this.gridColumn43.VisibleIndex = 12;
             // 
             // gridColumn37
             // 
-            this.gridColumn37.Caption = "docu";
+            this.gridColumn37.Caption = "Файл";
             this.gridColumn37.FieldName = "docu";
             this.gridColumn37.Name = "gridColumn37";
             this.gridColumn37.Visible = true;

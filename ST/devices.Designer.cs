@@ -269,9 +269,11 @@
             // 
             // gridColumn3
             // 
-            this.gridColumn3.Caption = "id";
+            this.gridColumn3.Caption = "ID";
             this.gridColumn3.FieldName = "id";
             this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 13;
             // 
             // gridColumn1
             // 

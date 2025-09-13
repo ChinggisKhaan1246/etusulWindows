@@ -21,15 +21,21 @@ using System.Net.NetworkInformation;
 using System.Management;
 using System.Diagnostics;
 using System.Web;
+using System.Net;                    // + WebClient
+using System.IO;                     // + IO
+using System.Web.Script.Serialization; // + JavaScriptSerializer
 
 namespace ST
 {
     public partial class devices : Form
     {
+        dataSetFill ds = new dataSetFill();
+        baseinfo userInfo = new baseinfo(UserSession.LoggedUserID);
+        BaseUrl Url = new BaseUrl();
+
         public devices()
         {
             InitializeComponent();
-     
 
             gridView2.CustomUnboundColumnData += (sender, e) =>
             {
@@ -39,151 +45,91 @@ namespace ST
             };
         }
 
-        dataSetFill ds = new dataSetFill();
         public void too_Load(object sender, EventArgs e)
         {
-            try
-            {
-               fillgridDevices();   
-            }
-            catch (Exception)
-            { }
+            try { fillgridDevices(); }
+            catch { }
             finally { }
         }
+
         public void fillgridDevices()
         {
-            try
-            {
-                gridControl2.DataSource = ds.gridFill("getdevices");
-            }
-            catch (Exception ee)
-            {
-                MessageBox.Show(ee.ToString());
-            }
-
+            try { gridControl2.DataSource = ds.gridFill("getdevices"); }
+            catch (Exception ee) { MessageBox.Show(ee.ToString()); }
         }
+
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             gridView2.ActiveFilterString = "";
         }
-        baseinfo userInfo = new baseinfo(UserSession.LoggedUserID);
+
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-                   PrintGridview.Print(
-                   gridView2,
-                   20, 15, 15, 10,  // Margin-ууд
-                   gridView2.GroupPanelText,
-                   "",
-                   userInfo.comName,     // Header хэсэг
-                   "Хэвлэсэн:" + userInfo.userName,
-                   DateTime.Now.ToString("yyyy-MM-dd"), // Footer хэсэг
-                   true); // Landscape чиглэл);
-        }
-
-        private void hai()
-        {
-           
-        }
-        private void textEdit1_EditValueChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void textEdit2_EditValueChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void textEdit3_EditValueChanged(object sender, EventArgs e)
-        {
-            hai();
+            PrintGridview.Print(
+                gridView2,
+                20, 15, 15, 10,
+                gridView2.GroupPanelText,
+                "",
+                userInfo.comName,
+                "Хэвлэсэн:" + userInfo.userName,
+                DateTime.Now.ToString("yyyy-MM-dd"),
+                true
+            );
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)
         {
-
             try
             {
                 adddevice adddev = new adddevice(this);
                 adddev.ognoo.DateTime = DateTime.Now;
                 adddev.ShowDialog();
             }
-            catch (Exception ee)
-            {
-                MessageBox.Show(ee.ToString());
-            }
-            finally
-            {
- 
-            }
+            catch (Exception ee) { MessageBox.Show(ee.ToString()); }
         }
 
         private void устгахToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
             try
             {
-                DialogResult ds = MessageBox.Show("Сонгогдсон борлуулалтын буцаалт хийхдээ итгэлтэй байна уу.", "Анхаар", MessageBoxButtons.YesNo);
-                if (ds == System.Windows.Forms.DialogResult.Yes)
+                DialogResult dsr = MessageBox.Show("Сонгогдсон борлуулалтын буцаалт хийхдээ итгэлтэй байна уу.", "Анхаар", MessageBoxButtons.YesNo);
+                if (dsr == DialogResult.Yes)
                 {
-                   // Устгах команд энд бичнэ
-                    hai();
+                    // Устгах команд
+                    // ...
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString(), "");
-            }
-            finally { //con.Close(); 
-            }
+            catch (Exception ex) { MessageBox.Show(ex.ToString(), ""); }
         }
 
         private void gridControl2_Click(object sender, EventArgs e)
         {
-            try
-            {
-               
-                
-            }
-            catch (Exception)
-            { }
-            finally
-            {
-                
-            }
+            try { }
+            catch { }
+            finally { }
         }
 
-       private void textEdit1_EditValueChanged_1(object sender, EventArgs e)
+        private void textEdit1_EditValueChanged_1(object sender, EventArgs e)
         {
-            gridView2.ActiveFilterString = "ner LIKE '%" + textEdit1.Text + "%'  or mark LIKE '%" + textEdit1.Text + "%'  or ULSdugaar LIKE '%" + textEdit1.Text + "%'";
+            gridView2.ActiveFilterString =
+                "ner LIKE '%" + textEdit1.Text + "%'  or mark LIKE '%" + textEdit1.Text + "%'  or ULSdugaar LIKE '%" + textEdit1.Text + "%'";
         }
 
         private void comboBoxEdit1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string searchtext = "";
-            if (comboBoxEdit1.SelectedIndex == 0)
-            {
-                searchtext = "";
-            }
-            if (comboBoxEdit1.SelectedIndex == 1)
-            {
-                searchtext = "машин механизм";
-            }
+            if (comboBoxEdit1.SelectedIndex == 0) searchtext = "";
+            if (comboBoxEdit1.SelectedIndex == 1) searchtext = "машин механизм";
+            if (comboBoxEdit1.SelectedIndex == 2) searchtext = "багаж, тоног төхөөрөмж";
+            if (comboBoxEdit1.SelectedIndex == 3) searchtext = "ХАБЭА хэрэгсэл";
 
-            if (comboBoxEdit1.SelectedIndex == 2)
-            {
-                searchtext = "багаж, тоног төхөөрөмж";
-            }
-            if (comboBoxEdit1.SelectedIndex == 3)
-            {
-                searchtext = "ХАБЭА хэрэгсэл";
-            }
-           // MessageBox.Show(searchtext + ":" + comboBoxEdit1.SelectedIndex.ToString());
-             gridView2.ActiveFilterString = "devicetype LIKE '%" + searchtext + "%'";
+            gridView2.ActiveFilterString = "devicetype LIKE '%" + searchtext + "%'";
         }
 
         private void comboBoxEdit1_TextChanged(object sender, EventArgs e)
         {
-            gridView2.ActiveFilterString = "ner LIKE '%" + textEdit1.Text + "%'  or mark LIKE '%" + textEdit1.Text + "%'  or ULSdugaar LIKE '%" + textEdit1.Text + "%'";
+            gridView2.ActiveFilterString =
+                "ner LIKE '%" + textEdit1.Text + "%'  or mark LIKE '%" + textEdit1.Text + "%'  or ULSdugaar LIKE '%" + textEdit1.Text + "%'";
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -193,24 +139,16 @@ namespace ST
                 dataSetFill dc = new dataSetFill();
                 string id = gridView2.GetFocusedRowCellValue("id").ToString().Trim();
                 DialogResult dr = MessageBox.Show("Тоног төхөөрөмжийн мэдээллийг утсгах уу?", "Анхаар", MessageBoxButtons.YesNo);
-                if (dr == System.Windows.Forms.DialogResult.Yes)
+                if (dr == DialogResult.Yes)
                 {
                     var data = new NameValueCollection();
                     data["deleteid"] = id;
                     data["ali_table"] = "devices";
                     MessageBox.Show(dc.exec_command("deleteAll", data));
-                    //f.saveLogg(f.salerID.Text, f.salerName.Text, "Агуулахын бүртгэлээс устгасан");
-
                 }
             }
-            catch (Exception ee)
-            {
-                MessageBox.Show(ee.ToString());
-            }
-            finally
-            {
-                fillgridDevices();
-            }
+            catch (Exception ee) { MessageBox.Show(ee.ToString()); }
+            finally { fillgridDevices(); }
         }
 
         private void засахToolStripMenuItem_Click(object sender, EventArgs e)
@@ -229,47 +167,320 @@ namespace ST
                 edd.power.Text = gridView2.GetFocusedRowCellValue("power").ToString().Trim();
                 edd.producted.Text = gridView2.GetFocusedRowCellValue("producted").ToString().Trim();
                 edd.ulsdugaar.Text = gridView2.GetFocusedRowCellValue("ULSdugaar").ToString().Trim();
-                if (edd.ognoo.DateTime.ToString() != "")
+                var ogVal = gridView2.GetFocusedRowCellValue("ognoo");
+                DateTime dt;
+                if (ogVal != null && DateTime.TryParse(ogVal.ToString(), out dt))
                 {
-                    edd.ognoo.DateTime = Convert.ToDateTime(gridView2.GetFocusedRowCellValue("ognoo").ToString().Trim());
+                    edd.ognoo.DateTime = dt;
                 }
-                
                 edd.ShowDialog();
             }
-            catch (Exception ee)
+            catch (Exception ee) { MessageBox.Show(ee.ToString()); }
+        }
+
+        // ===== API models (devices) =====
+        private class ApiFileEntry
+        {
+            public string name;
+            public string url;
+            public string type;
+            public string ext;
+            public long size;
+            public long bytes;
+            public string modified;
+            public long SizeBytes { get { return (size > 0 ? size : bytes); } }
+        }
+        private class ApiFileList
+        {
+            public int success;
+            public string error;
+            public List<ApiFileEntry> files;
+        }
+        private class ApiFileList2
+        {
+            public bool ok;
+            public string error;
+            public List<ApiFileEntry> files;
+        }
+
+        // ===== devices/{id}/ фолдероос файлын жагсаалт авах =====
+        private List<ApiFileEntry> FetchFileList(string folderUrl, string ext)
+        {
+            try
             {
-                MessageBox.Show(ee.ToString());
+                if (!folderUrl.EndsWith("/")) folderUrl += "/";
+
+                string api = Url.GetUrl() + "api/getfilelist.php"
+                           + "?url=" + Uri.EscapeDataString(folderUrl)
+                           + "&ext=" + Uri.EscapeDataString(string.IsNullOrEmpty(ext) ? "*" : ext);
+
+                using (var wc = new WebClient())
+                {
+                    ServicePointManager.Expect100Continue = true;
+                    ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072; // TLS 1.2
+
+                    wc.Encoding = Encoding.UTF8;
+                    string json = wc.DownloadString(api);
+                    if (json.Trim().Equals("nodata", StringComparison.OrdinalIgnoreCase))
+                        return new List<ApiFileEntry>();
+
+                    var js = new JavaScriptSerializer();
+                    var r1 = js.Deserialize<ApiFileList>(json);
+                    if (r1 != null && r1.success == 1 && r1.files != null) return r1.files;
+
+                    var r2 = js.Deserialize<ApiFileList2>(json);
+                    if (r2 != null && r2.ok && r2.files != null) return r2.files;
+
+                    string err = (r1 != null && !string.IsNullOrEmpty(r1.error)) ? r1.error :
+                                 (r2 != null && !string.IsNullOrEmpty(r2.error)) ? r2.error :
+                                 "Файл олдсонгүй.";
+                    XtraMessageBox.Show(err, "Мэдээлэл");
+                    return new List<ApiFileEntry>();
+                }
             }
-            finally
+            catch (Exception ex)
             {
- 
+                XtraMessageBox.Show("Жагсаалт татахад алдаа: " + ex.Message, "Алдаа");
+                return new List<ApiFileEntry>();
             }
         }
-        BaseUrl Url = new BaseUrl();
+
+        // === Double-click: тухайн төхөөрөмжийн PDF жагсаалт/нээх/нэмэх/устгах ===
         private void gridControl2_DoubleClick(object sender, EventArgs e)
         {
             try
             {
-                var encode = gridView2.GetFocusedRowCellValue("docURL").ToString().Replace(" ", "%20").Trim();
-                if (encode != "")
+                var idObj = gridView2.GetFocusedRowCellValue("id");
+                if (idObj == null) return;
+
+                int deviceId;
+                if (!int.TryParse(idObj.ToString(), out deviceId)) return;
+
+                string folderUrl = Url.GetUrl() + "dist/uploads/devices/" + deviceId + "/";
+                var files = FetchFileList(folderUrl, "pdf");
+
+                using (var dlg = new DeviceFilesForm(
+                    "Төхөөрөмжийн файлууд — ID: " + deviceId,
+                    folderUrl,
+                    files,
+                    () => FetchFileList(folderUrl, "pdf"),
+                    deviceId
+                ))
                 {
-                    FileViewer vvr = new FileViewer(Url.GetUrl() + "dist/uploads/devices/" + encode);
-                }
-                else
-                {
-                    MessageBox.Show("Харгалзах файл байхгүй байна.");
+                    dlg.ShowDialog(this);
                 }
             }
-            catch (Exception ee)
+            catch (Exception ex)
             {
-                MessageBox.Show(ee.ToString());
+                MessageBox.Show("Алдаа: " + ex.Message);
             }
-            finally { }
         }
 
         private void нэмэхToolStripMenuItem_Click(object sender, EventArgs e)
         {
             simpleButton3_Click(sender, e);
+        }
+
+        // === DEVICE файлын жагсаалт/preview + ADD/DELETE ===
+        private class DeviceFilesForm : XtraForm
+        {
+            private readonly string _folderUrl;                 // .../dist/uploads/devices/{id}/
+            private readonly Func<List<ApiFileEntry>> _reload;  // дахин ачаалах функц
+            private readonly int _deviceId;                     // server API-д дамжуулна
+            private List<ApiFileEntry> _files;
+
+            private DevExpress.XtraEditors.ListBoxControl list;
+            private DevExpress.XtraEditors.SimpleButton btnAdd, btnDelete, btnRefresh, btnClose;
+
+            public DeviceFilesForm(string title,
+                                   string folderUrl,
+                                   List<ApiFileEntry> files,
+                                   Func<List<ApiFileEntry>> reload,
+                                   int deviceId)
+            {
+                _folderUrl = folderUrl.EndsWith("/") ? folderUrl : (folderUrl + "/");
+                _files = files ?? new List<ApiFileEntry>();
+                _reload = reload;
+                _deviceId = deviceId;
+
+                Text = title;
+                Width = 720; Height = 520;
+                StartPosition = FormStartPosition.CenterParent;
+
+                list = new DevExpress.XtraEditors.ListBoxControl { Dock = DockStyle.Fill };
+                list.DoubleClick += (s, e) => OpenSelected();
+                list.KeyDown += (s, e) => { if (e.KeyCode == Keys.Enter) { e.Handled = true; OpenSelected(); } };
+                Controls.Add(list);
+
+                var pnl = new FlowLayoutPanel { Dock = DockStyle.Bottom, Height = 46, FlowDirection = FlowDirection.RightToLeft };
+
+                btnClose = new DevExpress.XtraEditors.SimpleButton { Text = "Хаах", Width = 90, DialogResult = DialogResult.Cancel };
+                btnRefresh = new DevExpress.XtraEditors.SimpleButton { Text = "Дахин ачаалах", Width = 120 };
+                btnDelete = new DevExpress.XtraEditors.SimpleButton { Text = "Устгах", Width = 90 };
+                btnAdd = new DevExpress.XtraEditors.SimpleButton { Text = "Нэмэх…", Width = 90 };
+
+                btnRefresh.Click += (s, e) => ReloadList();
+                btnDelete.Click += (s, e) => DeleteSelected();
+                btnAdd.Click += (s, e) => AddFiles();
+
+                pnl.Controls.Add(btnClose);
+                pnl.Controls.Add(btnRefresh);
+                pnl.Controls.Add(btnDelete);
+                pnl.Controls.Add(btnAdd);
+                Controls.Add(pnl);
+
+                CancelButton = btnClose;
+
+                FillList();
+            }
+
+            private class Lbi
+            {
+                public string Text { get; set; }
+                public ApiFileEntry File { get; set; }
+            }
+
+            private Uri ApiUri(string relative)  // ж: "api/fileupload.php"
+            {
+                Uri baseUri = new Uri(_folderUrl);
+                return new Uri(baseUri, "/" + relative.TrimStart('/'));
+            }
+
+            private void FillList()
+            {
+                list.DataSource = null;
+                list.Items.Clear();
+
+                List<Lbi> view = new List<Lbi>();
+                int n = 1;
+                foreach (ApiFileEntry f in _files)
+                {
+                    double mb = (f.SizeBytes > 0 ? (f.SizeBytes / 1024.0 / 1024.0) : 0.0);
+                    string mod = string.IsNullOrWhiteSpace(f.modified) ? "" : " — " + f.modified;
+
+                    view.Add(new Lbi
+                    {
+                        Text = string.Format("{0}. {1} ({2:0.##} MB){3}", n, f.name, mb, mod),
+                        File = f
+                    });
+                    n++;
+                }
+
+                list.DisplayMember = "Text";
+                list.ValueMember = "File";
+                list.DataSource = view;
+            }
+
+            private void ReloadList()
+            {
+                try
+                {
+                    var fresh = (_reload != null ? _reload() : null);
+                    if (fresh != null) { _files = fresh; FillList(); }
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show("Дахин ачаахад алдаа: " + ex.Message);
+                }
+            }
+
+            private void OpenSelected()
+            {
+                int idx = list.SelectedIndex;
+                if (idx < 0 || idx >= _files.Count) return;
+
+                ApiFileEntry entry = _files[idx];
+                string url = !string.IsNullOrEmpty(entry.url) ? entry.url : (_folderUrl + entry.name);
+
+                try { new FileViewer(url); }
+                catch (Exception ex) { XtraMessageBox.Show("Файл нээхэд алдаа: " + ex.Message); }
+            }
+
+            // ----- ФАЙЛ НЭМЭХ (зөвхөн PDF) -----
+            private void AddFiles()
+            {
+                try
+                {
+                    using (OpenFileDialog ofd = new OpenFileDialog())
+                    {
+                        ofd.Title = "PDF файл нэмэх";
+                        ofd.Multiselect = true;
+                        ofd.Filter = "PDF файлууд (*.pdf)|*.pdf";
+                        ofd.DefaultExt = "pdf";
+                        ofd.CheckFileExists = true;
+
+                        if (ofd.ShowDialog(this) != DialogResult.OK) return;
+
+                        ServicePointManager.Expect100Continue = true;
+                        ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072; // TLS 1.2
+
+                        foreach (string path in ofd.FileNames)
+                        {
+                            if (!string.Equals(Path.GetExtension(path), ".pdf", StringComparison.OrdinalIgnoreCase))
+                                continue;
+
+                            using (WebClient wc = new WebClient())
+                            {
+                                wc.Headers.Add("Content-Type", "application/pdf");
+                                // server: fileupload.php?deviceID=..&id=devicedoc
+                                Uri up = ApiUri("api/fileupload.php?deviceID=" + _deviceId + "&id=devices");
+                                wc.UploadFile(up, "POST", path);
+                            }
+                        }
+
+                        ReloadList();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show("Файл нэмэхэд алдаа: " + ex.Message);
+                }
+            }
+
+            // ----- ФАЙЛ УСТГАХ -----
+            private void DeleteSelected()
+            {
+                int idx = list.SelectedIndex;
+                if (idx < 0 || idx >= _files.Count) return;
+
+                ApiFileEntry entry = _files[idx];
+                if (XtraMessageBox.Show("“" + entry.name + "” файлыг устгах уу?",
+                                        "Баталгаажуулалт",
+                                        MessageBoxButtons.YesNo,
+                                        MessageBoxIcon.Question) != DialogResult.Yes)
+                    return;
+
+                try
+                {
+                    ServicePointManager.Expect100Continue = true;
+                    ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072; // TLS 1.2
+
+                    using (var wc = new WebClient())
+                    {
+                        wc.Encoding = Encoding.UTF8;
+
+                        // GET: deletefile.php?id=DEVICE&deviceID=123&name=scan.pdf
+                        string baseUrl = ApiUri("api/deletefile.php").ToString();
+                        string url = baseUrl
+                            + "?id=DEVICE"
+                            + "&deviceID=" + _deviceId
+                            + "&name=" + Uri.EscapeDataString(entry.name);
+
+                        string resp = wc.DownloadString(url);
+                        if (resp.IndexOf("\"ok\":true", StringComparison.OrdinalIgnoreCase) < 0)
+                        {
+                            XtraMessageBox.Show("Серверийн хариу: " + resp, "Анхаар");
+                            return;
+                        }
+                    }
+
+                    ReloadList();
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show("Файл устгахад алдаа: " + ex.Message);
+                }
+            }
         }
     }
 }

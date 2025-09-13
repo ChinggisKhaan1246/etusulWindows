@@ -1997,7 +1997,6 @@
             // navBarGroup1
             // 
             this.navBarGroup1.Caption = "Компани";
-            this.navBarGroup1.Expanded = true;
             this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem2),
@@ -2188,7 +2187,6 @@
             // navBarGroup6
             // 
             this.navBarGroup6.Caption = "Бусад";
-            this.navBarGroup6.Expanded = true;
             this.navBarGroup6.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem20),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem21),

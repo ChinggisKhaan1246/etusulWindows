@@ -57,10 +57,15 @@ namespace ST
         {
             public string name;
             public string url;
-            public string type;
-            public long size;
+            public string type;     // зарим API-д "type" эсвэл "ext"
+            public string ext;      // (optional) хэрэв API ext өгдөг бол энд орно
+            public long size;       // зарим API "size" гэж өгч магадгүй
+            public long bytes;      // танай getfilelist.php бодитоор энэ талбарыг өгч байгаа
             public string modified;
+            // Туслагч: аль нь ирсэн байна, тэрийг нь ашиглая
+            public long SizeBytes { get { return (size > 0 ? size : bytes); } }
         }
+
 
         // API response
         private class ApiFileList
