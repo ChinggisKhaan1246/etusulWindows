@@ -507,6 +507,7 @@
             this.groupControl1.Size = new System.Drawing.Size(744, 434);
             this.groupControl1.TabIndex = 7;
             this.groupControl1.Text = "Албан бичиг";
+            this.groupControl1.DoubleClick += new System.EventHandler(this.groupControl1_DoubleClick);
             // 
             // panelControl24
             // 
@@ -585,6 +586,7 @@
             this.checkEdit1.Properties.Caption = "Бүгд";
             this.checkEdit1.Size = new System.Drawing.Size(740, 19);
             this.checkEdit1.TabIndex = 3;
+            this.checkEdit1.CheckedChanged += new System.EventHandler(this.checkEdit1_CheckedChanged);
             // 
             // splitterControl1
             // 

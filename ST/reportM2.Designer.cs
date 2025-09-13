@@ -48,7 +48,6 @@
             this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
             this.signature = new DevExpress.XtraReports.UI.XRPictureBox();
             this.zakiname = new DevExpress.XtraReports.UI.XRLabel();
-            this.zaki = new DevExpress.XtraReports.UI.XRLabel();
             this.stamp = new DevExpress.XtraReports.UI.XRPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
@@ -267,7 +266,6 @@
             this.ReportFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.signature,
             this.zakiname,
-            this.zaki,
             this.stamp});
             this.ReportFooter.HeightF = 178.508F;
             this.ReportFooter.Name = "ReportFooter";
@@ -275,7 +273,7 @@
             // signature
             // 
             this.signature.Image = ((System.Drawing.Image)(resources.GetObject("signature.Image")));
-            this.signature.LocationFloat = new DevExpress.Utils.PointFloat(247.9167F, 32.39584F);
+            this.signature.LocationFloat = new DevExpress.Utils.PointFloat(228.125F, 30.8334F);
             this.signature.Name = "signature";
             this.signature.SizeF = new System.Drawing.SizeF(235.4166F, 111.4583F);
             this.signature.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
@@ -283,31 +281,20 @@
             // zakiname
             // 
             this.zakiname.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.zakiname.LocationFloat = new DevExpress.Utils.PointFloat(483.3333F, 10.17469F);
+            this.zakiname.LocationFloat = new DevExpress.Utils.PointFloat(463.5416F, 30.8334F);
+            this.zakiname.Multiline = true;
             this.zakiname.Name = "zakiname";
             this.zakiname.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.zakiname.SizeF = new System.Drawing.SizeF(152.6458F, 85.41669F);
             this.zakiname.StylePriority.UseFont = false;
             this.zakiname.StylePriority.UseTextAlignment = false;
-            this.zakiname.Text = "П.МӨНХЖАРГАЛ";
+            this.zakiname.Text = "\r\nЗАХИРАЛ \r\n\r\nП.МӨНХЖАРГАЛ";
             this.zakiname.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomLeft;
-            // 
-            // zaki
-            // 
-            this.zaki.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.zaki.LocationFloat = new DevExpress.Utils.PointFloat(10.00004F, 10.00001F);
-            this.zaki.Name = "zaki";
-            this.zaki.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.zaki.SizeF = new System.Drawing.SizeF(223.7917F, 85.41669F);
-            this.zaki.StylePriority.UseFont = false;
-            this.zaki.StylePriority.UseTextAlignment = false;
-            this.zaki.Text = "ЗАХИРАЛ ";
-            this.zaki.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomRight;
             // 
             // stamp
             // 
             this.stamp.Image = ((System.Drawing.Image)(resources.GetObject("stamp.Image")));
-            this.stamp.LocationFloat = new DevExpress.Utils.PointFloat(233.7917F, 10.17469F);
+            this.stamp.LocationFloat = new DevExpress.Utils.PointFloat(70.83334F, 10.00001F);
             this.stamp.Name = "stamp";
             this.stamp.SizeF = new System.Drawing.SizeF(157.2917F, 158.3333F);
             this.stamp.Sizing = DevExpress.XtraPrinting.ImageSizeMode.AutoSize;
@@ -349,7 +336,6 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel2;
         public DevExpress.XtraReports.UI.XRPictureBox signature;
         public DevExpress.XtraReports.UI.XRLabel zakiname;
-        public DevExpress.XtraReports.UI.XRLabel zaki;
         public DevExpress.XtraReports.UI.XRPictureBox stamp;
         public DevExpress.XtraReports.UI.XRLabel mayagtnumber;
     }

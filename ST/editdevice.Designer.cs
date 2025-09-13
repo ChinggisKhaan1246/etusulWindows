@@ -344,7 +344,6 @@
             this.deviceID.Name = "deviceID";
             this.deviceID.Size = new System.Drawing.Size(105, 20);
             this.deviceID.TabIndex = 43;
-            this.deviceID.Visible = false;
             // 
             // simpleButton1
             // 

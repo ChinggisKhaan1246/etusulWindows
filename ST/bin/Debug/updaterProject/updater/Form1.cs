@@ -25,6 +25,7 @@ namespace updater
         private void updater()
         {
             // --- Тохиргоо ---
+            
             string updateUrl = "http://etusul.com/downloads/updates/DS.zip";
 
             // updater.exe байрлал

@@ -154,8 +154,6 @@
             this.docu.Caption = "docu";
             this.docu.FieldName = "docu";
             this.docu.Name = "docu";
-            this.docu.Visible = true;
-            this.docu.VisibleIndex = 11;
             // 
             // xtraTabControl1
             // 
@@ -221,7 +219,7 @@
             this.gridcolumn25.FieldName = "id";
             this.gridcolumn25.Name = "gridcolumn25";
             this.gridcolumn25.Visible = true;
-            this.gridcolumn25.VisibleIndex = 13;
+            this.gridcolumn25.VisibleIndex = 12;
             // 
             // dd5
             // 
@@ -356,7 +354,7 @@
             this.gridColumn41.FieldName = "itatype";
             this.gridColumn41.Name = "gridColumn41";
             this.gridColumn41.Visible = true;
-            this.gridColumn41.VisibleIndex = 12;
+            this.gridColumn41.VisibleIndex = 11;
             // 
             // xtraTabPage1
             // 

@@ -55,7 +55,7 @@ namespace ST
             {
                 dataSetFill dcd = new dataSetFill();
                 var data = new NameValueCollection();
-                data["id"] = deviceID.Text.Trim();
+                data["deviceID"] = deviceID.Text.Trim();
                 data["ner"] = ner.Text.Trim();
                 data["mark"] = mark.Text.Trim();
                 data["made"] = made.Text.Trim();
@@ -77,7 +77,8 @@ namespace ST
                     WebClient Client = new System.Net.WebClient();
                     Client.Headers.Add("Content-Type", "binary/octet-stream");
                     string tusulid = "devices";
-                    byte[] result = Client.UploadFile(Url.GetUrl() + "api/fileupload.php?id=" + tusulid, "POST", openFileDialog1.FileName.ToString());
+                    string deviceIDD = deviceID.Text.Trim();
+                    byte[] result = Client.UploadFile(Url.GetUrl() + "api/fileupload.php?deviceID=" + deviceIDD + "&id=" + tusulid, "POST", openFileDialog1.FileName.ToString());
                     string s = System.Text.Encoding.UTF8.GetString(result, 0, result.Length);
                 }
             }
