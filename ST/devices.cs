@@ -181,26 +181,29 @@ namespace ST
         // ===== API models (devices) =====
         private class ApiFileEntry
         {
-            public string name;
-            public string url;
-            public string type;
-            public string ext;
-            public long size;
-            public long bytes;
-            public string modified;
+            public string name = string.Empty;
+            public string url = string.Empty;
+            public string type = string.Empty;
+            public string ext = string.Empty;
+            public long size = 0;
+            public long bytes = 0;
+            public string modified = string.Empty;
+
             public long SizeBytes { get { return (size > 0 ? size : bytes); } }
         }
+
         private class ApiFileList
         {
-            public int success;
-            public string error;
-            public List<ApiFileEntry> files;
+            public int success = 0;
+            public string error = string.Empty;
+            public List<ApiFileEntry> files = new List<ApiFileEntry>();
         }
+
         private class ApiFileList2
         {
-            public bool ok;
-            public string error;
-            public List<ApiFileEntry> files;
+            public bool ok = false;
+            public string error = string.Empty;
+            public List<ApiFileEntry> files = new List<ApiFileEntry>();
         }
 
         // ===== devices/{id}/ фолдероос файлын жагсаалт авах =====

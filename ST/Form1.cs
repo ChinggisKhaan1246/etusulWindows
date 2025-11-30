@@ -17,6 +17,7 @@ using System.Net;
 using System.Drawing.Printing;
 using DevExpress.LookAndFeel;
 using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraPrinting;
 using DevExpress.XtraPrinting.Control;
 using DevExpress.XtraPrintingLinks;
@@ -1881,6 +1882,224 @@ private static void SafeDelete(string path)
 
             // Preview гаргах
             rf.ShowPreview();
+        }
+
+        private void ажилДууссанМэдэгдэлToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // 1) Хоёр огноо асуух жижиг диалог үүсгэнэ
+                DateTime? docDate;      // Албан бичгийн огноо
+                DateTime? doneDate;     // Ажил дууссан огноо
+                if (!AskDates("Ажил дууссан огноо:", out docDate, out doneDate)) return; // Cancel дарвал зогсооно
+
+                // 2) Grid-ээс утгуудыг аюулгүй унших
+                int row = gridView1.FocusedRowHandle;
+                if (row < 0) { XtraMessageBox.Show("Мөр сонгоно уу."); return; }
+
+                string gereeNo = Convert.ToString(gridView1.GetRowCellValue(row, "gereeNo"));
+                string projectName = Convert.ToString(gridView1.GetRowCellValue(row, "projectName"));
+                string zahialagch = Convert.ToString(gridView1.GetRowCellValue(row, "zahialagch"));
+                string company = (userInfo != null) ? Convert.ToString(userInfo.comName) : "";
+
+                // 3) Тайлан бэлдэх
+                reporttendermat rpt = new reporttendermat();
+                rpt.tuhai.Text = "Мэдэгдэл хүргүүлэх тухай";
+                rpt.Bdugaar.Text = "М/15";
+
+                // Албан бичгийн огноо -> тайлангийн 'ognoo' control руу
+                if (docDate.HasValue) rpt.ognoo.Text = docDate.Value.ToString("yyyy-MM-dd");
+
+                // Ажил дууссан огноо (тайланд тусдаа control байгаа бол түүн рүү нь дамжуулж болно)
+                // Жишээлбэл: rpt.ajilDuussanOgnoo?.Text = doneDate.Value.ToString("yyyy-MM-dd");
+
+                // Текстдээ дууссан огноог шингээнэ
+                string donePart = doneDate.HasValue ? doneDate.Value.ToString("yyyy-MM-dd") : "";
+                rpt.utga.Text =
+                    "      Бид " + company + " нь \"№" + gereeNo + "\" дугаартай \"" + projectName +
+                    "\" ажлыг " + donePart + " өдөр гүйцэтгэж дууссан тул байнгын ашиглалтад хүлээн авна уу.";
+
+                rpt.haashaa.Text = Convert.ToString(zahialagch);
+
+                rpt.ShowPreview();
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.ToString());
+            }
+       
+        }
+        private bool AskDates(string secondLabel, out DateTime? docDate, out DateTime? doneDate)
+        {
+            docDate = null;
+            doneDate = null;
+
+            // === Диалог үүсгэнэ ===
+            XtraForm dlg = new XtraForm();
+            dlg.Text = "Огноо оруулах";
+            dlg.StartPosition = FormStartPosition.CenterParent;
+            dlg.FormBorderStyle = FormBorderStyle.FixedDialog;
+            dlg.MinimizeBox = false;
+            dlg.MaximizeBox = false;
+            dlg.ClientSize = new Size(380, 160);
+
+            // === Албан бичгийн огноо ===
+            LabelControl lbl1 = new LabelControl();
+            lbl1.Text = "Албан бичгийн огноо:";
+            lbl1.Location = new Point(16, 20);
+
+            DateEdit de1 = new DateEdit();
+            de1.Location = new Point(180, 16);
+            de1.Width = 170;
+            de1.Properties.Mask.EditMask = "yyyy-MM-dd";
+            de1.Properties.DisplayFormat.FormatString = "yyyy-MM-dd";
+            de1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            de1.Properties.EditFormat.FormatString = "yyyy-MM-dd";
+            de1.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            de1.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.True;
+            de1.Properties.VistaEditTime = DevExpress.Utils.DefaultBoolean.True;
+            de1.DateTime = DateTime.Today;
+
+            // === Ажил дууссан огноо ===
+            LabelControl lbl2 = new LabelControl();
+            lbl2.Text = secondLabel;
+            lbl2.Location = new Point(16, 60);
+
+            DateEdit de2 = new DateEdit();
+            de2.Location = new Point(180, 56);
+            de2.Width = 170;
+            de2.Properties.Mask.EditMask = "yyyy-MM-dd";
+            de2.Properties.DisplayFormat.FormatString = "yyyy-MM-dd";
+            de2.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            de2.Properties.EditFormat.FormatString = "yyyy-MM-dd";
+            de2.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            de2.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.True;
+            de2.Properties.VistaEditTime = DevExpress.Utils.DefaultBoolean.True;
+            de2.DateTime = DateTime.Today;
+
+            // === Товчнууд ===
+            SimpleButton btnOK = new SimpleButton();
+            btnOK.Text = "Oк";
+            btnOK.DialogResult = DialogResult.OK;
+            btnOK.Location = new Point(190, 110);
+            btnOK.Width = 75;
+
+            SimpleButton btnCancel = new SimpleButton();
+            btnCancel.Text = "Болих";
+            btnCancel.DialogResult = DialogResult.Cancel;
+            btnCancel.Location = new Point(275, 110);
+            btnCancel.Width = 75;
+
+            // === Элементийг нэмэх ===
+            dlg.Controls.Add(lbl1);
+            dlg.Controls.Add(de1);
+            dlg.Controls.Add(lbl2);
+            dlg.Controls.Add(de2);
+            dlg.Controls.Add(btnOK);
+            dlg.Controls.Add(btnCancel);
+
+            dlg.AcceptButton = btnOK;
+            dlg.CancelButton = btnCancel;
+
+            // === Диалогыг харуулах ===
+            DialogResult dr = dlg.ShowDialog();
+            if (dr != DialogResult.OK)
+                return false; // Хэрэв Cancel бол зогсооно
+
+            // === Хариу буцаах ===
+            docDate = de1.EditValue == null ? (DateTime?)null : de1.DateTime.Date;
+            doneDate = de2.EditValue == null ? (DateTime?)null : de2.DateTime.Date;
+            return true;
+        }
+
+        private void гүйцэтгэлийнБаталгааЦуцлуулахToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // 1) Хоёр огноо асуух жижиг диалог үүсгэнэ
+                DateTime? docDate;      // Албан бичгийн огноо
+                DateTime? doneDate;     // Ажил дууссан огноо
+                if (!AskDates("Комиссийн дүгнэлтийн огноо:", out docDate, out doneDate)) return; // Cancel дарвал зогсооно
+
+                // 2) Grid-ээс утгуудыг аюулгүй унших
+                int row = gridView1.FocusedRowHandle;
+                if (row < 0) { XtraMessageBox.Show("Мөр сонгоно уу."); return; }
+
+                string gereeNo = Convert.ToString(gridView1.GetRowCellValue(row, "gereeNo"));
+                string projectName = Convert.ToString(gridView1.GetRowCellValue(row, "projectName"));
+                string zahialagch = Convert.ToString(gridView1.GetRowCellValue(row, "zahialagch"));
+                string company = (userInfo != null) ? Convert.ToString(userInfo.comName) : "";
+
+                // 3) Тайлан бэлдэх
+                reporttendermat rpt = new reporttendermat();
+                rpt.tuhai.Text = "Хүсэлт гаргах тухай";
+                rpt.Bdugaar.Text = "М/15";
+
+                // Албан бичгийн огноо -> тайлангийн 'ognoo' control руу
+                if (docDate.HasValue) rpt.ognoo.Text = docDate.Value.ToString("yyyy-MM-dd");
+
+                // Ажил дууссан огноо (тайланд тусдаа control байгаа бол түүн рүү нь дамжуулж болно)
+                // Жишээлбэл: rpt.ajilDuussanOgnoo?.Text = doneDate.Value.ToString("yyyy-MM-dd");
+
+                // Текстдээ дууссан огноог шингээнэ
+                string donePart = doneDate.HasValue ? doneDate.Value.ToString("yyyy-MM-dd") : "";
+                rpt.utga.Text =
+                    "      Бид " + company + " нь \"№" + gereeNo + "\" дугаартай \"" + projectName +
+                    "\" ажлыг " + donePart + " өдөр хүлээлгэн өгсөн байх тул манай гүйцэтгэлийн баталгааг цуцлуулж өгнө үү.";
+
+                rpt.haashaa.Text = Convert.ToString(zahialagch);
+
+                rpt.ShowPreview();
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void чанарынБаталгааГаргахТухайToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // 1) Хоёр огноо асуух жижиг диалог үүсгэнэ
+                DateTime? docDate;      // Албан бичгийн огноо
+                DateTime? doneDate;     // Ажил дууссан огноо
+                if (!AskDates("Комиссийн дүгнэлтийн огноо:", out docDate, out doneDate)) return; // Cancel дарвал зогсооно
+
+                // 2) Grid-ээс утгуудыг аюулгүй унших
+                int row = gridView1.FocusedRowHandle;
+                if (row < 0) { XtraMessageBox.Show("Мөр сонгоно уу."); return; }
+
+                string gereeNo = Convert.ToString(gridView1.GetRowCellValue(row, "gereeNo"));
+                string projectName = Convert.ToString(gridView1.GetRowCellValue(row, "projectName"));
+                string zahialagch = Convert.ToString(gridView1.GetRowCellValue(row, "zahialagch"));
+                string company = (userInfo != null) ? Convert.ToString(userInfo.comName) : "";
+
+                // 3) Тайлан бэлдэх
+                reporttendermat rpt = new reporttendermat();
+                rpt.tuhai.Text = "Баталгаа гаргах тухай";
+                rpt.Bdugaar.Text = "М/15";
+
+                // Албан бичгийн огноо -> тайлангийн 'ognoo' control руу
+                if (docDate.HasValue) rpt.ognoo.Text = docDate.Value.ToString("yyyy-MM-dd");
+
+                // Ажил дууссан огноо (тайланд тусдаа control байгаа бол түүн рүү нь дамжуулж болно)
+                // Жишээлбэл: rpt.ajilDuussanOgnoo?.Text = doneDate.Value.ToString("yyyy-MM-dd");
+
+                // Текстдээ дууссан огноог шингээнэ
+                string donePart = doneDate.HasValue ? doneDate.Value.ToString("yyyy-MM-dd") : "";
+                rpt.utga.Text =
+                    "      Бид " + company + " нь \"№" + gereeNo + "\" дугаартай \"" + projectName +
+                    "\" ажлыг байнгын ашиглалтад хүлээлгэн өгсөн өдрөөс хойш 1 жилийн хугацаанд чанарын баталгаа гаргаж буй үүгээр баталгаажуулж байна.";
+
+                rpt.haashaa.Text = Convert.ToString(zahialagch);
+
+                rpt.ShowPreview();
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.ToString());
+            }
         }
 
 

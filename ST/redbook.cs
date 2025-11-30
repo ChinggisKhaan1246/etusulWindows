@@ -45,8 +45,8 @@ namespace ST
             {
                 gridControl2.DataSource = dsn.getData("getdaily", new Dictionary<string, string>
                     {
-                         { "status", "9" },
-                         { "comID", UserSession.LoggedComID.ToString() }
+                         { "status", "9" }
+                         
                     });
                 gridView2.IndicatorWidth = 75;
             }

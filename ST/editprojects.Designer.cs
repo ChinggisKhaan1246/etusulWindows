@@ -71,6 +71,15 @@
             this.gereeNo = new DevExpress.XtraEditors.TextEdit();
             this.locationP = new DevExpress.XtraEditors.TextEdit();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.Xphone = new DevExpress.XtraEditors.TextEdit();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.Zphone = new DevExpress.XtraEditors.TextEdit();
+            this.Aphone = new DevExpress.XtraEditors.TextEdit();
+            this.label21 = new System.Windows.Forms.Label();
+            this.spinEdit1 = new DevExpress.XtraEditors.SpinEdit();
+            this.label22 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.sumname.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aimag.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.injhai.Properties)).BeginInit();
@@ -94,12 +103,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.gereeNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.locationP.Properties)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Xphone.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Zphone.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Aphone.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(396, 275);
+            this.label8.Location = new System.Drawing.Point(395, 306);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(27, 13);
             this.label8.TabIndex = 31;
@@ -108,7 +121,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(70, 275);
+            this.label4.Location = new System.Drawing.Point(69, 306);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(39, 13);
             this.label4.TabIndex = 30;
@@ -116,7 +129,7 @@
             // 
             // sumname
             // 
-            this.sumname.Location = new System.Drawing.Point(425, 272);
+            this.sumname.Location = new System.Drawing.Point(424, 303);
             this.sumname.Name = "sumname";
             this.sumname.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -125,7 +138,7 @@
             // 
             // aimag
             // 
-            this.aimag.Location = new System.Drawing.Point(110, 272);
+            this.aimag.Location = new System.Drawing.Point(109, 303);
             this.aimag.Name = "aimag";
             this.aimag.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -206,7 +219,7 @@
             // 
             // comID
             // 
-            this.comID.Location = new System.Drawing.Point(109, 319);
+            this.comID.Location = new System.Drawing.Point(109, 384);
             this.comID.Name = "comID";
             this.comID.Properties.ReadOnly = true;
             this.comID.Size = new System.Drawing.Size(89, 20);
@@ -326,6 +339,15 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label22);
+            this.groupBox2.Controls.Add(this.spinEdit1);
+            this.groupBox2.Controls.Add(this.label21);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.Xphone);
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.Controls.Add(this.Zphone);
+            this.groupBox2.Controls.Add(this.Aphone);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.baritsaa);
             this.groupBox2.Controls.Add(this.label8);
@@ -365,7 +387,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(633, 382);
+            this.groupBox2.Size = new System.Drawing.Size(633, 441);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             // 
@@ -419,7 +441,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(370, 238);
+            this.label6.Location = new System.Drawing.Point(55, 270);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(50, 13);
             this.label6.TabIndex = 11;
@@ -429,7 +451,7 @@
             // 
             this.zahialagch.Location = new System.Drawing.Point(110, 205);
             this.zahialagch.Name = "zahialagch";
-            this.zahialagch.Size = new System.Drawing.Size(504, 20);
+            this.zahialagch.Size = new System.Drawing.Size(239, 20);
             this.zahialagch.TabIndex = 11;
             // 
             // label13
@@ -443,15 +465,15 @@
             // 
             // author
             // 
-            this.author.Location = new System.Drawing.Point(425, 235);
+            this.author.Location = new System.Drawing.Point(110, 267);
             this.author.Name = "author";
-            this.author.Size = new System.Drawing.Size(189, 20);
+            this.author.Size = new System.Drawing.Size(239, 20);
             this.author.TabIndex = 13;
             // 
             // simpleButton1
             // 
             this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(484, 322);
+            this.simpleButton1.Location = new System.Drawing.Point(484, 379);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(130, 42);
             this.simpleButton1.TabIndex = 14;
@@ -513,9 +535,9 @@
             // 
             // projectName
             // 
-            this.projectName.Enabled = false;
             this.projectName.Location = new System.Drawing.Point(110, 25);
             this.projectName.Name = "projectName";
+            this.projectName.Properties.ReadOnly = true;
             this.projectName.Size = new System.Drawing.Size(504, 20);
             this.projectName.TabIndex = 1;
             // 
@@ -541,14 +563,96 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(635, 384);
+            this.panel1.Size = new System.Drawing.Size(635, 443);
             this.panel1.TabIndex = 1;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(403, 238);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(88, 13);
+            this.label10.TabIndex = 41;
+            this.label10.Text = "Хянагчийн утас:";
+            // 
+            // Xphone
+            // 
+            this.Xphone.EditValue = "";
+            this.Xphone.Location = new System.Drawing.Point(497, 235);
+            this.Xphone.Name = "Xphone";
+            this.Xphone.Properties.Mask.EditMask = "d";
+            this.Xphone.Size = new System.Drawing.Size(117, 20);
+            this.Xphone.TabIndex = 39;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(386, 208);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(105, 13);
+            this.label12.TabIndex = 36;
+            this.label12.Text = "Захиалагчийн утас:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(398, 270);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(93, 13);
+            this.label14.TabIndex = 37;
+            this.label14.Text = "Зохиогчийн утас:";
+            // 
+            // Zphone
+            // 
+            this.Zphone.Location = new System.Drawing.Point(497, 205);
+            this.Zphone.Name = "Zphone";
+            this.Zphone.Size = new System.Drawing.Size(117, 20);
+            this.Zphone.TabIndex = 38;
+            // 
+            // Aphone
+            // 
+            this.Aphone.Location = new System.Drawing.Point(497, 267);
+            this.Aphone.Name = "Aphone";
+            this.Aphone.Size = new System.Drawing.Size(117, 20);
+            this.Aphone.TabIndex = 40;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(137, 336);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(61, 13);
+            this.label21.TabIndex = 43;
+            this.label21.Text = "Гүйцэтгэл:";
+            // 
+            // spinEdit1
+            // 
+            this.spinEdit1.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.spinEdit1.Location = new System.Drawing.Point(204, 333);
+            this.spinEdit1.Name = "spinEdit1";
+            this.spinEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.spinEdit1.Size = new System.Drawing.Size(73, 20);
+            this.spinEdit1.TabIndex = 45;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(283, 336);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(29, 13);
+            this.label22.TabIndex = 46;
+            this.label22.Text = "хувь";
             // 
             // editprojects
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(635, 384);
+            this.ClientSize = new System.Drawing.Size(635, 443);
             this.Controls.Add(this.panel1);
             this.KeyPreview = true;
             this.Name = "editprojects";
@@ -580,6 +684,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.gereeNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.locationP.Properties)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Xphone.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Zphone.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Aphone.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -627,5 +735,14 @@
         public DevExpress.XtraEditors.TextEdit gereeNo;
         private System.Windows.Forms.Label label9;
         public DevExpress.XtraEditors.TextEdit baritsaa;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label10;
+        public DevExpress.XtraEditors.TextEdit Xphone;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label14;
+        public DevExpress.XtraEditors.TextEdit Zphone;
+        public DevExpress.XtraEditors.TextEdit Aphone;
+        private DevExpress.XtraEditors.SpinEdit spinEdit1;
+        private System.Windows.Forms.Label label22;
     }
 }

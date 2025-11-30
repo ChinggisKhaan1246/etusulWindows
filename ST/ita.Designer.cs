@@ -38,7 +38,6 @@
             this.xtraTabPage5 = new DevExpress.XtraTab.XtraTabPage();
             this.gridControl5 = new DevExpress.XtraGrid.GridControl();
             this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridcolumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dd5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -52,6 +51,7 @@
             this.gridColumn36 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn38 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn41 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridcolumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -151,11 +151,15 @@
             // 
             // docu
             // 
+            this.docu.AppearanceCell.Options.UseTextOptions = true;
+            this.docu.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.docu.AppearanceHeader.Options.UseTextOptions = true;
+            this.docu.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.docu.Caption = "Файл";
             this.docu.FieldName = "docu";
             this.docu.Name = "docu";
             this.docu.Visible = true;
-            this.docu.VisibleIndex = 12;
+            this.docu.VisibleIndex = 11;
             // 
             // xtraTabControl1
             // 
@@ -194,7 +198,6 @@
             // gridView5
             // 
             this.gridView5.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridcolumn25,
             this.dd5,
             this.gridColumn27,
             this.gridColumn28,
@@ -208,20 +211,13 @@
             this.gridColumn36,
             this.gridColumn38,
             this.gridColumn41,
-            this.docu});
+            this.docu,
+            this.gridcolumn25});
             this.gridView5.GridControl = this.gridControl5;
             this.gridView5.GroupPanelText = "Бичиг баримтууд";
             this.gridView5.Name = "gridView5";
             this.gridView5.OptionsBehavior.Editable = false;
             this.gridView5.OptionsView.ShowFooter = true;
-            // 
-            // gridcolumn25
-            // 
-            this.gridcolumn25.Caption = "ID";
-            this.gridcolumn25.FieldName = "id";
-            this.gridcolumn25.Name = "gridcolumn25";
-            this.gridcolumn25.Visible = true;
-            this.gridcolumn25.VisibleIndex = 13;
             // 
             // dd5
             // 
@@ -298,6 +294,8 @@
             // 
             // gridColumn32
             // 
+            this.gridColumn32.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn32.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn32.Caption = "Утас";
             this.gridColumn32.FieldName = "phone";
             this.gridColumn32.Name = "gridColumn32";
@@ -306,7 +304,11 @@
             // 
             // gridColumn33
             // 
-            this.gridColumn33.Caption = "Email";
+            this.gridColumn33.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn33.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn33.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn33.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn33.Caption = "РД";
             this.gridColumn33.FieldName = "email";
             this.gridColumn33.Name = "gridColumn33";
             this.gridColumn33.Visible = true;
@@ -315,6 +317,10 @@
             // 
             // gridColumn35
             // 
+            this.gridColumn35.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn35.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn35.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn35.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn35.Caption = "Сургууль";
             this.gridColumn35.FieldName = "school";
             this.gridColumn35.Name = "gridColumn35";
@@ -324,6 +330,8 @@
             // 
             // gridColumn34
             // 
+            this.gridColumn34.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn34.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn34.Caption = "Б/зэрэг";
             this.gridColumn34.FieldName = "zereg";
             this.gridColumn34.Name = "gridColumn34";
@@ -333,6 +341,10 @@
             // 
             // gridColumn36
             // 
+            this.gridColumn36.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn36.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn36.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn36.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn36.Caption = "Ажилласан жил";
             this.gridColumn36.FieldName = "ajillsan";
             this.gridColumn36.Name = "gridColumn36";
@@ -344,6 +356,10 @@
             // 
             // gridColumn38
             // 
+            this.gridColumn38.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn38.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn38.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn38.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn38.Caption = "Нийт ажилласан";
             this.gridColumn38.FieldName = "niitAjilsan";
             this.gridColumn38.Name = "gridColumn38";
@@ -352,9 +368,23 @@
             // 
             // gridColumn41
             // 
+            this.gridColumn41.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn41.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn41.Caption = "Төрөл";
             this.gridColumn41.FieldName = "itatype";
             this.gridColumn41.Name = "gridColumn41";
+            // 
+            // gridcolumn25
+            // 
+            this.gridcolumn25.AppearanceCell.Options.UseTextOptions = true;
+            this.gridcolumn25.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridcolumn25.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridcolumn25.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridcolumn25.Caption = "ID";
+            this.gridcolumn25.FieldName = "id";
+            this.gridcolumn25.Name = "gridcolumn25";
+            this.gridcolumn25.Visible = true;
+            this.gridcolumn25.VisibleIndex = 12;
             // 
             // xtraTabPage1
             // 
@@ -404,6 +434,10 @@
             // 
             // gridColumn1
             // 
+            this.gridColumn1.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn1.Caption = "ID";
             this.gridColumn1.FieldName = "id";
             this.gridColumn1.Name = "gridColumn1";
@@ -485,6 +519,8 @@
             // 
             // gridColumn8
             // 
+            this.gridColumn8.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn8.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn8.Caption = "Утас";
             this.gridColumn8.FieldName = "phone";
             this.gridColumn8.Name = "gridColumn8";
@@ -493,7 +529,11 @@
             // 
             // gridColumn9
             // 
-            this.gridColumn9.Caption = "Email";
+            this.gridColumn9.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn9.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn9.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn9.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn9.Caption = "РД";
             this.gridColumn9.FieldName = "email";
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
@@ -502,6 +542,8 @@
             // 
             // gridColumn10
             // 
+            this.gridColumn10.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn10.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn10.Caption = "Сургууль";
             this.gridColumn10.FieldName = "school";
             this.gridColumn10.Name = "gridColumn10";
@@ -511,6 +553,8 @@
             // 
             // gridColumn11
             // 
+            this.gridColumn11.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn11.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn11.Caption = "Б/зэрэг";
             this.gridColumn11.FieldName = "zereg";
             this.gridColumn11.Name = "gridColumn11";
@@ -520,6 +564,10 @@
             // 
             // gridColumn12
             // 
+            this.gridColumn12.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn12.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn12.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn12.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn12.Caption = "Ажилласан жил";
             this.gridColumn12.FieldName = "ajillsan";
             this.gridColumn12.Name = "gridColumn12";
@@ -531,6 +579,10 @@
             // 
             // gridColumn39
             // 
+            this.gridColumn39.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn39.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn39.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn39.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn39.Caption = "Нийт ажилласан";
             this.gridColumn39.FieldName = "niitAjilsan";
             this.gridColumn39.Name = "gridColumn39";
@@ -539,12 +591,18 @@
             // 
             // gridColumn42
             // 
+            this.gridColumn42.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn42.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn42.Caption = "Төрөл";
             this.gridColumn42.FieldName = "itatype";
             this.gridColumn42.Name = "gridColumn42";
             // 
             // gridColumn13
             // 
+            this.gridColumn13.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn13.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn13.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn13.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn13.Caption = "Файл";
             this.gridColumn13.FieldName = "docu";
             this.gridColumn13.Name = "gridColumn13";
@@ -598,6 +656,10 @@
             // 
             // gridColumn14
             // 
+            this.gridColumn14.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn14.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn14.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn14.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn14.Caption = "ID";
             this.gridColumn14.FieldName = "id";
             this.gridColumn14.Name = "gridColumn14";
@@ -679,6 +741,10 @@
             // 
             // gridColumn21
             // 
+            this.gridColumn21.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn21.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn21.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn21.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn21.Caption = "Утас";
             this.gridColumn21.FieldName = "phone";
             this.gridColumn21.Name = "gridColumn21";
@@ -687,7 +753,11 @@
             // 
             // gridColumn22
             // 
-            this.gridColumn22.Caption = "Email";
+            this.gridColumn22.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn22.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn22.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn22.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn22.Caption = "РД";
             this.gridColumn22.FieldName = "email";
             this.gridColumn22.Name = "gridColumn22";
             this.gridColumn22.Visible = true;
@@ -696,6 +766,8 @@
             // 
             // gridColumn23
             // 
+            this.gridColumn23.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn23.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn23.Caption = "Сургууль";
             this.gridColumn23.FieldName = "school";
             this.gridColumn23.Name = "gridColumn23";
@@ -705,6 +777,8 @@
             // 
             // gridColumn24
             // 
+            this.gridColumn24.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn24.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn24.Caption = "Б/зэрэг";
             this.gridColumn24.FieldName = "zereg";
             this.gridColumn24.Name = "gridColumn24";
@@ -714,6 +788,10 @@
             // 
             // gridColumn26
             // 
+            this.gridColumn26.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn26.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn26.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn26.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn26.Caption = "Ажилласан жил";
             this.gridColumn26.FieldName = "ajillsan";
             this.gridColumn26.Name = "gridColumn26";
@@ -725,6 +803,10 @@
             // 
             // gridColumn40
             // 
+            this.gridColumn40.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn40.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn40.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn40.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn40.Caption = "Нийт ажилласан";
             this.gridColumn40.FieldName = "niitAjilsan";
             this.gridColumn40.Name = "gridColumn40";
@@ -733,12 +815,18 @@
             // 
             // gridColumn43
             // 
+            this.gridColumn43.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn43.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn43.Caption = "Төрөл";
             this.gridColumn43.FieldName = "itatype";
             this.gridColumn43.Name = "gridColumn43";
             // 
             // gridColumn37
             // 
+            this.gridColumn37.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn37.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn37.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn37.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn37.Caption = "Файл";
             this.gridColumn37.FieldName = "docu";
             this.gridColumn37.Name = "gridColumn37";

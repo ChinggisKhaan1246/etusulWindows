@@ -44,6 +44,12 @@ namespace ST
                 data["aimag"] = aimag.Text;
                 data["sumname"] = sumname.Text;
                 data["baritsaa"] = baritsaa.Text;
+                data["guitsetgel"] = Convert.ToInt32(spinEdit1.Value).ToString();
+                data["Zphone"] = Zphone.Text.Trim();
+                data["Aphone"] = Aphone.Text.Trim();
+                data["Xphone"] = Xphone.Text.Trim();
+          
+
                 MessageBox.Show(ds.exec_command("editproject", data));
             }
             catch (Exception ee)
@@ -469,6 +475,9 @@ namespace ST
             try
             {
                 aimag.Properties.DropDownRows = aimag.Properties.Items.Count;
+                spinEdit1.Properties.MinValue = 0;
+                spinEdit1.Properties.MaxValue = 100;
+                spinEdit1.Properties.IsFloatValue = false;
             }
             catch (Exception)
             {

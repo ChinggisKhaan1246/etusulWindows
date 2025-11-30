@@ -43,9 +43,9 @@ namespace ST
                     int comID = int.Parse(parts[1]);
                     UserSession.LoggedUserID = Convert.ToInt16(userID);
                     UserSession.LoggedComID = comID;
-                   
+
                     baseinfo userInfo = new baseinfo(UserSession.LoggedUserID);
-                    //MessageBox.Show(UserSession.LoggedUserID.ToString());
+                   // MessageBox.Show(UserSession.LoggedUserID.ToString());
                     f.salerLogin.Text = userInfo.userPhone;
                     f.comName.Text = userInfo.comName;
                     f.Text = userInfo.comName;

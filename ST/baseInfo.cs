@@ -23,13 +23,13 @@ namespace ST
         public string comProfilePicture { get; set; }
         public string comStatus { get; set; }
 
-        public baseinfo(int id)
+        public baseinfo(int ID)
         {
             // dataSetFill объект үүсгэх
             dataSetFill ds = new dataSetFill();
-
+            
             // "getbaseinfo" API-г ашиглаж, өгөгдөл унших
-            DataTable dt = ds.gridFill("getbaseinfo", "id=1");
+            DataTable dt = ds.gridFill("getbaseinfo", "id=" + ID);
 
             if (dt != null && dt.Rows.Count > 0)
             {

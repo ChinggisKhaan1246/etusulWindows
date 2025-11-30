@@ -19,7 +19,7 @@ namespace ST
                 {
                     string decryptedUrl = ConfigFileHandler.Decrypt(line);
                     MainUrl = decryptedUrl;//decryptedUrl; // URL-г хадгална.
-                   // MessageBox.Show(MainUrl);
+                    //MessageBox.Show(MainUrl);
                 }
                 else
                 {

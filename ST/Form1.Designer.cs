@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.AddGeree = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
@@ -42,6 +42,10 @@
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
             this.дангаарToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.бүгдToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.албанБичигToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ажилДууссанМэдэгдэлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.гүйцэтгэлийнБаталгааЦуцлуулахToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.чанарынБаталгааГаргахТухайToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.finish = new System.Windows.Forms.ToolStripMenuItem();
@@ -306,13 +310,14 @@
             this.Addincome,
             this.Addcost,
             this.toolStripMenuItem7,
+            this.албанБичигToolStripMenuItem,
             this.toolStripMenuItem5,
             this.toolStripMenuItem4,
             this.finish,
             this.toolStripSeparator2,
             this.deleteGeree});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(180, 258);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(180, 280);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // AddGeree
@@ -395,6 +400,42 @@
             this.бүгдToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.бүгдToolStripMenuItem.Text = "Бүх төслөөр";
             this.бүгдToolStripMenuItem.Click += new System.EventHandler(this.бүгдToolStripMenuItem_Click);
+            // 
+            // албанБичигToolStripMenuItem
+            // 
+            this.албанБичигToolStripMenuItem.AutoSize = false;
+            this.албанБичигToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ажилДууссанМэдэгдэлToolStripMenuItem,
+            this.гүйцэтгэлийнБаталгааЦуцлуулахToolStripMenuItem,
+            this.чанарынБаталгааГаргахТухайToolStripMenuItem});
+            this.албанБичигToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("албанБичигToolStripMenuItem.Image")));
+            this.албанБичигToolStripMenuItem.Name = "албанБичигToolStripMenuItem";
+            this.албанБичигToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.албанБичигToolStripMenuItem.Text = "Албан бичиг";
+            // 
+            // ажилДууссанМэдэгдэлToolStripMenuItem
+            // 
+            this.ажилДууссанМэдэгдэлToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ажилДууссанМэдэгдэлToolStripMenuItem.Image")));
+            this.ажилДууссанМэдэгдэлToolStripMenuItem.Name = "ажилДууссанМэдэгдэлToolStripMenuItem";
+            this.ажилДууссанМэдэгдэлToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
+            this.ажилДууссанМэдэгдэлToolStripMenuItem.Text = "Ажил дууссан мэдэгдэл";
+            this.ажилДууссанМэдэгдэлToolStripMenuItem.Click += new System.EventHandler(this.ажилДууссанМэдэгдэлToolStripMenuItem_Click);
+            // 
+            // гүйцэтгэлийнБаталгааЦуцлуулахToolStripMenuItem
+            // 
+            this.гүйцэтгэлийнБаталгааЦуцлуулахToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("гүйцэтгэлийнБаталгааЦуцлуулахToolStripMenuItem.Image")));
+            this.гүйцэтгэлийнБаталгааЦуцлуулахToolStripMenuItem.Name = "гүйцэтгэлийнБаталгааЦуцлуулахToolStripMenuItem";
+            this.гүйцэтгэлийнБаталгааЦуцлуулахToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
+            this.гүйцэтгэлийнБаталгааЦуцлуулахToolStripMenuItem.Text = "Гүйцэтгэлийн баталгаа цуцлуулах";
+            this.гүйцэтгэлийнБаталгааЦуцлуулахToolStripMenuItem.Click += new System.EventHandler(this.гүйцэтгэлийнБаталгааЦуцлуулахToolStripMenuItem_Click);
+            // 
+            // чанарынБаталгааГаргахТухайToolStripMenuItem
+            // 
+            this.чанарынБаталгааГаргахТухайToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("чанарынБаталгааГаргахТухайToolStripMenuItem.Image")));
+            this.чанарынБаталгааГаргахТухайToolStripMenuItem.Name = "чанарынБаталгааГаргахТухайToolStripMenuItem";
+            this.чанарынБаталгааГаргахТухайToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
+            this.чанарынБаталгааГаргахТухайToolStripMenuItem.Text = "Чанарын баталгаа гаргах тухай";
+            this.чанарынБаталгааГаргахТухайToolStripMenuItem.Click += new System.EventHandler(this.чанарынБаталгааГаргахТухайToolStripMenuItem_Click);
             // 
             // toolStripMenuItem5
             // 
@@ -1084,9 +1125,9 @@
             // 
             this.gridControl2.ContextMenuStrip = this.contextMenuStrip3;
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode1.RelationName = "Level1";
+            gridLevelNode2.RelationName = "Level1";
             this.gridControl2.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode2});
             this.gridControl2.Location = new System.Drawing.Point(0, 0);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
@@ -1647,10 +1688,10 @@
             this.baritsaa.Caption = "Барьцаа";
             this.baritsaa.DisplayFormat.FormatString = "#,##0";
             this.baritsaa.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.baritsaa.FieldName = "guitsetgel";
+            this.baritsaa.FieldName = "baritsaa";
             this.baritsaa.Name = "baritsaa";
             this.baritsaa.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "guitsetgel", "{0:#,##0}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "baritsaa", "{0:#,##0}")});
             this.baritsaa.Visible = true;
             this.baritsaa.VisibleIndex = 17;
             this.baritsaa.Width = 76;
@@ -1917,10 +1958,10 @@
             this.gridColumn31.Caption = "Барьцаа";
             this.gridColumn31.DisplayFormat.FormatString = "{0:#,##0}";
             this.gridColumn31.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn31.FieldName = "guitsetgel";
+            this.gridColumn31.FieldName = "baritsaa";
             this.gridColumn31.Name = "gridColumn31";
             this.gridColumn31.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "guitsetgel", "{0:#,##0}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "baritsaa", "{0:#,##0}")});
             this.gridColumn31.Visible = true;
             this.gridColumn31.VisibleIndex = 15;
             this.gridColumn31.Width = 76;
@@ -2527,6 +2568,10 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem7;
         private System.Windows.Forms.ToolStripMenuItem дангаарToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem бүгдToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem албанБичигToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ажилДууссанМэдэгдэлToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem гүйцэтгэлийнБаталгааЦуцлуулахToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem чанарынБаталгааГаргахТухайToolStripMenuItem;
     }
 }
 

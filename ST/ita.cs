@@ -61,28 +61,33 @@ namespace ST
         // ===== API models =====
         private class ApiFileEntry
         {
-            public string name;
-            public string url;
-            public string type;     // зарим API-д "type" эсвэл "ext"
-            public string ext;      // (optional) хэрэв API ext өгдөг бол энд орно
-            public long size;       // зарим API "size" гэж өгч магадгүй
-            public long bytes;      // танай getfilelist.php бодитоор энэ талбарыг өгч байгаа
-            public string modified;
+            public string name = string.Empty;          
+            public string url = string.Empty;           
+            public string type = string.Empty;          
+            public string ext = string.Empty;          
+            public long size = 0;                       
+            public long bytes = 0;                      
+            public string modified = string.Empty;      
+
             // Туслагч: аль нь ирсэн байна, тэрийг нь ашиглая
-            public long SizeBytes { get { return (size > 0 ? size : bytes); } }
+            public long SizeBytes
+            {
+                get { return (size > 0 ? size : bytes); }
+            }
         }
 
         private class ApiFileList   // success/int
         {
-            public int success;
-            public string error;
-            public List<ApiFileEntry> files;
+            public int success = 0;                            
+            public string error = string.Empty;                
+            public List<ApiFileEntry> files = new List<ApiFileEntry>();  
         }
+
         private class ApiFileList2  // ok/bool
         {
-            public bool ok;
-            public string error;
-            public List<ApiFileEntry> files;
+            public bool ok = false;                             
+            public string error = string.Empty;                 
+            public List<ApiFileEntry> files = new List<ApiFileEntry>(); 
         }
 
         // ===== Файлын жагсаалт татах =====

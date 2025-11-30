@@ -72,7 +72,8 @@ namespace ST
             {
                 // Өгөгдлийг унших
                 dataSetFill ds = new dataSetFill();
-                gridControl1.DataSource = ds.gridFill("getreceipts", "costID=" + costID.Text.Replace(",","").Trim());
+               // gridControl1.DataSource = ds.gridFill("getreceipts", "costID=" + costID.Text.Trim());
+                //MessageBox.Show(costID.Text);
                 gridView1.IndicatorWidth = 100;
             }
             catch (Exception ex)

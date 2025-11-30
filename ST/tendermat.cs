@@ -50,37 +50,34 @@ namespace ST
             public int ProjectId;
             public string FileName;
         }
-
-        // API-гийн буцаах нэг файл
-        // API буцаах нэг файл
         private class ApiFileEntry
         {
-            public string name;
-            public string url;
-            public string type;     // зарим API-д "type" эсвэл "ext"
-            public string ext;      // (optional) хэрэв API ext өгдөг бол энд орно
-            public long size;       // зарим API "size" гэж өгч магадгүй
-            public long bytes;      // танай getfilelist.php бодитоор энэ талбарыг өгч байгаа
-            public string modified;
+            public string name = string.Empty;
+            public string url = string.Empty;
+            public string type = string.Empty;
+            public string ext = string.Empty;      // (optional) хэрэв API ext өгдөг бол энд орно
+            public long size = 0;                   // зарим API "size" гэж өгч магадгүй
+            public long bytes = 0;                  // танай getfilelist.php бодитоор энэ талбарыг өгч байгаа
+            public string modified = string.Empty;
+
             // Туслагч: аль нь ирсэн байна, тэрийг нь ашиглая
             public long SizeBytes { get { return (size > 0 ? size : bytes); } }
         }
 
-
         // API response
         private class ApiFileList
         {
-            public int success;
-            public string error;
-            public List<ApiFileEntry> files;
+            public int success = 0;
+            public string error = string.Empty;
+            public List<ApiFileEntry> files = new List<ApiFileEntry>();
         }
 
         // ok/error түлхүүртэй хувилбарын загвар
         private class ApiFileList2
         {
-            public bool ok;
-            public string error;
-            public List<ApiFileEntry> files;
+            public bool ok = false;
+            public string error = string.Empty;
+            public List<ApiFileEntry> files = new List<ApiFileEntry>();
         }
 
         // Файлын жагсаалт татах
@@ -97,7 +94,7 @@ namespace ST
                 string api = url.GetUrl() + "api/getfilelist.php";
                 string full = api
                     + "?url=" + Uri.EscapeDataString(folderUrl)                 // << url параметр
-                    + "&type=" + Uri.EscapeDataString(string.IsNullOrEmpty(fileType) ? "*" : fileType);
+                    + "&ext=" + Uri.EscapeDataString(string.IsNullOrEmpty(fileType) ? "pdf" : fileType);
 
                 // DEBUG – яг ямар URL дуудаж байгааг харуулах
                 // MessageBox.Show("DEBUG — calling API\n\n" + full);
@@ -713,7 +710,7 @@ namespace ST
                         classatushaal = Convert.ToString(gridView2.GetRowCellValue(i, "atushaal")),
                         classner = Convert.ToString(gridView2.GetRowCellValue(i, "ner")),
                         classproff = Convert.ToString(gridView2.GetRowCellValue(i, "proff")),
-                        classniitAjilsan = Convert.ToString(gridView2.GetRowCellValue(i, "niitAjilsan")),
+                        classniitAjilsan = Convert.ToString(gridView2.GetRowCellValue(i, "email")),
                         classajillsan = Convert.ToString(gridView2.GetRowCellValue(i, "ajillsan"))
                     });
                 }
@@ -725,7 +722,7 @@ namespace ST
                 rpt21.atushaal.DataBindings.Add(new XRBinding("Text", null, "classatushaal"));
                 rpt21.ner.DataBindings.Add(new XRBinding("Text", null, "classner"));
                 rpt21.proff.DataBindings.Add(new XRBinding("Text", null, "classproff"));
-                rpt21.niitAjilsan.DataBindings.Add(new XRBinding("Text", null, "classniitAjilsan"));
+                rpt21.rd.DataBindings.Add(new XRBinding("Text", null, "classniitAjilsan"));
                 rpt21.ajillsan.DataBindings.Add(new XRBinding("Text", null, "classajillsan"));
                 rpt21.CreateDocument();
 
@@ -767,7 +764,7 @@ namespace ST
                     }
                 }
 
-                MessageBox.Show("ITA хавсралтын сонгосон PDF тоо: " + urlList.Count);
+               // MessageBox.Show("ITA хавсралтын сонгосон PDF тоо: " + urlList.Count);
                 MergeReportWithAttachmentUrls(rpt21, urlList);
             }
             catch (Exception ee)
@@ -885,7 +882,7 @@ private void groupControl3_DoubleClick(object sender, EventArgs e)
                 classatushaal = Convert.ToString(gridView3.GetRowCellValue(i, "atushaal")),
                 classner = Convert.ToString(gridView3.GetRowCellValue(i, "ner")),
                 classproff = Convert.ToString(gridView3.GetRowCellValue(i, "proff")),
-                classniitAjilsan = Convert.ToString(gridView3.GetRowCellValue(i, "niitAjilsan")),
+                classniitAjilsan = Convert.ToString(gridView3.GetRowCellValue(i, "email")),
                 classajillsan = Convert.ToString(gridView3.GetRowCellValue(i, "ajillsan"))
             });
         }
@@ -897,7 +894,7 @@ private void groupControl3_DoubleClick(object sender, EventArgs e)
         rpt21.atushaal.DataBindings.Add(new XRBinding("Text", null, "classatushaal"));
         rpt21.ner.DataBindings.Add(new XRBinding("Text", null, "classner"));
         rpt21.proff.DataBindings.Add(new XRBinding("Text", null, "classproff"));
-        rpt21.niitAjilsan.DataBindings.Add(new XRBinding("Text", null, "classniitAjilsan"));
+        rpt21.rd.DataBindings.Add(new XRBinding("Text", null, "classniitAjilsan"));
         rpt21.ajillsan.DataBindings.Add(new XRBinding("Text", null, "classajillsan"));
         rpt21.CreateDocument();
 
@@ -935,7 +932,7 @@ private void groupControl3_DoubleClick(object sender, EventArgs e)
             }
         }
 
-        MessageBox.Show("OP хавсралтын сонгосон PDF тоо: " + urlList.Count);
+       // MessageBox.Show("OP хавсралтын сонгосон PDF тоо: " + urlList.Count);
         MergeReportWithAttachmentUrls(rpt21, urlList);
     }
     catch (Exception ee)
@@ -974,7 +971,7 @@ private void groupControl4_DoubleClick(object sender, EventArgs e)
                 classatushaal = Convert.ToString(gridView4.GetRowCellValue(i, "atushaal")),
                 classner = Convert.ToString(gridView4.GetRowCellValue(i, "ner")),
                 classproff = Convert.ToString(gridView4.GetRowCellValue(i, "proff")),
-                classniitAjilsan = Convert.ToString(gridView4.GetRowCellValue(i, "niitAjilsan")),
+                classniitAjilsan = Convert.ToString(gridView4.GetRowCellValue(i, "email")),
                 classajillsan = Convert.ToString(gridView4.GetRowCellValue(i, "ajillsan"))
             });
         }
@@ -986,7 +983,7 @@ private void groupControl4_DoubleClick(object sender, EventArgs e)
         rpt21.atushaal.DataBindings.Add(new XRBinding("Text", null, "classatushaal"));
         rpt21.ner.DataBindings.Add(new XRBinding("Text", null, "classner"));
         rpt21.proff.DataBindings.Add(new XRBinding("Text", null, "classproff"));
-        rpt21.niitAjilsan.DataBindings.Add(new XRBinding("Text", null, "classniitAjilsan"));
+        rpt21.rd.DataBindings.Add(new XRBinding("Text", null, "classniitAjilsan"));
         rpt21.ajillsan.DataBindings.Add(new XRBinding("Text", null, "classajillsan"));
         rpt21.CreateDocument();
 
@@ -1024,7 +1021,7 @@ private void groupControl4_DoubleClick(object sender, EventArgs e)
             }
         }
 
-        MessageBox.Show("MA хавсралтын сонгосон PDF тоо: " + urlList.Count);
+        //MessageBox.Show("MA хавсралтын сонгосон PDF тоо: " + urlList.Count);
         MergeReportWithAttachmentUrls(rpt21, urlList);
     }
     catch (Exception ee)
@@ -1115,7 +1112,7 @@ private void groupControl5_DoubleClick(object sender, EventArgs e)
             }
         }
 
-        MessageBox.Show("DEVICE хавсралтын сонгосон PDF тоо: " + urlList.Count);
+        //MessageBox.Show("DEVICE хавсралтын сонгосон PDF тоо: " + urlList.Count);
         MergeReportWithAttachmentUrls(rpt21, urlList);
     }
     catch (Exception ee)
@@ -1268,7 +1265,7 @@ private void groupControl5_DoubleClick(object sender, EventArgs e)
                     rpt5.budget.DataBindings.Add(new XRBinding("Text", null, "classBudget"));
                     rpt5.ognoo1.DataBindings.Add(new XRBinding("Text", null, "classognoo1"));
                     rpt5.ognoo2.DataBindings.Add(new XRBinding("Text", null, "classognoo2"));
-                    rpt5.huleegdejbui.Text = "99.9%";
+                    rpt5.huleegdejbui.Text = "100%";
                     
                     
                    
@@ -1346,57 +1343,146 @@ private void groupControl5_DoubleClick(object sender, EventArgs e)
             finally { }
 
         }
-        private void ShowDocPickerForProject(int projectId)
+
+
+        // --- VS2012-д таарах алсын файлын хэмжээ авах helper-үүд ---
+private long TryGetFileSize_HEAD(string url)
+{
+    try
+    {
+        ServicePointManager.Expect100Continue = true;
+        ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072; // TLS 1.2
+
+        var req = (HttpWebRequest)WebRequest.Create(url);
+        req.Method = "HEAD";
+        req.Timeout = 6000;
+        req.UserAgent = "Mozilla/5.0";
+
+        using (var resp = (HttpWebResponse)req.GetResponse())
         {
-            DataTable dt = ds.gridFill("getdocument", "projectID=" + projectId);
-            if (dt == null || dt.Rows.Count == 0)
-            {
-                XtraMessageBox.Show("Төсөл " + projectId + " дээр баримт олдсонгүй.", "Мэдээлэл");
-                return;
-            }
-
-            using (var dlg = new DocPickerForm(projectId))
-            {
-                dlg.Text = "Төсөл id:" + projectId + " — бичиг баримт сонгох";
-                dlg.List.Items.Clear();
-
-                // Өмнөх сонголтуудыг урьдчилж check-тэй гаргах
-                var pre = _projDocs.ContainsKey(projectId)
-                    ? _projDocs[projectId]
-                    : new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-
-                foreach (DataRow r in dt.Rows)
-                {
-                    string docType = Convert.ToString(r["doctype"]);
-                    string name = Convert.ToString(r["docname"]);
-                    string dateStr = Convert.ToString(r["ognoo"]);
-                    DateTime d; if (DateTime.TryParse(dateStr, out d)) dateStr = d.ToString("yyyy-MM-dd");
-
-                    // ⚠️ getdocument.php -> document.URL  (файлын нэр, ж: act_001.pdf)
-                    string fileName = Convert.ToString(r["URL"]);
-
-                    string display = string.Format("[{0}] {1} | {2}",
-                        string.IsNullOrWhiteSpace(docType) ? "Файл" : docType, name, dateStr);
-
-                    bool preChecked = !string.IsNullOrWhiteSpace(fileName) && pre.Contains(fileName);
-                    // Value = fileName  → дараа нь татаж merge хийхэд ашиглана
-                    dlg.List.Items.Add(new CheckedListBoxItem(fileName,  display, preChecked ? CheckState.Checked : CheckState.Unchecked ));
-                }
-
-                if (dlg.ShowDialog(this) != DialogResult.OK) return;
-
-                // ШИНЭ сонголтыг хадгална
-                var set = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-                foreach (CheckedListBoxItem it in dlg.List.CheckedItems)
-                {
-                    string fn = Convert.ToString(it.Value);
-                    if (!string.IsNullOrWhiteSpace(fn)) set.Add(fn);
-                }
-
-                if (set.Count > 0) _projDocs[projectId] = set;
-                else if (_projDocs.ContainsKey(projectId)) _projDocs.Remove(projectId);
-            }
+            if (resp.ContentLength > 0) return resp.ContentLength;
         }
+    }
+    catch { }
+    return 0L;
+}
+
+private long TryGetFileSize_Range(string url)
+{
+    try
+    {
+        ServicePointManager.Expect100Continue = true;
+        ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072; // TLS 1.2
+
+        var req = (HttpWebRequest)WebRequest.Create(url);
+        req.Method = "GET";
+        req.Timeout = 8000;
+        req.UserAgent = "Mozilla/5.0";
+        req.AddRange(0, 0); // 0-байтын range хүсэлт
+
+        using (var resp = (HttpWebResponse)req.GetResponse())
+        {
+            string cr = resp.Headers["Content-Range"]; // ж: bytes 0-0/12345
+            if (!string.IsNullOrEmpty(cr))
+            {
+                int slash = cr.LastIndexOf('/');
+                long total;
+                if (slash >= 0 && long.TryParse(cr.Substring(slash + 1), out total)) return total;
+            }
+            if (resp.ContentLength > 0) return resp.ContentLength;
+        }
+    }
+    catch { }
+    return 0L;
+}
+
+private long GetRemoteFileSize(string url)
+{
+    long n = TryGetFileSize_HEAD(url);
+    if (n > 0) return n;
+    return TryGetFileSize_Range(url);
+}
+
+private void ShowDocPickerForProject(int projectId)
+{
+    DataTable dt = ds.gridFill("getdocument", "projectID=" + projectId);
+    if (dt == null || dt.Rows.Count == 0)
+    {
+        XtraMessageBox.Show("Төсөл " + projectId + " дээр баримт олдсонгүй.", "Мэдээлэл");
+        return;
+    }
+
+    using (var dlg = new DocPickerForm(projectId))
+    {
+        dlg.Text = "Төсөл id:" + projectId + " — бичиг баримт сонгох";
+        dlg.List.Items.Clear();
+
+        var pre = _projDocs.ContainsKey(projectId)
+            ? _projDocs[projectId]
+            : new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+        foreach (DataRow r in dt.Rows)
+        {
+            string docType = Convert.ToString(r["doctype"]);
+            string name = Convert.ToString(r["docname"]);
+            string dateStr = Convert.ToString(r["ognoo"]);
+            DateTime d;
+            if (DateTime.TryParse(dateStr, out d)) dateStr = d.ToString("yyyy-MM-dd");
+
+            // Файлын нэр (сервер дээрх)
+            string fileName = Convert.ToString(r["URL"]);
+            if (string.IsNullOrWhiteSpace(fileName)) continue;
+
+            // Зөвхөн PDF
+            if (!fileName.EndsWith(".pdf", StringComparison.OrdinalIgnoreCase)) continue;
+
+            string fileUrl = url.GetUrl()
+                              + "dist/uploads/documents/"
+                              + projectId + "/"
+                              + Uri.EscapeDataString(fileName);
+
+            // Бодит хэмжээ татах
+            long bytes = GetRemoteFileSize(fileUrl);
+            double mb = (bytes > 0 ? (bytes / 1024.0 / 1024.0) : 0.0);
+
+            string leftTag = string.IsNullOrWhiteSpace(docType) ? "Файл" : docType;
+            string sizePart = (bytes > 0)
+                ? ("  (" + mb.ToString("0.##") + " MB)")
+                : "  (size?)";
+
+            string display = string.Format("[{0}] {1} | {2}{3}",
+                leftTag, name, dateStr, sizePart);
+
+            bool preChecked = pre.Contains(fileName);
+
+            dlg.List.Items.Add(new CheckedListBoxItem(
+                (object)fileName,
+                display,
+                preChecked ? CheckState.Checked : CheckState.Unchecked
+            ));
+        }
+
+        if (dlg.List.Items.Count == 0)
+        {
+            XtraMessageBox.Show("PDF файл олдсонгүй.", "Мэдээлэл");
+            return;
+        }
+
+        if (dlg.ShowDialog(this) != DialogResult.OK) return;
+
+        var set = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        foreach (CheckedListBoxItem it in dlg.List.CheckedItems)
+        {
+            string fn = Convert.ToString(it.Value);
+            if (!string.IsNullOrWhiteSpace(fn)) set.Add(fn);
+        }
+
+        if (set.Count > 0) _projDocs[projectId] = set;
+        else if (_projDocs.ContainsKey(projectId)) _projDocs.Remove(projectId);
+    }
+}
+
+
 
         public class DocPickerForm : XtraForm
         {
@@ -1430,12 +1516,13 @@ private void groupControl5_DoubleClick(object sender, EventArgs e)
             {
                 int idx = List.SelectedIndex;
                 if (idx < 0) return;
-
+               
+                
                 var item = (CheckedListBoxItem)List.Items[idx];
                 string fileName = Convert.ToString(item.Value);   // бид Value = файл нэр гэж өгсөн
                 if (string.IsNullOrWhiteSpace(fileName)) return;
 
-                string urlD = "https://etusul.com/dist/uploads/documents/" + _projectId + "/" + Uri.EscapeDataString(fileName);
+                string urlD =  "https://etusul.com/dist/uploads/documents/" + _projectId + "/" + Uri.EscapeDataString(fileName);
 
                 try
                 {
@@ -1462,6 +1549,7 @@ private void checkedListBoxControl6_ItemCheck(object sender, DevExpress.XtraEdit
             if (val != null && int.TryParse(val.ToString(), out projectId))
             {
                 ShowDocPickerForProject(projectId);
+               
             }
         }
     }
@@ -1617,8 +1705,8 @@ private FileListResponse GetFilesFromApi(string folderUrl, string extsCsv)
     {
         // таны API: {base}/api/getfilelist.php?url=...&ext=...
         string api = url.GetUrl() + "api/getfilelist.php"
-                   + "?url=" + Uri.EscapeDataString(folderUrl)
-                   + "&ext=" + Uri.EscapeDataString(extsCsv ?? "");
+            + "?url=" + Uri.EscapeDataString(folderUrl)
+            + "&ext=pdf";
 
         using (var wc = new WebClient())
         {
@@ -1750,9 +1838,7 @@ private void ShowDocPickerForITA(string kind, int id, string folderUrl)
         else if (kind == "OP") _opPicked[id] = picked;
         else if (kind == "DEV") _devicePicked[id] = picked;
 
-        MessageBox.Show(
-            string.Format("{0} (ID={1}) – сонгосон PDF: {2} ширхэг", kind, id, picked.Count),
-            "Хадгаллаа", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //MessageBox.Show( string.Format("{0} (ID={1}) – сонгосон PDF: {2} ширхэг", kind, id, picked.Count),"Хадгаллаа", MessageBoxButtons.OK, MessageBoxIcon.Information);
     }
 }
 
@@ -1780,10 +1866,11 @@ private class ItaDocPickerForm : XtraForm
         // Жагсаалтыг дүүргэнэ
         foreach (var f in files)
         {
-            string display = string.Format("{0}  ({1:0.##} MB, {2})",
-                f.name, (f.size > 0 ? (f.size / 1024.0 / 1024.0) : 0.0), f.modified);
+            if (f == null || string.IsNullOrEmpty(f.name) ||
+                !f.name.EndsWith(".pdf", StringComparison.OrdinalIgnoreCase)) continue;
 
-            // Value = бүхэл ApiFileEntry
+            double mb = (f.SizeBytes > 0 ? (f.SizeBytes / 1024.0 / 1024.0) : 0.0);
+            string display = string.Format("{0}  ({1:0.##} MB, {2})", f.name, mb, f.modified);
             var item = new CheckedListBoxItem((object)f, display, CheckState.Unchecked);
             List.Items.Add(item);
         }

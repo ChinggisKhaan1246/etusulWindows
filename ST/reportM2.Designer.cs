@@ -33,7 +33,7 @@
             this.atushaal = new DevExpress.XtraReports.UI.XRLabel();
             this.ner = new DevExpress.XtraReports.UI.XRLabel();
             this.proff = new DevExpress.XtraReports.UI.XRLabel();
-            this.niitAjilsan = new DevExpress.XtraReports.UI.XRLabel();
+            this.rd = new DevExpress.XtraReports.UI.XRLabel();
             this.ajillsan = new DevExpress.XtraReports.UI.XRLabel();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
@@ -57,7 +57,7 @@
             this.atushaal,
             this.ner,
             this.proff,
-            this.niitAjilsan,
+            this.rd,
             this.ajillsan});
             this.Detail.HeightF = 30F;
             this.Detail.Name = "Detail";
@@ -107,33 +107,33 @@
             this.proff.Text = "xrLabel2";
             this.proff.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
-            // niitAjilsan
+            // rd
             // 
-            this.niitAjilsan.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.niitAjilsan.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.niitAjilsan.LocationFloat = new DevExpress.Utils.PointFloat(569.7083F, 0F);
-            this.niitAjilsan.Name = "niitAjilsan";
-            this.niitAjilsan.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.niitAjilsan.SizeF = new System.Drawing.SizeF(72.91656F, 30F);
-            this.niitAjilsan.StylePriority.UseBorders = false;
-            this.niitAjilsan.StylePriority.UseFont = false;
-            this.niitAjilsan.StylePriority.UseTextAlignment = false;
-            this.niitAjilsan.Text = "xrLabel2";
-            this.niitAjilsan.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.rd.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.rd.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rd.LocationFloat = new DevExpress.Utils.PointFloat(569.7083F, 0F);
+            this.rd.Name = "rd";
+            this.rd.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.rd.SizeF = new System.Drawing.SizeF(100.5206F, 30F);
+            this.rd.StylePriority.UseBorders = false;
+            this.rd.StylePriority.UseFont = false;
+            this.rd.StylePriority.UseTextAlignment = false;
+            this.rd.Text = "xrLabel2";
+            this.rd.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // ajillsan
             // 
             this.ajillsan.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.ajillsan.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ajillsan.LocationFloat = new DevExpress.Utils.PointFloat(642.6249F, 0F);
+            this.ajillsan.LocationFloat = new DevExpress.Utils.PointFloat(670.2289F, 0F);
             this.ajillsan.Name = "ajillsan";
             this.ajillsan.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.ajillsan.SizeF = new System.Drawing.SizeF(75.37506F, 30F);
+            this.ajillsan.SizeF = new System.Drawing.SizeF(47.771F, 30F);
             this.ajillsan.StylePriority.UseBorders = false;
             this.ajillsan.StylePriority.UseFont = false;
             this.ajillsan.StylePriority.UseTextAlignment = false;
-            this.ajillsan.Text = "xrLabel2";
+            this.ajillsan.Text = "55";
             this.ajillsan.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // TopMargin
@@ -168,11 +168,11 @@
             this.xrLabel6.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrLabel6.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(642.6249F, 57.29171F);
+            this.xrLabel6.Font = new System.Drawing.Font("Arial", 4F, System.Drawing.FontStyle.Bold);
+            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(670.229F, 57.29171F);
             this.xrLabel6.Name = "xrLabel6";
             this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel6.SizeF = new System.Drawing.SizeF(75.37506F, 56.25F);
+            this.xrLabel6.SizeF = new System.Drawing.SizeF(47.77094F, 56.25F);
             this.xrLabel6.StylePriority.UseBorders = false;
             this.xrLabel6.StylePriority.UseFont = false;
             this.xrLabel6.StylePriority.UseTextAlignment = false;
@@ -187,11 +187,11 @@
             this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(569.7084F, 57.29168F);
             this.xrLabel5.Name = "xrLabel5";
             this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel5.SizeF = new System.Drawing.SizeF(72.91656F, 56.25F);
+            this.xrLabel5.SizeF = new System.Drawing.SizeF(100.5206F, 56.25F);
             this.xrLabel5.StylePriority.UseBorders = false;
             this.xrLabel5.StylePriority.UseFont = false;
             this.xrLabel5.StylePriority.UseTextAlignment = false;
-            this.xrLabel5.Text = "Нийт ажилсан жил";
+            this.xrLabel5.Text = "Регистрийн дугаар";
             this.xrLabel5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel4
@@ -327,7 +327,7 @@
         public DevExpress.XtraReports.UI.XRLabel atushaal;
         public DevExpress.XtraReports.UI.XRLabel ner;
         public DevExpress.XtraReports.UI.XRLabel proff;
-        public DevExpress.XtraReports.UI.XRLabel niitAjilsan;
+        public DevExpress.XtraReports.UI.XRLabel rd;
         public DevExpress.XtraReports.UI.XRLabel ajillsan;
         private DevExpress.XtraReports.UI.XRLabel xrLabel6;
         private DevExpress.XtraReports.UI.XRLabel xrLabel5;
