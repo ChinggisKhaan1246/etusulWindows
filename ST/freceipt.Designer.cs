@@ -62,6 +62,7 @@
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -144,12 +145,13 @@
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
-            this.gridColumn4,
-            this.gridColumn2,
-            this.gridColumn3,
             this.gridColumn5,
-            this.gridColumn6,
-            this.gridColumn7});
+            this.gridColumn3,
+            this.gridColumn2,
+            this.gridColumn4,
+            this.gridColumn7,
+            this.gridColumn8,
+            this.gridColumn6});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.GroupPanelText = "Зардлын баримтууд";
             this.gridView1.IndicatorWidth = 100;
@@ -174,6 +176,8 @@
             this.gridColumn4.Caption = "Зардлын нэр";
             this.gridColumn4.FieldName = "costname";
             this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 1;
             this.gridColumn4.Width = 90;
             // 
             // gridColumn2
@@ -200,9 +204,11 @@
             // 
             // gridColumn6
             // 
-            this.gridColumn6.Caption = "projectID";
-            this.gridColumn6.FieldName = "projectID";
+            this.gridColumn6.Caption = "Нэр";
+            this.gridColumn6.FieldName = "ner";
             this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 4;
             // 
             // gridColumn7
             // 
@@ -384,6 +390,14 @@
             this.simpleButton5.TabIndex = 6;
             this.simpleButton5.Text = "Хэвлэх";
             // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "Овог";
+            this.gridColumn8.FieldName = "ovog";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 3;
+            // 
             // freceipt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -452,5 +466,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit repositoryItemPictureEdit1;
         private DevExpress.XtraEditors.SplitterControl splitterControl1;
         private System.Windows.Forms.WebBrowser webBrowser1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
     }
 }

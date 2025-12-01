@@ -44,12 +44,13 @@ namespace ST
                     data["Rtailbar"] = Rtailbar.Text;
                     data["URL11"] = URL11.Text;
                     data["projectID"] = projectID.Text;
+                    data["userID"] = UserSession.LoggedUserID.ToString().Trim();
                     ServicePointManager.Expect100Continue = true;
                     ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072;
                     WebClient Client = new System.Net.WebClient();
                     Client.Headers.Add("Content-Type", "binary/octet-stream");
                     string tusulid = "receipt";
-                    string url = Url.GetUrl()+"api/fileupload.php?id=" + tusulid + "&projectID=" + projectID.Text.Trim();
+                    string url = Url.GetUrl() + "api/fileupload.php?id=" + tusulid + "&projectID=" + projectID.Text.Trim() + "&userID=" + UserSession.LoggedUserID.ToString().Trim();
                     byte[] result = Client.UploadFile(url, "POST", openFileDialog1.FileName.ToString());
                     string s = System.Text.Encoding.UTF8.GetString(result, 0, result.Length);
                     MessageBox.Show(dcd.exec_command("addreceipt", data));
