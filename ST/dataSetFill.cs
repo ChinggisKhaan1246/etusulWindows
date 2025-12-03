@@ -32,15 +32,17 @@ namespace ST
                     mainurl = Url.GetUrl();
                     
                     var response = wb.UploadValues(mainurl+"api/" + url + ".php" + param, "POST", data);
-                    string responseInString = Encoding.UTF8.GetString(response);
-                    if (responseInString.Trim() == "nodata")
-                        return (DataTable)null; //Ялгаа ч нэх байхгүй л байх л даа хэхэ
-                        return (DataTable)JsonConvert.DeserializeObject(responseInString, (typeof(DataTable)));
+                    string json = Encoding.UTF8.GetString(response);
+                    if (json == null || json.Trim() == "" || json.Trim() == "[]" || json.Trim().ToLower().Contains("nodata") || json.Trim().ToLower().Contains("error"))
+                    {
+                        return null;
+                    }
+                    return (DataTable)JsonConvert.DeserializeObject(json, (typeof(DataTable)));
                 }
             }
-            catch (Exception ee)
+            catch (Exception)
             {
-                return (DataTable)JsonConvert.DeserializeObject(ee.ToString(), (typeof(DataTable)));
+                return new DataTable();
             }
             finally { }
         }

@@ -40,9 +40,10 @@ namespace ST
 
                     string responseInString = (method == "POST") ? Encoding.UTF8.GetString(wb.UploadValues(fullUrl, "POST", new NameValueCollection())) : wb.DownloadString(fullUrl);
 
-                    if (responseInString.Trim() == "nodata")
+                    if (responseInString == null || responseInString.Trim() == "" || responseInString.Trim() == "[]" || responseInString.Trim().ToLower().Contains("nodata"))
+                    {
                         return null;
-
+                    }
                     // ✅ JSON-ийг эхлээд List<Dictionary<string, object>> болгож хөрвүүлэх
                     var list = JsonConvert.DeserializeObject<List<Dictionary<string, object>>>(responseInString);
 

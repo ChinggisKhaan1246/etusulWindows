@@ -24,7 +24,7 @@ using DevExpress.Utils;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
 using Newtonsoft.Json;
-//using DevExpress.Pdf; // DevExpress.XtraPdfProcessing багц хэрэгтэй
+using ST;
 using PdfSharp.Pdf;
 using PdfSharp.Pdf.IO;
 
@@ -1522,7 +1522,9 @@ private void ShowDocPickerForProject(int projectId)
                 string fileName = Convert.ToString(item.Value);   // бид Value = файл нэр гэж өгсөн
                 if (string.IsNullOrWhiteSpace(fileName)) return;
 
-                string urlD =  "https://etusul.com/dist/uploads/documents/" + _projectId + "/" + Uri.EscapeDataString(fileName);
+                BaseUrl domainname = new BaseUrl();
+                string urlD = domainname.GetUrl() + "dist/uploads/documents/" + _projectId + "/" + Uri.EscapeDataString(fileName);
+
 
                 try
                 {

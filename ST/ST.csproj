@@ -554,6 +554,7 @@
     <Compile Include="invite.Designer.cs">
       <DependentUpon>invite.cs</DependentUpon>
     </Compile>
+    <Compile Include="OvogHelper.cs" />
     <Compile Include="PrintGridview.cs" />
     <Compile Include="projectnameFilter.cs" />
     <Compile Include="redbook.cs">
@@ -630,6 +631,7 @@
       <DependentUpon>reportdailypic.cs</DependentUpon>
     </Compile>
     <Compile Include="ReportData.cs" />
+    <Compile Include="rootComInfo.cs" />
     <Compile Include="signatures.cs">
       <SubType>Form</SubType>
     </Compile>

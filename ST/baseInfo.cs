@@ -16,12 +16,14 @@ namespace ST
         public string userStatus { get; set; }
         public string comName { get; set; }
         public string comID { get; set; }
+        public string comRD { get; set; }
         public string comAbout { get; set; }
         public string comAddress { get; set; }
         public string comEmail { get; set; }
         public string comFacebook { get; set; }
         public string comProfilePicture { get; set; }
         public string comStatus { get; set; }
+        public string comCountry { get; set; }
 
         public baseinfo(int ID)
         {
@@ -43,7 +45,7 @@ namespace ST
                 userAlbantushaal = row["albantushaal"] != DBNull.Value ? row["albantushaal"].ToString() : string.Empty;
                 userPhone = row["phone"] != DBNull.Value ? row["phone"].ToString() : string.Empty;
                 userPicture = row["picture"] != DBNull.Value ? row["picture"].ToString() : string.Empty;
-                userStatus = row["userStatus"] != DBNull.Value ? row["userStatus"].ToString() : string.Empty;
+                userStatus = row["userStatus"] != DBNull.Value ? row["userStatus"].ToString() : "Cтатус алга";
                 comName = row["comName"] != DBNull.Value ? row["comName"].ToString() : string.Empty;
                 comID = row["comID"] != DBNull.Value ? row["comID"].ToString() : string.Empty;
                 comAbout = row["comAbout"] != DBNull.Value ? row["comAbout"].ToString() : string.Empty;
@@ -52,6 +54,8 @@ namespace ST
                 comFacebook = row["facebook"] != DBNull.Value ? row["facebook"].ToString() : string.Empty;
                 comProfilePicture = row["propic"] != DBNull.Value ? row["propic"].ToString() : string.Empty;
                 comStatus = row["comStatus"] != DBNull.Value ? row["comStatus"].ToString() : string.Empty;
+                comRD = row["RD"] != DBNull.Value ? row["RD"].ToString() : string.Empty;
+                comCountry = row["country"] != DBNull.Value ? row["country"].ToString() : string.Empty;
             }
         }
     }

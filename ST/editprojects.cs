@@ -28,38 +28,43 @@ namespace ST
             {
                 var data = new NameValueCollection();
                 data["id"] = projectID.Text.Trim();
-                data["projectName"] = projectName.Text;
+                data["projectName"] = projectName.Text.Trim();
                 data["ognooG"] = ognooG.DateTime.ToString("yyyy-MM-dd");
                 data["ognoo1"] = ognoo1.DateTime.ToString("yyyy-MM-dd");
                 data["ognoo2"] = ognoo2.DateTime.ToString("yyyy-MM-dd");
-                data["gereeNo"] = gereeNo.Text;
-                data["locationP"] = locationP.Text;
-                data["budget"] = budget.Text; ;
-                data["zahialagch"] = zahialagch.Text;
-                data["zahialagchT"] = zahialagchT.Text;
-                data["author"] = author.Text;
-                data["authorT"] = authorT.Text;
-                data["injhai"] = injhai.Text;
-                data["hyanagch"] = hyanagch.Text;
-                data["aimag"] = aimag.Text;
-                data["sumname"] = sumname.Text;
-                data["baritsaa"] = baritsaa.Text;
-                data["guitsetgel"] = Convert.ToInt32(spinEdit1.Value).ToString();
+                data["gereeNo"] = gereeNo.Text.Trim();
+                data["locationP"] = locationP.Text.Trim();
+                data["budget"] = budget.Text.Trim();
+                data["zahialagch"] = zahialagch.Text.Trim();
+                data["zahialagchT"] = zahialagchT.Text.Trim();
+                data["author"] = author.Text.Trim();
+                data["authorT"] = authorT.Text.Trim();
+                data["injhai"] = injhai.Text.Trim();
+                data["hyanagch"] = hyanagch.Text.Trim();
+                data["aimag"] = aimag.Text.Trim();
+                data["sumname"] = sumname.Text.Trim();
+                data["baritsaa"] = baritsaa.Text.Trim();
+                data["guitsetgel"] = spinEdit1.Value.ToString();
                 data["Zphone"] = Zphone.Text.Trim();
                 data["Aphone"] = Aphone.Text.Trim();
                 data["Xphone"] = Xphone.Text.Trim();
-          
 
-                MessageBox.Show(ds.exec_command("editproject", data));
+                string response = ds.exec_command("editproject", data);
+
+                if (response.Contains("амжилттай"))
+                {
+                    MessageBox.Show(response, "Амжилттай", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    f.FillGridOdoo();
+                    this.Hide();
+                }
+                else
+                {
+                     MessageBox.Show(response, "Анхааруулга", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             catch (Exception ee)
-            { 
-                MessageBox.Show("Алдаа гарлаа:"+ee.Message, "Алдаа", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally 
             {
-                f.FillGridOdoo();
-                this.Hide(); 
+                MessageBox.Show("Алдаа гарлаа: " + ee.Message, "Алдаа", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

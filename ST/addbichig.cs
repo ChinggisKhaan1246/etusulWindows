@@ -72,7 +72,7 @@ namespace ST
             {
                 try
                 {
-                    data["comID"] = UserSession.LoggedComID.ToString();
+                  
                     data["Bnumber"] = Bnumber.Text;
                     data["haanaas"] = haashaa.Text;
                     data["tuhai"] = tuhai.Text;

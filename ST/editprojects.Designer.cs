@@ -52,6 +52,14 @@
             this.уётгахToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.Xphone = new DevExpress.XtraEditors.TextEdit();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.Zphone = new DevExpress.XtraEditors.TextEdit();
+            this.Aphone = new DevExpress.XtraEditors.TextEdit();
             this.label9 = new System.Windows.Forms.Label();
             this.baritsaa = new DevExpress.XtraEditors.TextEdit();
             this.label16 = new System.Windows.Forms.Label();
@@ -71,15 +79,7 @@
             this.gereeNo = new DevExpress.XtraEditors.TextEdit();
             this.locationP = new DevExpress.XtraEditors.TextEdit();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.Xphone = new DevExpress.XtraEditors.TextEdit();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.Zphone = new DevExpress.XtraEditors.TextEdit();
-            this.Aphone = new DevExpress.XtraEditors.TextEdit();
-            this.label21 = new System.Windows.Forms.Label();
             this.spinEdit1 = new DevExpress.XtraEditors.SpinEdit();
-            this.label22 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.sumname.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aimag.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.injhai.Properties)).BeginInit();
@@ -92,6 +92,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.hyanagch.Properties)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Xphone.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Zphone.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Aphone.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.baritsaa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.authorT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zahialagch.Properties)).BeginInit();
@@ -103,9 +106,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gereeNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.locationP.Properties)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Xphone.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Zphone.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Aphone.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
@@ -391,6 +391,74 @@
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(283, 336);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(29, 13);
+            this.label22.TabIndex = 46;
+            this.label22.Text = "хувь";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(137, 336);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(61, 13);
+            this.label21.TabIndex = 43;
+            this.label21.Text = "Гүйцэтгэл:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(403, 238);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(88, 13);
+            this.label10.TabIndex = 41;
+            this.label10.Text = "Хянагчийн утас:";
+            // 
+            // Xphone
+            // 
+            this.Xphone.EditValue = "";
+            this.Xphone.Location = new System.Drawing.Point(497, 235);
+            this.Xphone.Name = "Xphone";
+            this.Xphone.Properties.Mask.EditMask = "d";
+            this.Xphone.Size = new System.Drawing.Size(117, 20);
+            this.Xphone.TabIndex = 39;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(386, 208);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(105, 13);
+            this.label12.TabIndex = 36;
+            this.label12.Text = "Захиалагчийн утас:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(398, 270);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(93, 13);
+            this.label14.TabIndex = 37;
+            this.label14.Text = "Зохиогчийн утас:";
+            // 
+            // Zphone
+            // 
+            this.Zphone.Location = new System.Drawing.Point(497, 205);
+            this.Zphone.Name = "Zphone";
+            this.Zphone.Size = new System.Drawing.Size(117, 20);
+            this.Zphone.TabIndex = 38;
+            // 
+            // Aphone
+            // 
+            this.Aphone.Location = new System.Drawing.Point(497, 267);
+            this.Aphone.Name = "Aphone";
+            this.Aphone.Size = new System.Drawing.Size(117, 20);
+            this.Aphone.TabIndex = 40;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -566,65 +634,6 @@
             this.panel1.Size = new System.Drawing.Size(635, 443);
             this.panel1.TabIndex = 1;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(403, 238);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(88, 13);
-            this.label10.TabIndex = 41;
-            this.label10.Text = "Хянагчийн утас:";
-            // 
-            // Xphone
-            // 
-            this.Xphone.EditValue = "";
-            this.Xphone.Location = new System.Drawing.Point(497, 235);
-            this.Xphone.Name = "Xphone";
-            this.Xphone.Properties.Mask.EditMask = "d";
-            this.Xphone.Size = new System.Drawing.Size(117, 20);
-            this.Xphone.TabIndex = 39;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(386, 208);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(105, 13);
-            this.label12.TabIndex = 36;
-            this.label12.Text = "Захиалагчийн утас:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(398, 270);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(93, 13);
-            this.label14.TabIndex = 37;
-            this.label14.Text = "Зохиогчийн утас:";
-            // 
-            // Zphone
-            // 
-            this.Zphone.Location = new System.Drawing.Point(497, 205);
-            this.Zphone.Name = "Zphone";
-            this.Zphone.Size = new System.Drawing.Size(117, 20);
-            this.Zphone.TabIndex = 38;
-            // 
-            // Aphone
-            // 
-            this.Aphone.Location = new System.Drawing.Point(497, 267);
-            this.Aphone.Name = "Aphone";
-            this.Aphone.Size = new System.Drawing.Size(117, 20);
-            this.Aphone.TabIndex = 40;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(137, 336);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(61, 13);
-            this.label21.TabIndex = 43;
-            this.label21.Text = "Гүйцэтгэл:";
-            // 
             // spinEdit1
             // 
             this.spinEdit1.EditValue = new decimal(new int[] {
@@ -638,15 +647,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.spinEdit1.Size = new System.Drawing.Size(73, 20);
             this.spinEdit1.TabIndex = 45;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(283, 336);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(29, 13);
-            this.label22.TabIndex = 46;
-            this.label22.Text = "хувь";
             // 
             // editprojects
             // 
@@ -673,6 +673,9 @@
             this.contextMenuStrip1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Xphone.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Zphone.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Aphone.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.baritsaa.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.authorT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zahialagch.Properties)).EndInit();
@@ -684,9 +687,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gereeNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.locationP.Properties)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Xphone.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Zphone.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Aphone.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
@@ -742,7 +742,7 @@
         private System.Windows.Forms.Label label14;
         public DevExpress.XtraEditors.TextEdit Zphone;
         public DevExpress.XtraEditors.TextEdit Aphone;
-        private DevExpress.XtraEditors.SpinEdit spinEdit1;
         private System.Windows.Forms.Label label22;
+        public DevExpress.XtraEditors.SpinEdit spinEdit1;
     }
 }

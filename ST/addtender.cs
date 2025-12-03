@@ -180,7 +180,7 @@ namespace ST
             {
                 try
                 {
-                    data["comID"] = "1";
+                    data["comID"] = "999";
                     data["Tdugaar"] = Tdugaar.Text.Trim();
                     data["Udugaar"] = Udugaar.Text.Trim();
                     data["zahialagch"] = zahialagch.Text.Trim();

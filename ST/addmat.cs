@@ -44,15 +44,24 @@ namespace ST
 
         private void too_EditValueChanged(object sender, EventArgs e)
         {
-            try
+          if (!string.IsNullOrWhiteSpace(too.Text) && !string.IsNullOrWhiteSpace(une.Text))
             {
-                niit.Text = (Convert.ToInt64(too.Text) * Convert.ToInt64(une.Text)).ToString();
+                long tooValue, uneValue;
+
+                if (long.TryParse(too.Text, out tooValue) && long.TryParse(une.Text, out uneValue))
+                {
+                    niit.Text = (tooValue * uneValue).ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Зөвхөн бүхэл тоон утга оруулна уу.");
+                    niit.Text = "0";
+                }
             }
-            catch (Exception ee)
+            else
             {
-                MessageBox.Show(ee.ToString()+"Бүхэл тоон утга оруулна уу.");
+                niit.Text = "0"; 
             }
-            finally { }
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -61,7 +70,7 @@ namespace ST
             {
                 dataSetFill dcd = new dataSetFill();
                 var data = new NameValueCollection();
-                data["comID"] = "1";
+                data["comID"] = "999";
                 data["matname"] = matname.Text;
                 data["negj"] = negj.Text;
                 data["too"] = too.Text;
@@ -103,6 +112,28 @@ namespace ST
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
             URL11.Text = openFileDialog1.SafeFileName;
+        }
+
+        private void une_EditValueChanged(object sender, EventArgs e)
+        {
+          if (!string.IsNullOrWhiteSpace(too.Text) && !string.IsNullOrWhiteSpace(une.Text))
+            {
+                long tooValue, uneValue;
+
+                if (long.TryParse(too.Text, out tooValue) && long.TryParse(une.Text, out uneValue))
+                {
+                    niit.Text = (tooValue * uneValue).ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Зөвхөн бүхэл тоон утга оруулна уу.");
+                    niit.Text = "0";
+                }
+            }
+            else
+            {
+                niit.Text = "0"; 
+            }
         }
     }
 }

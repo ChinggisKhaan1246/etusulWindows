@@ -50,36 +50,29 @@ namespace ST
         {
             try
             {
-                var DT = dc.gridFill("getbookact");
-                gridControl1.DataSource = DT;
-                gridView1.Columns["dd"].Width = 35;
-                gridView2.Columns["dd2"].Width = 35;
-
                 var parameters = new Dictionary<string, string> { { "status", "filter" }, { "comID", UserSession.LoggedComID.ToString() } };
                 var projectData = dsn.getData("getproject", parameters);
 
-                if (projectData == null || projectData.Rows.Count == 0)
-                {
-                    MessageBox.Show("Идэвхтэй төсөл олдсонгүй.", "Анхааруулга", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
+                if (projectData != null && projectData.Rows.Count != 0)
                 {
                     projectnameFilter.Properties.DataSource = projectData;
                     projectnameFilter.Properties.ValueMember = "projectID";
                     projectnameFilter.Properties.DisplayMember = "projectName";
-                    projectnameFilter.Properties.Columns.Clear(); // Бүх багануудаа цэвэрлэнэ
-                    projectnameFilter.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("projectName", "Төслийн нэр"));
-                    projectnameFilter.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("aimag", "", 0, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default));
-                    projectnameFilter.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("sumname", "", 0, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default));
-                    projectnameFilter.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("projectID", "", 0, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default));
-                    projectnameFilter.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("author", "", 0, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default));
-                    projectnameFilter.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("hyanagch", "", 0, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default));
-                }
 
+                    int rowCount = projectData.Rows.Count;
+                    projectnameFilter.Properties.DropDownRows = rowCount + 1;
+
+                    projectnameFilter.Properties.Columns.Clear();
+                    projectnameFilter.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("projectName", "Төслийн нэр"));
+                }
+                else
+                {
+                    MessageBox.Show("Идэвхтэй төсөл олдсонгүй.", "Анхааруулга", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
-            catch (Exception ee)
+            catch (Exception)
             {
-                MessageBox.Show("aldaa", ee.ToString());
+                MessageBox.Show("Алдаа: Төслийн жагсаалт үүсгэхэд алдаа гарлаа.");
             }
         }
 
@@ -175,18 +168,18 @@ namespace ST
                                     {
                                         if (row[key] != null)
                                         {
-                                            dr[key] = row[key].ToString(); // `null` биш бол string болгох
+                                            dr[key] = row[key].ToString(); //
                                         }
                                         else
                                         {
-                                            dr[key] = ""; // `null` бол хоосон string болгох
+                                            dr[key] = ""; // 
                                         }
                                     }
                                 }
                                 dt.Rows.Add(dr);
                             }
 
-                            gridControl2.DataSource = dt; // 📌 Өгөгдлийг `gridControl2`-д оноох
+                            gridControl2.DataSource = dt; // 
                         }
                         else
                         {
@@ -313,6 +306,7 @@ namespace ST
         {
             try
             {
+               
                 gridView2.ActiveFilterString = "projectName LIKE '%" + projectName.Text + "%'";
                     if (projectnameFilter.EditValue != null)
                     {
@@ -327,6 +321,19 @@ namespace ST
                             zohorg.Text         = selectedRow["author"].ToString();
                         }
                     }
+                    try
+                    {
+                        var DT = dc.gridFill("getbookact", "projectID=" + projectID.Text.Trim());
+                        gridControl1.DataSource = DT;
+                        gridView1.Columns["dd"].Width = 35;
+                        gridView2.Columns["dd2"].Width = 35;
+
+                    }
+                    catch (Exception ee)
+                    {
+                        MessageBox.Show("aldaa", ee.ToString());
+                    }
+                
             }
             catch (Exception ee)
             {

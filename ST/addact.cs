@@ -53,15 +53,15 @@ namespace ST
                         NameValueCollection values = new NameValueCollection();
                         values["projectID"] = projectID.Text.Trim();
                         values["bookID"] = bookID.Text.Trim();
+                        values["comID"] = "999";
                         values["userID"] = UserSession.LoggedUserID.ToString();
-                        values["comID"] = UserSession.LoggedComID.ToString();
                         values["actnamefromuser"] = actnamefromuser.Text;
                         values["actdata"] = jsonString; // 📌 JSON өгөгдлийг `actdata` баганад хадгалах
                         byte[] response = client.UploadValues(Url.GetUrl() + "api/addactdata.php", "POST", values);
                         string responseText = Encoding.UTF8.GetString(response);
                         string decodedResponse = System.Text.RegularExpressions.Regex.Unescape(responseText);
-                        MessageBox.Show("Өгөгдөл амжилттай хадгалагдлаа! \n" + decodedResponse, "Амжилттай", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        li.grid2_refresh(); //Энд яагаад refresh хийхгүй байна. dund ni shine object uuschihsen bolohoor tegeed bna uu
+                        MessageBox.Show(decodedResponse, "Амжилттай", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        li.grid2_refresh(); 
                     }
                 }
                 catch (Exception ee)

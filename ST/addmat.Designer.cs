@@ -47,10 +47,10 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.status = new DevExpress.XtraEditors.ComboBoxEdit();
             this.location = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.status = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.negj.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.too.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.une.Properties)).BeginInit();
@@ -61,8 +61,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.matname.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.status.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.location.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.status.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // negj
@@ -124,6 +124,7 @@
             this.une.Name = "une";
             this.une.Size = new System.Drawing.Size(129, 20);
             this.une.TabIndex = 3;
+            this.une.EditValueChanged += new System.EventHandler(this.une_EditValueChanged);
             // 
             // labelControl8
             // 
@@ -250,18 +251,6 @@
             this.panelControl1.Size = new System.Drawing.Size(697, 214);
             this.panelControl1.TabIndex = 5;
             // 
-            // status
-            // 
-            this.status.Location = new System.Drawing.Point(370, 67);
-            this.status.Name = "status";
-            this.status.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.status.Properties.Items.AddRange(new object[] {
-            "Бэлэн",
-            "Захиалсан"});
-            this.status.Size = new System.Drawing.Size(105, 20);
-            this.status.TabIndex = 7;
-            // 
             // location
             // 
             this.location.Location = new System.Drawing.Point(552, 67);
@@ -287,6 +276,18 @@
             this.simpleButton1.Text = "Хадгалах";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
+            // status
+            // 
+            this.status.Location = new System.Drawing.Point(370, 67);
+            this.status.Name = "status";
+            this.status.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.status.Properties.Items.AddRange(new object[] {
+            "Бэлэн",
+            "Захиалсан"});
+            this.status.Size = new System.Drawing.Size(105, 20);
+            this.status.TabIndex = 7;
+            // 
             // addmat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -310,8 +311,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.status.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.location.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.status.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

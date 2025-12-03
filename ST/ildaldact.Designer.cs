@@ -58,18 +58,39 @@
             this.id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.dd2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.layoutView1 = new DevExpress.XtraGrid.Views.Layout.LayoutView();
+            this.dd2 = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            this.layoutViewField_dd2 = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            this.layoutViewField_gridColumn3 = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            this.layoutViewField_gridColumn4 = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            this.layoutViewField_gridColumn5 = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            this.layoutViewField_gridColumn6 = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            this.layoutViewField_gridColumn7 = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            this.layoutViewField_gridColumn8 = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            this.layoutViewField_gridColumn9 = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            this.layoutViewField_gridColumn10 = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.layoutViewCard1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewCard();
             this.contextMenuStrip2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -87,6 +108,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_dd2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_gridColumn3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_gridColumn4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_gridColumn5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_gridColumn6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_gridColumn7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_gridColumn8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_gridColumn9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_gridColumn10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).BeginInit();
             this.SuspendLayout();
             // 
             // contextMenuStrip2
@@ -293,7 +325,7 @@
             this.gridControl1.Location = new System.Drawing.Point(0, 94);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(397, 625);
+            this.gridControl1.Size = new System.Drawing.Size(660, 625);
             this.gridControl1.TabIndex = 7;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -305,7 +337,8 @@
             this.dd,
             this.id,
             this.gridColumn1,
-            this.gridColumn2});
+            this.gridColumn2,
+            this.gridColumn11});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.GroupPanelText = "Агуулахын бүртгэл";
             this.gridView1.Name = "gridView1";
@@ -346,9 +379,17 @@
             this.gridColumn2.VisibleIndex = 1;
             this.gridColumn2.Width = 344;
             // 
+            // gridColumn11
+            // 
+            this.gridColumn11.Caption = "Тоо";
+            this.gridColumn11.FieldName = "too";
+            this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 2;
+            // 
             // splitterControl1
             // 
-            this.splitterControl1.Location = new System.Drawing.Point(397, 94);
+            this.splitterControl1.Location = new System.Drawing.Point(660, 94);
             this.splitterControl1.Name = "splitterControl1";
             this.splitterControl1.Size = new System.Drawing.Size(5, 625);
             this.splitterControl1.TabIndex = 8;
@@ -358,18 +399,112 @@
             // 
             this.gridControl2.ContextMenuStrip = this.contextMenuStrip1;
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(402, 94);
+            this.gridControl2.Location = new System.Drawing.Point(665, 94);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1096, 625);
+            this.gridControl2.Size = new System.Drawing.Size(833, 625);
             this.gridControl2.TabIndex = 9;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
+            this.gridView2,
+            this.layoutView1});
             this.gridControl2.DoubleClick += new System.EventHandler(this.gridControl2_DoubleClick);
             // 
             // gridView2
             // 
             this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn12,
+            this.gridColumn13,
+            this.gridColumn14,
+            this.gridColumn15,
+            this.gridColumn16,
+            this.gridColumn17,
+            this.gridColumn18,
+            this.gridColumn19,
+            this.gridColumn20});
+            this.gridView2.GridControl = this.gridControl2;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsBehavior.Editable = false;
+            this.gridView2.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
+            this.gridView2.OptionsView.ShowFooter = true;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn12
+            // 
+            this.gridColumn12.Caption = "№";
+            this.gridColumn12.FieldName = "dd2";
+            this.gridColumn12.Name = "gridColumn12";
+            this.gridColumn12.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.gridColumn12.Visible = true;
+            this.gridColumn12.VisibleIndex = 0;
+            this.gridColumn12.Width = 53;
+            // 
+            // gridColumn13
+            // 
+            this.gridColumn13.Caption = "id";
+            this.gridColumn13.FieldName = "id";
+            this.gridColumn13.Name = "gridColumn13";
+            // 
+            // gridColumn14
+            // 
+            this.gridColumn14.Caption = "Тухайн ажлын нэр";
+            this.gridColumn14.FieldName = "actnamefromuser";
+            this.gridColumn14.Name = "gridColumn14";
+            this.gridColumn14.Visible = true;
+            this.gridColumn14.VisibleIndex = 3;
+            this.gridColumn14.Width = 169;
+            // 
+            // gridColumn15
+            // 
+            this.gridColumn15.Caption = "Актын нэр";
+            this.gridColumn15.FieldName = "actname";
+            this.gridColumn15.Name = "gridColumn15";
+            this.gridColumn15.Visible = true;
+            this.gridColumn15.VisibleIndex = 2;
+            this.gridColumn15.Width = 169;
+            // 
+            // gridColumn16
+            // 
+            this.gridColumn16.Caption = "Төслийн нэр";
+            this.gridColumn16.FieldName = "projectName";
+            this.gridColumn16.Name = "gridColumn16";
+            this.gridColumn16.Visible = true;
+            this.gridColumn16.VisibleIndex = 1;
+            this.gridColumn16.Width = 169;
+            // 
+            // gridColumn17
+            // 
+            this.gridColumn17.Caption = "Хэрэглэгч";
+            this.gridColumn17.FieldName = "username";
+            this.gridColumn17.Name = "gridColumn17";
+            this.gridColumn17.Visible = true;
+            this.gridColumn17.VisibleIndex = 5;
+            this.gridColumn17.Width = 169;
+            // 
+            // gridColumn18
+            // 
+            this.gridColumn18.Caption = "Компанийн нэр";
+            this.gridColumn18.FieldName = "comName";
+            this.gridColumn18.Name = "gridColumn18";
+            this.gridColumn18.Width = 169;
+            // 
+            // gridColumn19
+            // 
+            this.gridColumn19.Caption = "Огноо";
+            this.gridColumn19.FieldName = "created_at";
+            this.gridColumn19.Name = "gridColumn19";
+            this.gridColumn19.Visible = true;
+            this.gridColumn19.VisibleIndex = 4;
+            this.gridColumn19.Width = 179;
+            // 
+            // gridColumn20
+            // 
+            this.gridColumn20.Caption = "actdata";
+            this.gridColumn20.FieldName = "actdata";
+            this.gridColumn20.Name = "gridColumn20";
+            // 
+            // layoutView1
+            // 
+            this.layoutView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.LayoutViewColumn[] {
             this.dd2,
             this.gridColumn3,
             this.gridColumn4,
@@ -379,92 +514,169 @@
             this.gridColumn8,
             this.gridColumn9,
             this.gridColumn10});
-            this.gridView2.GridControl = this.gridControl2;
-            this.gridView2.GroupPanelText = "Агуулахын бүртгэл";
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsBehavior.Editable = false;
-            this.gridView2.OptionsView.RowAutoHeight = true;
-            this.gridView2.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
-            this.gridView2.OptionsView.ShowFooter = true;
-            this.gridView2.OptionsView.ShowGroupExpandCollapseButtons = false;
-            this.gridView2.OptionsView.ShowGroupPanel = false;
-            this.gridView2.OptionsView.ShowPreview = true;
+            this.layoutView1.GridControl = this.gridControl2;
+            this.layoutView1.Name = "layoutView1";
+            this.layoutView1.OptionsBehavior.Editable = false;
+            this.layoutView1.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
+            this.layoutView1.TemplateCard = this.layoutViewCard1;
             // 
             // dd2
             // 
             this.dd2.Caption = "№";
             this.dd2.FieldName = "dd2";
+            this.dd2.LayoutViewField = this.layoutViewField_dd2;
             this.dd2.Name = "dd2";
             this.dd2.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            this.dd2.Visible = true;
-            this.dd2.VisibleIndex = 0;
             this.dd2.Width = 53;
+            // 
+            // layoutViewField_dd2
+            // 
+            this.layoutViewField_dd2.EditorPreferredWidth = 98;
+            this.layoutViewField_dd2.Location = new System.Drawing.Point(0, 0);
+            this.layoutViewField_dd2.Name = "layoutViewField_dd2";
+            this.layoutViewField_dd2.Size = new System.Drawing.Size(203, 20);
+            this.layoutViewField_dd2.TextSize = new System.Drawing.Size(97, 13);
             // 
             // gridColumn3
             // 
             this.gridColumn3.Caption = "id";
             this.gridColumn3.FieldName = "id";
+            this.gridColumn3.LayoutViewField = this.layoutViewField_gridColumn3;
             this.gridColumn3.Name = "gridColumn3";
+            // 
+            // layoutViewField_gridColumn3
+            // 
+            this.layoutViewField_gridColumn3.EditorPreferredWidth = 98;
+            this.layoutViewField_gridColumn3.Location = new System.Drawing.Point(0, 20);
+            this.layoutViewField_gridColumn3.Name = "layoutViewField_gridColumn3";
+            this.layoutViewField_gridColumn3.Size = new System.Drawing.Size(203, 20);
+            this.layoutViewField_gridColumn3.TextSize = new System.Drawing.Size(97, 13);
             // 
             // gridColumn4
             // 
             this.gridColumn4.Caption = "Тухайн ажлын нэр";
             this.gridColumn4.FieldName = "actnamefromuser";
+            this.gridColumn4.LayoutViewField = this.layoutViewField_gridColumn4;
             this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 4;
             this.gridColumn4.Width = 169;
+            // 
+            // layoutViewField_gridColumn4
+            // 
+            this.layoutViewField_gridColumn4.EditorPreferredWidth = 98;
+            this.layoutViewField_gridColumn4.Location = new System.Drawing.Point(0, 40);
+            this.layoutViewField_gridColumn4.Name = "layoutViewField_gridColumn4";
+            this.layoutViewField_gridColumn4.Size = new System.Drawing.Size(203, 20);
+            this.layoutViewField_gridColumn4.TextSize = new System.Drawing.Size(97, 13);
             // 
             // gridColumn5
             // 
             this.gridColumn5.Caption = "Актын нэр";
             this.gridColumn5.FieldName = "actname";
+            this.gridColumn5.LayoutViewField = this.layoutViewField_gridColumn5;
             this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 3;
             this.gridColumn5.Width = 169;
+            // 
+            // layoutViewField_gridColumn5
+            // 
+            this.layoutViewField_gridColumn5.EditorPreferredWidth = 98;
+            this.layoutViewField_gridColumn5.Location = new System.Drawing.Point(0, 60);
+            this.layoutViewField_gridColumn5.Name = "layoutViewField_gridColumn5";
+            this.layoutViewField_gridColumn5.Size = new System.Drawing.Size(203, 20);
+            this.layoutViewField_gridColumn5.TextSize = new System.Drawing.Size(97, 13);
             // 
             // gridColumn6
             // 
             this.gridColumn6.Caption = "Төслийн нэр";
             this.gridColumn6.FieldName = "projectName";
+            this.gridColumn6.LayoutViewField = this.layoutViewField_gridColumn6;
             this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 2;
             this.gridColumn6.Width = 169;
+            // 
+            // layoutViewField_gridColumn6
+            // 
+            this.layoutViewField_gridColumn6.EditorPreferredWidth = 98;
+            this.layoutViewField_gridColumn6.Location = new System.Drawing.Point(0, 80);
+            this.layoutViewField_gridColumn6.Name = "layoutViewField_gridColumn6";
+            this.layoutViewField_gridColumn6.Size = new System.Drawing.Size(203, 20);
+            this.layoutViewField_gridColumn6.TextSize = new System.Drawing.Size(97, 13);
             // 
             // gridColumn7
             // 
             this.gridColumn7.Caption = "Хэрэглэгч";
             this.gridColumn7.FieldName = "username";
+            this.gridColumn7.LayoutViewField = this.layoutViewField_gridColumn7;
             this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 5;
             this.gridColumn7.Width = 169;
+            // 
+            // layoutViewField_gridColumn7
+            // 
+            this.layoutViewField_gridColumn7.EditorPreferredWidth = 98;
+            this.layoutViewField_gridColumn7.Location = new System.Drawing.Point(0, 100);
+            this.layoutViewField_gridColumn7.Name = "layoutViewField_gridColumn7";
+            this.layoutViewField_gridColumn7.Size = new System.Drawing.Size(203, 20);
+            this.layoutViewField_gridColumn7.TextSize = new System.Drawing.Size(97, 13);
             // 
             // gridColumn8
             // 
             this.gridColumn8.Caption = "Компанийн нэр";
             this.gridColumn8.FieldName = "comName";
+            this.gridColumn8.LayoutViewField = this.layoutViewField_gridColumn8;
             this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 1;
             this.gridColumn8.Width = 169;
+            // 
+            // layoutViewField_gridColumn8
+            // 
+            this.layoutViewField_gridColumn8.EditorPreferredWidth = 98;
+            this.layoutViewField_gridColumn8.Location = new System.Drawing.Point(0, 120);
+            this.layoutViewField_gridColumn8.Name = "layoutViewField_gridColumn8";
+            this.layoutViewField_gridColumn8.Size = new System.Drawing.Size(203, 20);
+            this.layoutViewField_gridColumn8.TextSize = new System.Drawing.Size(97, 13);
             // 
             // gridColumn9
             // 
             this.gridColumn9.Caption = "Огноо";
             this.gridColumn9.FieldName = "created_at";
+            this.gridColumn9.LayoutViewField = this.layoutViewField_gridColumn9;
             this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 6;
             this.gridColumn9.Width = 179;
+            // 
+            // layoutViewField_gridColumn9
+            // 
+            this.layoutViewField_gridColumn9.EditorPreferredWidth = 98;
+            this.layoutViewField_gridColumn9.Location = new System.Drawing.Point(0, 140);
+            this.layoutViewField_gridColumn9.Name = "layoutViewField_gridColumn9";
+            this.layoutViewField_gridColumn9.Size = new System.Drawing.Size(203, 20);
+            this.layoutViewField_gridColumn9.TextSize = new System.Drawing.Size(97, 13);
             // 
             // gridColumn10
             // 
             this.gridColumn10.Caption = "actdata";
             this.gridColumn10.FieldName = "actdata";
+            this.gridColumn10.LayoutViewField = this.layoutViewField_gridColumn10;
             this.gridColumn10.Name = "gridColumn10";
+            // 
+            // layoutViewField_gridColumn10
+            // 
+            this.layoutViewField_gridColumn10.EditorPreferredWidth = 98;
+            this.layoutViewField_gridColumn10.Location = new System.Drawing.Point(0, 160);
+            this.layoutViewField_gridColumn10.Name = "layoutViewField_gridColumn10";
+            this.layoutViewField_gridColumn10.Size = new System.Drawing.Size(203, 20);
+            this.layoutViewField_gridColumn10.TextSize = new System.Drawing.Size(97, 13);
+            // 
+            // layoutViewCard1
+            // 
+            this.layoutViewCard1.ExpandButtonLocation = DevExpress.Utils.GroupElementLocation.AfterText;
+            this.layoutViewCard1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutViewField_dd2,
+            this.layoutViewField_gridColumn3,
+            this.layoutViewField_gridColumn4,
+            this.layoutViewField_gridColumn5,
+            this.layoutViewField_gridColumn6,
+            this.layoutViewField_gridColumn7,
+            this.layoutViewField_gridColumn8,
+            this.layoutViewField_gridColumn9,
+            this.layoutViewField_gridColumn10});
+            this.layoutViewCard1.Name = "layoutViewCard1";
             // 
             // ildaldact
             // 
@@ -502,6 +714,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_dd2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_gridColumn3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_gridColumn4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_gridColumn5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_gridColumn6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_gridColumn7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_gridColumn8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_gridColumn9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_gridColumn10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -535,19 +758,40 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraEditors.SplitterControl splitterControl1;
         private DevExpress.XtraGrid.GridControl gridControl2;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        private DevExpress.XtraGrid.Columns.GridColumn dd2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         public DevExpress.XtraEditors.TextEdit sumname;
         public DevExpress.XtraEditors.TextEdit zohorg;
         public DevExpress.XtraEditors.TextEdit zahorg;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
+        private DevExpress.XtraGrid.Views.Layout.LayoutView layoutView1;
+        private DevExpress.XtraGrid.Columns.LayoutViewColumn dd2;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_dd2;
+        private DevExpress.XtraGrid.Columns.LayoutViewColumn gridColumn3;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_gridColumn3;
+        private DevExpress.XtraGrid.Columns.LayoutViewColumn gridColumn4;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_gridColumn4;
+        private DevExpress.XtraGrid.Columns.LayoutViewColumn gridColumn5;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_gridColumn5;
+        private DevExpress.XtraGrid.Columns.LayoutViewColumn gridColumn6;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_gridColumn6;
+        private DevExpress.XtraGrid.Columns.LayoutViewColumn gridColumn7;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_gridColumn7;
+        private DevExpress.XtraGrid.Columns.LayoutViewColumn gridColumn8;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_gridColumn8;
+        private DevExpress.XtraGrid.Columns.LayoutViewColumn gridColumn9;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_gridColumn9;
+        private DevExpress.XtraGrid.Columns.LayoutViewColumn gridColumn10;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_gridColumn10;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewCard layoutViewCard1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
     }
 }

@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Net.Http;
 using System.Threading.Tasks;
-
+using ST;
+using System.Windows.Forms;
 public class getweather
 {
     // HttpClient-ийг нэг удаа үүсгэж ашиглах
@@ -17,9 +18,10 @@ public class getweather
             string sumEncoded = Uri.EscapeDataString(sum);
             string dateEncoded = Uri.EscapeDataString(date);
 
-            // URL-ийг format.string ашиглан үүсгэх
-            string url = string.Format("http://www.etusul.com/api/getweather.php?aimag={0}&sum={1}&date={2}", aimagEncoded, sumEncoded, dateEncoded);
+            BaseUrl Domainname = new BaseUrl();
+            string url = string.Format(Domainname.GetUrl() + "api/getweather.php?aimag={0}&sum={1}&date={2}", aimagEncoded, sumEncoded, dateEncoded);
 
+            MessageBox.Show(url.ToString());
             // Тайм-аут тохируулах (30 секунд)
             client.Timeout = TimeSpan.FromSeconds(30);
 

@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.AddGeree = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
@@ -75,7 +75,6 @@
             this.bune = new DevExpress.XtraEditors.TextEdit();
             this.statuscombo = new DevExpress.XtraEditors.ComboBoxEdit();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.saler = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.comName = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -620,12 +619,11 @@
             // 
             this.projectID1.EditValue = "26";
             this.projectID1.Enabled = false;
-            this.projectID1.Location = new System.Drawing.Point(828, 12);
+            this.projectID1.Location = new System.Drawing.Point(510, 32);
             this.projectID1.Name = "projectID1";
             this.projectID1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.projectID1.Size = new System.Drawing.Size(39, 18);
             this.projectID1.TabIndex = 15;
-            this.projectID1.Visible = false;
             // 
             // label1
             // 
@@ -703,7 +701,7 @@
             // 
             // statuscombo
             // 
-            this.statuscombo.Location = new System.Drawing.Point(527, 32);
+            this.statuscombo.Location = new System.Drawing.Point(756, 32);
             this.statuscombo.Name = "statuscombo";
             this.statuscombo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -718,7 +716,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.saler);
             this.groupBox2.Controls.Add(this.pictureBox2);
             this.groupBox2.Controls.Add(this.comName);
             this.groupBox2.Controls.Add(this.labelControl1);
@@ -731,16 +728,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Хэрэглэгч";
             // 
-            // saler
-            // 
-            this.saler.AutoSize = true;
-            this.saler.Location = new System.Drawing.Point(216, 54);
-            this.saler.Name = "saler";
-            this.saler.Size = new System.Drawing.Size(30, 13);
-            this.saler.TabIndex = 13;
-            this.saler.Text = "saler";
-            this.saler.Visible = false;
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
@@ -750,6 +737,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // comName
             // 
@@ -1053,7 +1041,7 @@
             // gridColumn40
             // 
             this.gridColumn40.Caption = "Хэн";
-            this.gridColumn40.FieldName = "ner";
+            this.gridColumn40.FieldName = "name";
             this.gridColumn40.Name = "gridColumn40";
             this.gridColumn40.Visible = true;
             this.gridColumn40.VisibleIndex = 4;
@@ -1125,9 +1113,9 @@
             // 
             this.gridControl2.ContextMenuStrip = this.contextMenuStrip3;
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode2.RelationName = "Level1";
+            gridLevelNode1.RelationName = "Level1";
             this.gridControl2.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode1});
             this.gridControl2.Location = new System.Drawing.Point(0, 0);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
@@ -1236,8 +1224,10 @@
             // gridColumn39
             // 
             this.gridColumn39.Caption = "Хэрэглэгч";
-            this.gridColumn39.FieldName = "username";
+            this.gridColumn39.FieldName = "name";
             this.gridColumn39.Name = "gridColumn39";
+            this.gridColumn39.Visible = true;
+            this.gridColumn39.VisibleIndex = 5;
             this.gridColumn39.Width = 92;
             // 
             // repositoryItemMemoEdit1
@@ -2396,7 +2386,6 @@
         private DevExpress.XtraEditors.TextEdit bname;
         private DevExpress.XtraEditors.TextEdit bune;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label saler;
         private System.Windows.Forms.PictureBox pictureBox2;
         public DevExpress.XtraEditors.LabelControl comName;
         public DevExpress.XtraEditors.LabelControl labelControl1;

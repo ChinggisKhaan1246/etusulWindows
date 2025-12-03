@@ -62,6 +62,7 @@ namespace ST
                     if (doctype.Text.Trim() == "OP") tusulid = "itadocOP";
                     byte[] result = Client.UploadFile(Url.GetUrl() + "api/fileupload.php?itaID=" + itaID.Text.ToString().Trim() + "&id=" + tusulid, "POST", openFileDialog1.FileName.ToString());
                     string s = System.Text.Encoding.UTF8.GetString(result, 0, result.Length);
+                    f.ita_Load(sender, e); 
                 }
             }
             catch (Exception ee)
@@ -70,8 +71,7 @@ namespace ST
             }
             finally 
             { 
-                this.Hide();  
-                f.ita_Load(sender, e); 
+                
             }
             
         }

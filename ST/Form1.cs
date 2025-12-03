@@ -40,7 +40,7 @@ namespace ST
         public Form1()
         {
             InitializeComponent();
-           // comName = comName.Text; 
+           
 
 
             gridView1.CustomUnboundColumnData += (sender, e) =>
@@ -400,7 +400,7 @@ namespace ST
             try
             {
                 System.Threading.Thread.Sleep(110);
-                DataTable DT = ds.gridFill("getproject", "status=4&comID="+UserSession.LoggedComID);
+                DataTable DT = ds.gridFill("getproject", "status=4");
 
                 if (DT != null && DT.Rows.Count > 0)
                 {
@@ -411,7 +411,6 @@ namespace ST
                 else
                 {
                     gridControl5.DataSource = new DataTable();
-                    MessageBox.Show("Төслийн мэдээлэл олдсонгүй!");
                 }
             }
             catch (Exception ee)
@@ -436,12 +435,11 @@ namespace ST
                 else
                 {
                     gridControl1.DataSource = new DataTable();
-                    MessageBox.Show("Төслийн мэдээлэл олдсонгүй!");
                 }  
             }
             catch (Exception ee)
             {
-                MessageBox.Show("Алдаа: " + ee.Message);
+                MessageBox.Show("Алдаа: FillGridOdoo функцээс " + ee.Message);
             }
         }
         public void FillGridCost(int proID)
@@ -732,11 +730,11 @@ namespace ST
             {
                 dataSetFill dc = new dataSetFill();
                 string id = gridView5.GetFocusedRowCellValue("projectID").ToString();
-                DialogResult dr = MessageBox.Show("" + gridView5.GetFocusedRowCellValue("projectName").ToString() + " нэртэй төслийн мэдээллийг хэрэгжиж байгаа жагсаалруу шилжүүлэх үү?", "Анхаар", MessageBoxButtons.YesNo);
+                DialogResult dr = MessageBox.Show("" + gridView5.GetFocusedRowCellValue("projectName").ToString() + " нэртэй төслийн мэдээллийг хэрэгжиж байгаа жагсаалруу шилжүүлэх гэж байна уу?", "Анхаар", MessageBoxButtons.YesNo);
                 if (dr == System.Windows.Forms.DialogResult.Yes)
                 {
                     var data = new NameValueCollection();
-                    data["deleteid"] = id;
+                    data["id"] = id;
                     MessageBox.Show(dc.exec_command("resetproject", data));
                     //f.saveLogg(f.salerID.Text, f.salerName.Text, "Агуулахын бүртгэлээс устгасан");
                     
@@ -813,7 +811,8 @@ namespace ST
                 eb.ognoo1.DateTime = Convert.ToDateTime(gridView1.GetFocusedRowCellValue("ognoo1").ToString());
                 eb.ognoo2.DateTime = Convert.ToDateTime(gridView1.GetFocusedRowCellValue("ognoo2").ToString());
                 eb.locationP.Text = gridView1.GetFocusedRowCellValue("location").ToString();
-                eb.baritsaa.Text = gridView1.GetFocusedRowCellValue("guitsetgel").ToString();
+                eb.spinEdit1.Value = Convert.ToInt16(gridView1.GetFocusedRowCellValue("guitsetgel").ToString().Trim());
+                eb.baritsaa.Text = gridView1.GetFocusedRowCellValue("baritsaa").ToString();
                 eb.ShowDialog();
             }
             catch (Exception ee)
@@ -1811,6 +1810,7 @@ private static void SafeDelete(string path)
 
         private void бүгдToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            string company = userInfo.comName;
             reportfinanceAll rf = new reportfinanceAll();
             List<ReportData> reportDataList = new List<ReportData>();
 
@@ -1821,9 +1821,9 @@ private static void SafeDelete(string path)
                 decimal injhaiT = Convert.ToDecimal(gridView1.GetRowCellValue(i, "injhaiT"));
                 decimal zahiT = Convert.ToDecimal(gridView1.GetRowCellValue(i, "zahialagchT"));
                 decimal zohiT = Convert.ToDecimal(gridView1.GetRowCellValue(i, "authorT"));
-                decimal baritsaa = Convert.ToDecimal(gridView1.GetRowCellValue(i, "guitsetgel"));
+                decimal baritsaa = Convert.ToDecimal(gridView1.GetRowCellValue(i, "baritsaa"));
                 decimal cost = Convert.ToDecimal(gridView1.GetRowCellValue(i, "cost"));
-
+                
 
                 decimal uldegdel = budget - (income + zohiT + zahiT + injhaiT + baritsaa);
 
@@ -1878,7 +1878,7 @@ private static void SafeDelete(string path)
             rf.sumincome.Text = sumincome.ToString("#,##0");
             rf.sumbaritsaa.Text = sumbaritsaa.ToString("#,##0");
             rf.sumuldegdel.Text = sumuld.ToString("#,##0");
-            rf.comName.Text = userInfo.comName;
+            rf.comName.Text = UserSession.LoggedComName ?? "Е-төсөл";
 
             // Preview гаргах
             rf.ShowPreview();
@@ -2100,6 +2100,11 @@ private static void SafeDelete(string path)
             {
                 XtraMessageBox.Show(ex.ToString());
             }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(url.GetUrl());
         }
 
 
