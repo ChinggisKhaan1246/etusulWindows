@@ -37,44 +37,54 @@ namespace ST
                 data["phone"] = textEdit1.Text.Trim();
                 data["password"] = textEdit2.Text.Trim();
                 var answer = ds.exec_command("login", data); // userID ирнэ.
-                int userID = int.Parse(answer);
-               
-                try
+                MessageBox.Show(answer);
+                if (answer != "nodata" )
                 {
-                    baseinfo userInfo = new baseinfo(userID);
-                    UserSession.LoggedUserID = Convert.ToInt16(userID);
-                    UserSession.LoggedComID = userInfo.comID;
-                    UserSession.LoggedComName =userInfo.comName;
-                    UserSession.LoggedComRD = userInfo.comRD;
-                    UserSession.LoggedComAbout = userInfo.comAbout; 
-                    UserSession.LoggedComCountry = userInfo.comCountry;
-                    UserSession.LoggedComStatus = userInfo.comStatus;
-                    UserSession.LoggedComPropic = userInfo.comProfilePicture;
-                    UserSession.LoggedComAddress = userInfo.comAddress;
-                    UserSession.LoggedUserStatus = userInfo.userStatus;
-                    mainform.salerLogin.Text = userInfo.userPhone;
-                    mainform.comName.Text = userInfo.comName;
-                    mainform.Text = userInfo.comName;
-                    mainform.labelControl1.Text = userInfo.userAlbantushaal;
-                    mainform.salerName.Text = OvogHelper.OvogNer(userInfo.userOvog, userInfo.userName);
-                    mainform.saveLogg(mainform.comName.Text, "Нэвтэрсэн");
-                    if (checkEdit1.Checked) // Хэрэв Remember Me идэвхтэй бол
+                    try
                     {
-                        SaveLoginInfo(textEdit3.Text, textEdit1.Text, textEdit2.Text);
+                        string[] parts = answer.Split(';');
+                        int userID = int.Parse(parts[0]);
+                        string userStatus = parts[1];
+                        baseinfo userInfo = new baseinfo(userID);
+                        UserSession.LoggedUserID = Convert.ToInt16(userID);
+                        UserSession.LoggedComID = userInfo.comID;
+                        UserSession.LoggedComName = userInfo.comName;
+                        UserSession.LoggedComRD = userInfo.comRD;
+                        UserSession.LoggedComAbout = userInfo.comAbout;
+                        UserSession.LoggedComCountry = userInfo.comCountry;
+                        UserSession.LoggedComStatus = userInfo.comStatus;
+                        UserSession.LoggedComPropic = userInfo.comProfilePicture;
+                        UserSession.LoggedComAddress = userInfo.comAddress;
+                        UserSession.LoggedUserStatus = userInfo.userStatus;
+                        mainform.salerLogin.Text = userInfo.userPhone;
+                        mainform.comName.Text = userInfo.comName;
+                        mainform.Text = userInfo.comName;
+                        mainform.labelControl1.Text = userInfo.userAlbantushaal;
+                        mainform.salerName.Text = OvogHelper.OvogNer(userInfo.userOvog, userInfo.userName);
+                        mainform.saveLogg(mainform.comName.Text, "Нэвтэрсэн");
+                        if (checkEdit1.Checked) // Хэрэв Remember Me идэвхтэй бол
+                        {
+                            SaveLoginInfo(textEdit3.Text, textEdit1.Text, textEdit2.Text);
+                        }
+                        else // Хэрэв идэвхгүй бол өмнөх мэдээллийг устгах
+                        {
+                            ClearLoginInfo();
+                        }
+                        //MessageBox.Show(userInfo.userID+userInfo.userStatus);
+                        mainform.Show();
+                        this.Hide();
                     }
-                    else // Хэрэв идэвхгүй бол өмнөх мэдээллийг устгах
+                    catch
                     {
-                        ClearLoginInfo();
+                        this.textEdit2.Text = "";
+                        this.Show();
                     }
-                    //MessageBox.Show(userInfo.userID+userInfo.userStatus);
-                    mainform.Show();
-                    this.Hide();
+                    
                 }
-                catch 
-                {
-                    this.textEdit2.Text = "";
-                    this.Show();
-                }
+                else
+                    {
+                        MessageBox.Show("Нууц үг эсвэл хэрэглэгчийн нэр буруу байна.");
+                    }
             }
             catch (Exception ee)
             { 
@@ -132,7 +142,8 @@ namespace ST
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
-
+            BaseUrl url = new BaseUrl();
+            MessageBox.Show(url.GetUrl());
         }
 
         private void login_KeyDown(object sender, KeyEventArgs e)
