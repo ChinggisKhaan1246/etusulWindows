@@ -2107,6 +2107,38 @@ private static void SafeDelete(string path)
             MessageBox.Show(url.GetUrl());
         }
 
+        private void statuscombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (xtraTabControl1.SelectedTabPageIndex == 0)
+                {
+                   
+                }
+                if (xtraTabControl1.SelectedTabPageIndex == 1)
+                {
+                    switch (statuscombo.SelectedIndex)
+                    {
+                        case 0: gridView5.ActiveFilterString = "";
+                                break;
+                        case 1: gridView5.ActiveFilterString = "[baritsaa] = 0";
+                                break;
+                        case 2: gridView5.ActiveFilterString = "[baritsaa] <> 0";
+                                break;
+                        case 3: gridView5.ActiveFilterString = "[status] = 3";
+                                break;
+                        default:
+                                gridView5.ActiveFilterString = "";
+                                break;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Өгөгдөл байхгүй.");
+            }
+        }
+
 
 
        

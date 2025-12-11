@@ -724,12 +724,6 @@
     <Compile Include="reporttendermat.Designer.cs">
       <DependentUpon>reporttendermat.cs</DependentUpon>
     </Compile>
-    <Compile Include="reportA5.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="reportA5.Designer.cs">
-      <DependentUpon>reportA5.cs</DependentUpon>
-    </Compile>
     <Compile Include="reportM2.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -893,7 +887,6 @@
     <EmbeddedResource Include="redbook.resx">
       <DependentUpon>redbook.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report5.rdlc" />
     <EmbeddedResource Include="reportfinance.resx">
       <DependentUpon>reportfinance.cs</DependentUpon>
     </EmbeddedResource>
@@ -926,9 +919,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="reportfinanceAll.resx">
       <DependentUpon>reportfinanceAll.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="reportA5.resx">
-      <DependentUpon>reportA5.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="reportdailypic.resx">
       <DependentUpon>reportdailypic.cs</DependentUpon>

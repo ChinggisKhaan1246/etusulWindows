@@ -163,7 +163,8 @@ namespace ST
                     data["zahialagchphone"] = Zphone.Text.Trim();
                     data["authorphone"] = Aphone.Text.Trim();
                     data["hyanagchphone"] = Xphone.Text.Trim();
-                    data["guitsetgel"] = baritsaa.Text;
+                    data["baritsaa"] = baritsaa.Text;
+                    data["guitsetgel"] = "0";
                     
                     MessageBox.Show(dcd.exec_command("addproject", data));
                 }

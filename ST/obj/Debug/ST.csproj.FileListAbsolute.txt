@@ -834,7 +834,6 @@ D:\2 future\software projects\etusul.com\desktop\DS\software\ST\obj\Debug\ST.ita
 D:\2 future\software projects\etusul.com\desktop\DS\software\ST\obj\Debug\ST.income.resources
 D:\2 future\software projects\etusul.com\desktop\DS\software\ST\obj\Debug\ST.FUTUREINNOVATION.resources
 D:\2 future\software projects\etusul.com\desktop\DS\software\ST\obj\Debug\ST.reportfinanceAll.resources
-D:\2 future\software projects\etusul.com\desktop\DS\software\ST\obj\Debug\ST.reportA5.resources
 D:\2 future\software projects\etusul.com\desktop\DS\software\ST\obj\Debug\ST.reportdailypic.resources
 D:\2 future\software projects\etusul.com\desktop\DS\software\ST\obj\Debug\ST.reportM2.resources
 D:\2 future\software projects\etusul.com\desktop\DS\software\ST\obj\Debug\ST.reportM3.resources
@@ -860,7 +859,5 @@ D:\2 future\software projects\etusul.com\desktop\DS\software\ST\obj\Debug\ST.zar
 D:\2 future\software projects\etusul.com\desktop\DS\software\ST\obj\Debug\ST.Zform.resources
 D:\2 future\software projects\etusul.com\desktop\DS\software\ST\obj\Debug\ST.csproj.GenerateResource.Cache
 D:\2 future\software projects\etusul.com\desktop\DS\software\ST\obj\Debug\DS.exe.licenses
-D:\2 future\software projects\etusul.com\desktop\DS\software\ST\obj\Debug\RdlCompile.cache
-D:\2 future\software projects\etusul.com\desktop\DS\software\ST\obj\Debug\RdlCompile.compiled
 D:\2 future\software projects\etusul.com\desktop\DS\software\ST\bin\Debug\ICSharpCode.SharpZipLib.dll
 D:\2 future\software projects\etusul.com\desktop\DS\software\ST\obj\Debug\ST.reportM7.resources

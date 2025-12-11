@@ -619,7 +619,7 @@
             // 
             this.projectID1.EditValue = "26";
             this.projectID1.Enabled = false;
-            this.projectID1.Location = new System.Drawing.Point(510, 32);
+            this.projectID1.Location = new System.Drawing.Point(678, 32);
             this.projectID1.Name = "projectID1";
             this.projectID1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.projectID1.Size = new System.Drawing.Size(39, 18);
@@ -628,12 +628,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(524, 16);
+            this.label1.Location = new System.Drawing.Point(507, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 14;
             this.label1.Text = "Төлөв";
-            this.label1.Visible = false;
             // 
             // Ttext2
             // 
@@ -701,18 +700,19 @@
             // 
             // statuscombo
             // 
-            this.statuscombo.Location = new System.Drawing.Point(756, 32);
+            this.statuscombo.Location = new System.Drawing.Point(510, 31);
             this.statuscombo.Name = "statuscombo";
             this.statuscombo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.statuscombo.Properties.Items.AddRange(new object[] {
-            "9",
-            "4",
-            "7"});
+            "Бүгд",
+            "Барьцаа чөлөөлсөн",
+            "Барьцаа чөлөөлөөгүй",
+            "Зогссон"});
             this.statuscombo.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.statuscombo.Size = new System.Drawing.Size(118, 20);
+            this.statuscombo.Size = new System.Drawing.Size(162, 20);
             this.statuscombo.TabIndex = 7;
-            this.statuscombo.Visible = false;
+            this.statuscombo.SelectedIndexChanged += new System.EventHandler(this.statuscombo_SelectedIndexChanged);
             // 
             // groupBox2
             // 
@@ -2283,7 +2283,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ДЭОТ";
+            this.Text = "E-төсөл";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);

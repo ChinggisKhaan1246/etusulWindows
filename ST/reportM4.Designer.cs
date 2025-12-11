@@ -38,6 +38,7 @@
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
+            this.signature = new DevExpress.XtraReports.UI.XRPictureBox();
             this.zakiname = new DevExpress.XtraReports.UI.XRLabel();
             this.zaki = new DevExpress.XtraReports.UI.XRLabel();
             this.stamp = new DevExpress.XtraReports.UI.XRPictureBox();
@@ -52,7 +53,6 @@
             this.ReportHeader1 = new DevExpress.XtraReports.UI.ReportHeaderBand();
             this.ReportFooter1 = new DevExpress.XtraReports.UI.ReportFooterBand();
             this.reportFooterBand1 = new DevExpress.XtraReports.UI.ReportFooterBand();
-            this.signature = new DevExpress.XtraReports.UI.XRPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -162,6 +162,14 @@
             this.stamp});
             this.ReportFooter.HeightF = 196.4583F;
             this.ReportFooter.Name = "ReportFooter";
+            // 
+            // signature
+            // 
+            this.signature.Image = ((System.Drawing.Image)(resources.GetObject("signature.Image")));
+            this.signature.LocationFloat = new DevExpress.Utils.PointFloat(237.5F, 37.5F);
+            this.signature.Name = "signature";
+            this.signature.SizeF = new System.Drawing.SizeF(235.4166F, 111.4583F);
+            this.signature.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
             // 
             // zakiname
             // 
@@ -320,14 +328,6 @@
             // 
             this.reportFooterBand1.HeightF = 196.4583F;
             this.reportFooterBand1.Name = "reportFooterBand1";
-            // 
-            // signature
-            // 
-            this.signature.Image = ((System.Drawing.Image)(resources.GetObject("signature.Image")));
-            this.signature.LocationFloat = new DevExpress.Utils.PointFloat(237.5F, 37.5F);
-            this.signature.Name = "signature";
-            this.signature.SizeF = new System.Drawing.SizeF(235.4166F, 111.4583F);
-            this.signature.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
             // 
             // reportM4
             // 

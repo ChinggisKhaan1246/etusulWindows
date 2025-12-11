@@ -37,7 +37,7 @@ namespace ST
                 data["phone"] = textEdit1.Text.Trim();
                 data["password"] = textEdit2.Text.Trim();
                 var answer = ds.exec_command("login", data); // userID ирнэ.
-                MessageBox.Show(answer);
+               // MessageBox.Show(answer);
                 if (answer != "nodata" )
                 {
                     try

@@ -30,20 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reporttendermat));
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
-            this.utga = new DevExpress.XtraReports.UI.XRLabel();
-            this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
-            this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
-            this.xrRichText1 = new DevExpress.XtraReports.UI.XRRichText();
+            this.xrPictureBox1 = new DevExpress.XtraReports.UI.XRPictureBox();
+            this.signature = new DevExpress.XtraReports.UI.XRPictureBox();
+            this.xrPageBreak2 = new DevExpress.XtraReports.UI.XRPageBreak();
             this.haashaa = new DevExpress.XtraReports.UI.XRLabel();
             this.ognoo = new DevExpress.XtraReports.UI.XRLabel();
             this.Bdugaar = new DevExpress.XtraReports.UI.XRLabel();
             this.tuhai = new DevExpress.XtraReports.UI.XRLabel();
-            this.stamp = new DevExpress.XtraReports.UI.XRPictureBox();
-            this.zaki = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrRichText1 = new DevExpress.XtraReports.UI.XRRichText();
+            this.utga = new DevExpress.XtraReports.UI.XRLabel();
             this.zakiname = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrPageBreak2 = new DevExpress.XtraReports.UI.XRPageBreak();
-            this.signature = new DevExpress.XtraReports.UI.XRPictureBox();
-            this.xrPictureBox1 = new DevExpress.XtraReports.UI.XRPictureBox();
+            this.zaki = new DevExpress.XtraReports.UI.XRLabel();
+            this.stamp = new DevExpress.XtraReports.UI.XRPictureBox();
+            this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
+            this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             ((System.ComponentModel.ISupportInitialize)(this.xrRichText1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
@@ -67,39 +67,26 @@
             this.Detail.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
-            // utga
+            // xrPictureBox1
             // 
-            this.utga.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.utga.LocationFloat = new DevExpress.Utils.PointFloat(0F, 340.625F);
-            this.utga.Name = "utga";
-            this.utga.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.utga.SizeF = new System.Drawing.SizeF(653.9999F, 215.4583F);
-            this.utga.StylePriority.UseFont = false;
-            this.utga.StylePriority.UseTextAlignment = false;
-            this.utga.Text = "utga";
-            this.utga.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            this.xrPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("xrPictureBox1.Image")));
+            this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(100.2917F, 12F);
+            this.xrPictureBox1.Name = "xrPictureBox1";
+            this.xrPictureBox1.SizeF = new System.Drawing.SizeF(71.875F, 71.87501F);
+            this.xrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
             // 
-            // TopMargin
+            // signature
             // 
-            this.TopMargin.HeightF = 58F;
-            this.TopMargin.Name = "TopMargin";
-            this.TopMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
-            this.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            this.signature.Image = ((System.Drawing.Image)(resources.GetObject("signature.Image")));
+            this.signature.LocationFloat = new DevExpress.Utils.PointFloat(247.9167F, 578.125F);
+            this.signature.Name = "signature";
+            this.signature.SizeF = new System.Drawing.SizeF(235.4166F, 111.4583F);
+            this.signature.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
             // 
-            // BottomMargin
+            // xrPageBreak2
             // 
-            this.BottomMargin.HeightF = 76.70847F;
-            this.BottomMargin.Name = "BottomMargin";
-            this.BottomMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
-            this.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            // 
-            // xrRichText1
-            // 
-            this.xrRichText1.Font = new System.Drawing.Font("Times New Roman", 9.75F);
-            this.xrRichText1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
-            this.xrRichText1.Name = "xrRichText1";
-            this.xrRichText1.SerializableRtfString = resources.GetString("xrRichText1.SerializableRtfString");
-            this.xrRichText1.SizeF = new System.Drawing.SizeF(653.9999F, 298.3334F);
+            this.xrPageBreak2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 726.3749F);
+            this.xrPageBreak2.Name = "xrPageBreak2";
             // 
             // haashaa
             // 
@@ -149,25 +136,25 @@
             this.tuhai.Text = "tuhai";
             this.tuhai.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
-            // stamp
+            // xrRichText1
             // 
-            this.stamp.Image = ((System.Drawing.Image)(resources.GetObject("stamp.Image")));
-            this.stamp.LocationFloat = new DevExpress.Utils.PointFloat(227.1667F, 556.0833F);
-            this.stamp.Name = "stamp";
-            this.stamp.SizeF = new System.Drawing.SizeF(157.2917F, 158.3333F);
-            this.stamp.Sizing = DevExpress.XtraPrinting.ImageSizeMode.AutoSize;
+            this.xrRichText1.Font = new System.Drawing.Font("Times New Roman", 9.75F);
+            this.xrRichText1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.xrRichText1.Name = "xrRichText1";
+            this.xrRichText1.SerializableRtfString = resources.GetString("xrRichText1.SerializableRtfString");
+            this.xrRichText1.SizeF = new System.Drawing.SizeF(653.9999F, 298.3334F);
             // 
-            // zaki
+            // utga
             // 
-            this.zaki.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.zaki.LocationFloat = new DevExpress.Utils.PointFloat(4.000038F, 556.0833F);
-            this.zaki.Name = "zaki";
-            this.zaki.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.zaki.SizeF = new System.Drawing.SizeF(223.7917F, 85.41669F);
-            this.zaki.StylePriority.UseFont = false;
-            this.zaki.StylePriority.UseTextAlignment = false;
-            this.zaki.Text = "ЗАХИРАЛ ";
-            this.zaki.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomRight;
+            this.utga.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.utga.LocationFloat = new DevExpress.Utils.PointFloat(0F, 340.625F);
+            this.utga.Name = "utga";
+            this.utga.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.utga.SizeF = new System.Drawing.SizeF(653.9999F, 215.4583F);
+            this.utga.StylePriority.UseFont = false;
+            this.utga.StylePriority.UseTextAlignment = false;
+            this.utga.Text = "utga";
+            this.utga.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
             // 
             // zakiname
             // 
@@ -181,26 +168,39 @@
             this.zakiname.Text = "П.МӨНХЖАРГАЛ";
             this.zakiname.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomLeft;
             // 
-            // xrPageBreak2
+            // zaki
             // 
-            this.xrPageBreak2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 726.3749F);
-            this.xrPageBreak2.Name = "xrPageBreak2";
+            this.zaki.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.zaki.LocationFloat = new DevExpress.Utils.PointFloat(4.000038F, 556.0833F);
+            this.zaki.Name = "zaki";
+            this.zaki.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.zaki.SizeF = new System.Drawing.SizeF(223.7917F, 85.41669F);
+            this.zaki.StylePriority.UseFont = false;
+            this.zaki.StylePriority.UseTextAlignment = false;
+            this.zaki.Text = "ЗАХИРАЛ ";
+            this.zaki.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomRight;
             // 
-            // signature
+            // stamp
             // 
-            this.signature.Image = ((System.Drawing.Image)(resources.GetObject("signature.Image")));
-            this.signature.LocationFloat = new DevExpress.Utils.PointFloat(247.9167F, 578.125F);
-            this.signature.Name = "signature";
-            this.signature.SizeF = new System.Drawing.SizeF(235.4166F, 111.4583F);
-            this.signature.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
+            this.stamp.Image = ((System.Drawing.Image)(resources.GetObject("stamp.Image")));
+            this.stamp.LocationFloat = new DevExpress.Utils.PointFloat(227.1667F, 556.0833F);
+            this.stamp.Name = "stamp";
+            this.stamp.SizeF = new System.Drawing.SizeF(157.2917F, 158.3333F);
+            this.stamp.Sizing = DevExpress.XtraPrinting.ImageSizeMode.AutoSize;
             // 
-            // xrPictureBox1
+            // TopMargin
             // 
-            this.xrPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("xrPictureBox1.Image")));
-            this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(100.2917F, 12F);
-            this.xrPictureBox1.Name = "xrPictureBox1";
-            this.xrPictureBox1.SizeF = new System.Drawing.SizeF(71.875F, 71.87501F);
-            this.xrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
+            this.TopMargin.HeightF = 58F;
+            this.TopMargin.Name = "TopMargin";
+            this.TopMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            this.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // BottomMargin
+            // 
+            this.BottomMargin.HeightF = 76.70847F;
+            this.BottomMargin.Name = "BottomMargin";
+            this.BottomMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            this.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // reporttendermat
             // 
