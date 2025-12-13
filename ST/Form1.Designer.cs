@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.AddGeree = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
@@ -172,6 +172,7 @@
             this.aimag = new DevExpress.XtraGrid.Columns.GridColumn();
             this.sumname = new DevExpress.XtraGrid.Columns.GridColumn();
             this.locationP = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.status = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.gridControl5 = new DevExpress.XtraGrid.GridControl();
             this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -194,6 +195,7 @@
             this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn32 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn41 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
             this.panelControl13 = new DevExpress.XtraEditors.PanelControl();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
@@ -705,10 +707,11 @@
             this.statuscombo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.statuscombo.Properties.Items.AddRange(new object[] {
-            "Бүгд",
+            "Дууссан бүгд",
             "Барьцаа чөлөөлсөн",
             "Барьцаа чөлөөлөөгүй",
-            "Зогссон"});
+            "Зогссон",
+            "Идэвхтэй"});
             this.statuscombo.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.statuscombo.Size = new System.Drawing.Size(162, 20);
             this.statuscombo.TabIndex = 7;
@@ -1113,9 +1116,9 @@
             // 
             this.gridControl2.ContextMenuStrip = this.contextMenuStrip3;
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode1.RelationName = "Level1";
+            gridLevelNode2.RelationName = "Level1";
             this.gridControl2.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode2});
             this.gridControl2.Location = new System.Drawing.Point(0, 0);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
@@ -1481,7 +1484,8 @@
             this.baritsaa,
             this.aimag,
             this.sumname,
-            this.locationP});
+            this.locationP,
+            this.status});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.GroupPanelText = "Идэвхтэй байгаа төслүүд";
             this.gridView1.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
@@ -1710,6 +1714,12 @@
             this.locationP.Visible = true;
             this.locationP.VisibleIndex = 18;
             // 
+            // status
+            // 
+            this.status.Caption = "status";
+            this.status.FieldName = "status";
+            this.status.Name = "status";
+            // 
             // xtraTabPage2
             // 
             this.xtraTabPage2.Controls.Add(this.gridControl5);
@@ -1751,7 +1761,8 @@
             this.gridColumn29,
             this.gridColumn30,
             this.gridColumn31,
-            this.gridColumn32});
+            this.gridColumn32,
+            this.gridColumn41});
             this.gridView5.GridControl = this.gridControl5;
             this.gridView5.GroupPanelText = "Идэвхтэй байгаа төслүүд";
             this.gridView5.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
@@ -1964,6 +1975,12 @@
             this.gridColumn32.Visible = true;
             this.gridColumn32.VisibleIndex = 16;
             // 
+            // gridColumn41
+            // 
+            this.gridColumn41.Caption = "status";
+            this.gridColumn41.FieldName = "status";
+            this.gridColumn41.Name = "gridColumn41";
+            // 
             // splitterControl1
             // 
             this.splitterControl1.Location = new System.Drawing.Point(270, 2);
@@ -2061,6 +2078,7 @@
             // navBarGroup2
             // 
             this.navBarGroup2.Caption = "Тайлангууд";
+            this.navBarGroup2.Expanded = true;
             this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem4),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem5),
@@ -2561,6 +2579,8 @@
         private System.Windows.Forms.ToolStripMenuItem ажилДууссанМэдэгдэлToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem гүйцэтгэлийнБаталгааЦуцлуулахToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem чанарынБаталгааГаргахТухайToolStripMenuItem;
+        private DevExpress.XtraGrid.Columns.GridColumn status;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn41;
     }
 }
 

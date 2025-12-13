@@ -343,7 +343,7 @@ namespace ST
 
         private void projectName_EditValueChanged(object sender, EventArgs e)
         {
-            gridView2.ActiveFilterString = "projectName LIKE '%" + projectName.Text + "%'";
+            projectnameFilter_EditValueChanged(projectnameFilter, EventArgs.Empty);
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)

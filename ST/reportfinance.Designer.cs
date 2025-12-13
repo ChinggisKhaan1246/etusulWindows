@@ -30,6 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reportfinance));
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
+            this.uld = new DevExpress.XtraReports.UI.XRRichText();
+            this.xrRichText3 = new DevExpress.XtraReports.UI.XRRichText();
+            this.xrRichText2 = new DevExpress.XtraReports.UI.XRRichText();
+            this.urid = new DevExpress.XtraReports.UI.XRRichText();
+            this.baritsaa = new DevExpress.XtraReports.UI.XRRichText();
+            this.xrRichText5 = new DevExpress.XtraReports.UI.XRRichText();
+            this.zahi = new DevExpress.XtraReports.UI.XRRichText();
+            this.zohi = new DevExpress.XtraReports.UI.XRRichText();
+            this.zurag = new DevExpress.XtraReports.UI.XRRichText();
+            this.mytotal = new DevExpress.XtraReports.UI.XRRichText();
+            this.xrRichText4 = new DevExpress.XtraReports.UI.XRRichText();
+            this.xrRichText1 = new DevExpress.XtraReports.UI.XRRichText();
+            this.ognoo2 = new DevExpress.XtraReports.UI.XRRichText();
             this.projectName = new DevExpress.XtraReports.UI.XRRichText();
             this.actognoo = new DevExpress.XtraReports.UI.XRRichText();
             this.ognoo1 = new DevExpress.XtraReports.UI.XRRichText();
@@ -45,19 +58,19 @@
             this.aimag = new DevExpress.XtraReports.UI.XRRichText();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
-            this.xrRichText1 = new DevExpress.XtraReports.UI.XRRichText();
-            this.ognoo2 = new DevExpress.XtraReports.UI.XRRichText();
-            this.xrRichText4 = new DevExpress.XtraReports.UI.XRRichText();
-            this.zahi = new DevExpress.XtraReports.UI.XRRichText();
-            this.zohi = new DevExpress.XtraReports.UI.XRRichText();
-            this.zurag = new DevExpress.XtraReports.UI.XRRichText();
-            this.mytotal = new DevExpress.XtraReports.UI.XRRichText();
-            this.baritsaa = new DevExpress.XtraReports.UI.XRRichText();
-            this.xrRichText5 = new DevExpress.XtraReports.UI.XRRichText();
-            this.xrRichText2 = new DevExpress.XtraReports.UI.XRRichText();
-            this.urid = new DevExpress.XtraReports.UI.XRRichText();
-            this.xrRichText3 = new DevExpress.XtraReports.UI.XRRichText();
-            this.uld = new DevExpress.XtraReports.UI.XRRichText();
+            ((System.ComponentModel.ISupportInitialize)(this.uld)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xrRichText3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xrRichText2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.urid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.baritsaa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xrRichText5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zahi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zohi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zurag)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mytotal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xrRichText4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xrRichText1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ognoo2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.actognoo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ognoo1)).BeginInit();
@@ -71,19 +84,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Ginj)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gereeNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aimag)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xrRichText1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ognoo2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xrRichText4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zahi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zohi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zurag)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mytotal)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.baritsaa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xrRichText5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xrRichText2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.urid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xrRichText3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uld)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -119,6 +119,149 @@
             this.Detail.Name = "Detail";
             this.Detail.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // uld
+            // 
+            this.uld.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.uld.ForeColor = System.Drawing.Color.Black;
+            this.uld.LocationFloat = new DevExpress.Utils.PointFloat(372.4585F, 236.9582F);
+            this.uld.Name = "uld";
+            this.uld.SerializableRtfString = resources.GetString("uld.SerializableRtfString");
+            this.uld.SizeF = new System.Drawing.SizeF(250.6667F, 19.79166F);
+            this.uld.StylePriority.UseFont = false;
+            this.uld.StylePriority.UseForeColor = false;
+            // 
+            // xrRichText3
+            // 
+            this.xrRichText3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.xrRichText3.ForeColor = System.Drawing.Color.Black;
+            this.xrRichText3.LocationFloat = new DevExpress.Utils.PointFloat(10F, 236.9582F);
+            this.xrRichText3.Name = "xrRichText3";
+            this.xrRichText3.SerializableRtfString = resources.GetString("xrRichText3.SerializableRtfString");
+            this.xrRichText3.SizeF = new System.Drawing.SizeF(250.6667F, 19.79166F);
+            this.xrRichText3.StylePriority.UseFont = false;
+            this.xrRichText3.StylePriority.UseForeColor = false;
+            // 
+            // xrRichText2
+            // 
+            this.xrRichText2.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.xrRichText2.ForeColor = System.Drawing.Color.Black;
+            this.xrRichText2.LocationFloat = new DevExpress.Utils.PointFloat(121.125F, 217.1666F);
+            this.xrRichText2.Name = "xrRichText2";
+            this.xrRichText2.SerializableRtfString = resources.GetString("xrRichText2.SerializableRtfString");
+            this.xrRichText2.SizeF = new System.Drawing.SizeF(180.875F, 19.79166F);
+            this.xrRichText2.StylePriority.UseFont = false;
+            this.xrRichText2.StylePriority.UseForeColor = false;
+            // 
+            // urid
+            // 
+            this.urid.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.urid.ForeColor = System.Drawing.Color.Black;
+            this.urid.LocationFloat = new DevExpress.Utils.PointFloat(372.4585F, 217.1666F);
+            this.urid.Name = "urid";
+            this.urid.SerializableRtfString = resources.GetString("urid.SerializableRtfString");
+            this.urid.SizeF = new System.Drawing.SizeF(250.6667F, 19.79166F);
+            this.urid.StylePriority.UseFont = false;
+            this.urid.StylePriority.UseForeColor = false;
+            // 
+            // baritsaa
+            // 
+            this.baritsaa.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Italic);
+            this.baritsaa.ForeColor = System.Drawing.Color.Black;
+            this.baritsaa.LocationFloat = new DevExpress.Utils.PointFloat(372.4585F, 176F);
+            this.baritsaa.Name = "baritsaa";
+            this.baritsaa.SerializableRtfString = resources.GetString("baritsaa.SerializableRtfString");
+            this.baritsaa.SizeF = new System.Drawing.SizeF(250.6667F, 19.79166F);
+            this.baritsaa.StylePriority.UseFont = false;
+            this.baritsaa.StylePriority.UseForeColor = false;
+            // 
+            // xrRichText5
+            // 
+            this.xrRichText5.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.xrRichText5.ForeColor = System.Drawing.Color.Black;
+            this.xrRichText5.LocationFloat = new DevExpress.Utils.PointFloat(120.3337F, 176.0001F);
+            this.xrRichText5.Name = "xrRichText5";
+            this.xrRichText5.SerializableRtfString = resources.GetString("xrRichText5.SerializableRtfString");
+            this.xrRichText5.SizeF = new System.Drawing.SizeF(250.6667F, 19.79166F);
+            this.xrRichText5.StylePriority.UseFont = false;
+            this.xrRichText5.StylePriority.UseForeColor = false;
+            // 
+            // zahi
+            // 
+            this.zahi.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Italic);
+            this.zahi.ForeColor = System.Drawing.Color.Black;
+            this.zahi.LocationFloat = new DevExpress.Utils.PointFloat(372.4585F, 116.625F);
+            this.zahi.Name = "zahi";
+            this.zahi.SerializableRtfString = resources.GetString("zahi.SerializableRtfString");
+            this.zahi.SizeF = new System.Drawing.SizeF(250.6667F, 19.79166F);
+            this.zahi.StylePriority.UseFont = false;
+            this.zahi.StylePriority.UseForeColor = false;
+            // 
+            // zohi
+            // 
+            this.zohi.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Italic);
+            this.zohi.ForeColor = System.Drawing.Color.Black;
+            this.zohi.LocationFloat = new DevExpress.Utils.PointFloat(372.4585F, 136.4167F);
+            this.zohi.Name = "zohi";
+            this.zohi.SerializableRtfString = resources.GetString("zohi.SerializableRtfString");
+            this.zohi.SizeF = new System.Drawing.SizeF(250.6667F, 19.79169F);
+            this.zohi.StylePriority.UseFont = false;
+            this.zohi.StylePriority.UseForeColor = false;
+            // 
+            // zurag
+            // 
+            this.zurag.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Italic);
+            this.zurag.ForeColor = System.Drawing.Color.Black;
+            this.zurag.LocationFloat = new DevExpress.Utils.PointFloat(372.4585F, 156.2084F);
+            this.zurag.Name = "zurag";
+            this.zurag.SerializableRtfString = resources.GetString("zurag.SerializableRtfString");
+            this.zurag.SizeF = new System.Drawing.SizeF(250.6667F, 19.79166F);
+            this.zurag.StylePriority.UseFont = false;
+            this.zurag.StylePriority.UseForeColor = false;
+            // 
+            // mytotal
+            // 
+            this.mytotal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.mytotal.ForeColor = System.Drawing.Color.Black;
+            this.mytotal.LocationFloat = new DevExpress.Utils.PointFloat(372.4585F, 197.3749F);
+            this.mytotal.Name = "mytotal";
+            this.mytotal.SerializableRtfString = resources.GetString("mytotal.SerializableRtfString");
+            this.mytotal.SizeF = new System.Drawing.SizeF(250.6667F, 19.79166F);
+            this.mytotal.StylePriority.UseFont = false;
+            this.mytotal.StylePriority.UseForeColor = false;
+            // 
+            // xrRichText4
+            // 
+            this.xrRichText4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.xrRichText4.ForeColor = System.Drawing.Color.Black;
+            this.xrRichText4.LocationFloat = new DevExpress.Utils.PointFloat(10.0416F, 197.3749F);
+            this.xrRichText4.Name = "xrRichText4";
+            this.xrRichText4.SerializableRtfString = resources.GetString("xrRichText4.SerializableRtfString");
+            this.xrRichText4.SizeF = new System.Drawing.SizeF(250.6667F, 19.79166F);
+            this.xrRichText4.StylePriority.UseFont = false;
+            this.xrRichText4.StylePriority.UseForeColor = false;
+            // 
+            // xrRichText1
+            // 
+            this.xrRichText1.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.xrRichText1.ForeColor = System.Drawing.Color.Black;
+            this.xrRichText1.LocationFloat = new DevExpress.Utils.PointFloat(290.3751F, 71.24999F);
+            this.xrRichText1.Name = "xrRichText1";
+            this.xrRichText1.SerializableRtfString = resources.GetString("xrRichText1.SerializableRtfString");
+            this.xrRichText1.SizeF = new System.Drawing.SizeF(61.45835F, 19.79166F);
+            this.xrRichText1.StylePriority.UseFont = false;
+            this.xrRichText1.StylePriority.UseForeColor = false;
+            // 
+            // ognoo2
+            // 
+            this.ognoo2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic);
+            this.ognoo2.ForeColor = System.Drawing.Color.Black;
+            this.ognoo2.LocationFloat = new DevExpress.Utils.PointFloat(355.0418F, 71.24998F);
+            this.ognoo2.Name = "ognoo2";
+            this.ognoo2.SerializableRtfString = resources.GetString("ognoo2.SerializableRtfString");
+            this.ognoo2.SizeF = new System.Drawing.SizeF(104.8333F, 19.79166F);
+            this.ognoo2.StylePriority.UseFont = false;
+            this.ognoo2.StylePriority.UseForeColor = false;
             // 
             // projectName
             // 
@@ -277,149 +420,6 @@
             this.BottomMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
-            // xrRichText1
-            // 
-            this.xrRichText1.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.xrRichText1.ForeColor = System.Drawing.Color.Black;
-            this.xrRichText1.LocationFloat = new DevExpress.Utils.PointFloat(290.3751F, 71.24999F);
-            this.xrRichText1.Name = "xrRichText1";
-            this.xrRichText1.SerializableRtfString = resources.GetString("xrRichText1.SerializableRtfString");
-            this.xrRichText1.SizeF = new System.Drawing.SizeF(61.45835F, 19.79166F);
-            this.xrRichText1.StylePriority.UseFont = false;
-            this.xrRichText1.StylePriority.UseForeColor = false;
-            // 
-            // ognoo2
-            // 
-            this.ognoo2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic);
-            this.ognoo2.ForeColor = System.Drawing.Color.Black;
-            this.ognoo2.LocationFloat = new DevExpress.Utils.PointFloat(355.0418F, 71.24998F);
-            this.ognoo2.Name = "ognoo2";
-            this.ognoo2.SerializableRtfString = resources.GetString("ognoo2.SerializableRtfString");
-            this.ognoo2.SizeF = new System.Drawing.SizeF(104.8333F, 19.79166F);
-            this.ognoo2.StylePriority.UseFont = false;
-            this.ognoo2.StylePriority.UseForeColor = false;
-            // 
-            // xrRichText4
-            // 
-            this.xrRichText4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.xrRichText4.ForeColor = System.Drawing.Color.Black;
-            this.xrRichText4.LocationFloat = new DevExpress.Utils.PointFloat(10.0416F, 197.3749F);
-            this.xrRichText4.Name = "xrRichText4";
-            this.xrRichText4.SerializableRtfString = resources.GetString("xrRichText4.SerializableRtfString");
-            this.xrRichText4.SizeF = new System.Drawing.SizeF(250.6667F, 19.79166F);
-            this.xrRichText4.StylePriority.UseFont = false;
-            this.xrRichText4.StylePriority.UseForeColor = false;
-            // 
-            // zahi
-            // 
-            this.zahi.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Italic);
-            this.zahi.ForeColor = System.Drawing.Color.Black;
-            this.zahi.LocationFloat = new DevExpress.Utils.PointFloat(372.4585F, 116.625F);
-            this.zahi.Name = "zahi";
-            this.zahi.SerializableRtfString = resources.GetString("zahi.SerializableRtfString");
-            this.zahi.SizeF = new System.Drawing.SizeF(250.6667F, 19.79166F);
-            this.zahi.StylePriority.UseFont = false;
-            this.zahi.StylePriority.UseForeColor = false;
-            // 
-            // zohi
-            // 
-            this.zohi.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Italic);
-            this.zohi.ForeColor = System.Drawing.Color.Black;
-            this.zohi.LocationFloat = new DevExpress.Utils.PointFloat(372.4585F, 136.4167F);
-            this.zohi.Name = "zohi";
-            this.zohi.SerializableRtfString = resources.GetString("zohi.SerializableRtfString");
-            this.zohi.SizeF = new System.Drawing.SizeF(250.6667F, 19.79169F);
-            this.zohi.StylePriority.UseFont = false;
-            this.zohi.StylePriority.UseForeColor = false;
-            // 
-            // zurag
-            // 
-            this.zurag.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Italic);
-            this.zurag.ForeColor = System.Drawing.Color.Black;
-            this.zurag.LocationFloat = new DevExpress.Utils.PointFloat(372.4585F, 156.2084F);
-            this.zurag.Name = "zurag";
-            this.zurag.SerializableRtfString = resources.GetString("zurag.SerializableRtfString");
-            this.zurag.SizeF = new System.Drawing.SizeF(250.6667F, 19.79166F);
-            this.zurag.StylePriority.UseFont = false;
-            this.zurag.StylePriority.UseForeColor = false;
-            // 
-            // mytotal
-            // 
-            this.mytotal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.mytotal.ForeColor = System.Drawing.Color.Black;
-            this.mytotal.LocationFloat = new DevExpress.Utils.PointFloat(372.4585F, 197.3749F);
-            this.mytotal.Name = "mytotal";
-            this.mytotal.SerializableRtfString = resources.GetString("mytotal.SerializableRtfString");
-            this.mytotal.SizeF = new System.Drawing.SizeF(250.6667F, 19.79166F);
-            this.mytotal.StylePriority.UseFont = false;
-            this.mytotal.StylePriority.UseForeColor = false;
-            // 
-            // baritsaa
-            // 
-            this.baritsaa.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Italic);
-            this.baritsaa.ForeColor = System.Drawing.Color.Black;
-            this.baritsaa.LocationFloat = new DevExpress.Utils.PointFloat(372.4585F, 176F);
-            this.baritsaa.Name = "baritsaa";
-            this.baritsaa.SerializableRtfString = resources.GetString("baritsaa.SerializableRtfString");
-            this.baritsaa.SizeF = new System.Drawing.SizeF(250.6667F, 19.79166F);
-            this.baritsaa.StylePriority.UseFont = false;
-            this.baritsaa.StylePriority.UseForeColor = false;
-            // 
-            // xrRichText5
-            // 
-            this.xrRichText5.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.xrRichText5.ForeColor = System.Drawing.Color.Black;
-            this.xrRichText5.LocationFloat = new DevExpress.Utils.PointFloat(120.3337F, 176.0001F);
-            this.xrRichText5.Name = "xrRichText5";
-            this.xrRichText5.SerializableRtfString = resources.GetString("xrRichText5.SerializableRtfString");
-            this.xrRichText5.SizeF = new System.Drawing.SizeF(250.6667F, 19.79166F);
-            this.xrRichText5.StylePriority.UseFont = false;
-            this.xrRichText5.StylePriority.UseForeColor = false;
-            // 
-            // xrRichText2
-            // 
-            this.xrRichText2.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.xrRichText2.ForeColor = System.Drawing.Color.Black;
-            this.xrRichText2.LocationFloat = new DevExpress.Utils.PointFloat(121.125F, 217.1666F);
-            this.xrRichText2.Name = "xrRichText2";
-            this.xrRichText2.SerializableRtfString = resources.GetString("xrRichText2.SerializableRtfString");
-            this.xrRichText2.SizeF = new System.Drawing.SizeF(180.875F, 19.79166F);
-            this.xrRichText2.StylePriority.UseFont = false;
-            this.xrRichText2.StylePriority.UseForeColor = false;
-            // 
-            // urid
-            // 
-            this.urid.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Italic);
-            this.urid.ForeColor = System.Drawing.Color.Black;
-            this.urid.LocationFloat = new DevExpress.Utils.PointFloat(372.4585F, 217.1666F);
-            this.urid.Name = "urid";
-            this.urid.SerializableRtfString = resources.GetString("urid.SerializableRtfString");
-            this.urid.SizeF = new System.Drawing.SizeF(250.6667F, 19.79166F);
-            this.urid.StylePriority.UseFont = false;
-            this.urid.StylePriority.UseForeColor = false;
-            // 
-            // xrRichText3
-            // 
-            this.xrRichText3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.xrRichText3.ForeColor = System.Drawing.Color.Black;
-            this.xrRichText3.LocationFloat = new DevExpress.Utils.PointFloat(10F, 236.9582F);
-            this.xrRichText3.Name = "xrRichText3";
-            this.xrRichText3.SerializableRtfString = resources.GetString("xrRichText3.SerializableRtfString");
-            this.xrRichText3.SizeF = new System.Drawing.SizeF(250.6667F, 19.79166F);
-            this.xrRichText3.StylePriority.UseFont = false;
-            this.xrRichText3.StylePriority.UseForeColor = false;
-            // 
-            // uld
-            // 
-            this.uld.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.uld.ForeColor = System.Drawing.Color.Black;
-            this.uld.LocationFloat = new DevExpress.Utils.PointFloat(372.4585F, 236.9582F);
-            this.uld.Name = "uld";
-            this.uld.SerializableRtfString = resources.GetString("uld.SerializableRtfString");
-            this.uld.SizeF = new System.Drawing.SizeF(250.6667F, 19.79166F);
-            this.uld.StylePriority.UseFont = false;
-            this.uld.StylePriority.UseForeColor = false;
-            // 
             // reportfinance
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -431,6 +431,19 @@
             this.PageWidth = 827;
             this.PaperKind = System.Drawing.Printing.PaperKind.A4;
             this.Version = "12.1";
+            ((System.ComponentModel.ISupportInitialize)(this.uld)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xrRichText3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xrRichText2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.urid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.baritsaa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xrRichText5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zahi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zohi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zurag)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mytotal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xrRichText4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xrRichText1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ognoo2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.actognoo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ognoo1)).EndInit();
@@ -444,19 +457,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Ginj)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gereeNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aimag)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xrRichText1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ognoo2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xrRichText4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zahi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zohi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zurag)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mytotal)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.baritsaa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xrRichText5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xrRichText2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.urid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xrRichText3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uld)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }

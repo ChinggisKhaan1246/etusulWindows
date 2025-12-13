@@ -859,5 +859,5 @@ D:\2 future\software projects\etusul.com\desktop\DS\software\ST\obj\Debug\ST.zar
 D:\2 future\software projects\etusul.com\desktop\DS\software\ST\obj\Debug\ST.Zform.resources
 D:\2 future\software projects\etusul.com\desktop\DS\software\ST\obj\Debug\ST.csproj.GenerateResource.Cache
 D:\2 future\software projects\etusul.com\desktop\DS\software\ST\obj\Debug\DS.exe.licenses
-D:\2 future\software projects\etusul.com\desktop\DS\software\ST\bin\Debug\ICSharpCode.SharpZipLib.dll
 D:\2 future\software projects\etusul.com\desktop\DS\software\ST\obj\Debug\ST.reportM7.resources
+D:\2 future\software projects\etusul.com\desktop\DS\software\ST\obj\Debug\Interop.WIA.dll

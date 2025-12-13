@@ -400,7 +400,7 @@ namespace ST
             try
             {
                 System.Threading.Thread.Sleep(110);
-                DataTable DT = ds.gridFill("getproject", "status=4");
+                DataTable DT = ds.gridFill("getproject", "status=all");
 
                 if (DT != null && DT.Rows.Count > 0)
                 {
@@ -674,6 +674,7 @@ namespace ST
                 s.Text = "Шинэ акт бичих";
                 s.projectID.Text = gridView1.GetFocusedRowCellValue("projectID").ToString().Trim();
                 s.projectName.Text = gridView1.GetFocusedRowCellValue("projectName").ToString().Trim();
+                s.projectnameFilter.Text = gridView1.GetFocusedRowCellValue("projectName").ToString().Trim();
                 s.aimag.Text = gridView1.GetFocusedRowCellValue("aimag").ToString().Trim();
                 s.sumname.Text = gridView1.GetFocusedRowCellValue("sumname").ToString().Trim();
                 s.zahorg.Text = gridView1.GetFocusedRowCellValue("hyanagch").ToString().Trim();
@@ -2111,27 +2112,27 @@ private static void SafeDelete(string path)
         {
             try
             {
-                if (xtraTabControl1.SelectedTabPageIndex == 0)
-                {
-                   
-                }
-                if (xtraTabControl1.SelectedTabPageIndex == 1)
-                {
                     switch (statuscombo.SelectedIndex)
                     {
-                        case 0: gridView5.ActiveFilterString = "";
+                        case 0: xtraTabControl1.SelectedTabPage = xtraTabPage2;
+                                gridView5.ActiveFilterString = "";
                                 break;
-                        case 1: gridView5.ActiveFilterString = "[baritsaa] = 0";
+                        case 1: xtraTabControl1.SelectedTabPage = xtraTabPage2;
+                                gridView5.ActiveFilterString = "[baritsaa] = 0";
                                 break;
-                        case 2: gridView5.ActiveFilterString = "[baritsaa] <> 0";
+                        case 2: xtraTabControl1.SelectedTabPage = xtraTabPage2;
+                                gridView5.ActiveFilterString = "[baritsaa] <> 0";
                                 break;
-                        case 3: gridView5.ActiveFilterString = "[status] = 3";
+                        case 3: xtraTabControl1.SelectedTabPage = xtraTabPage2;
+                                gridView5.ActiveFilterString = "[status] = 3";
+                                break;
+                        case 4: xtraTabControl1.SelectedTabPage = xtraTabPage1;
                                 break;
                         default:
                                 gridView5.ActiveFilterString = "";
                                 break;
                     }
-                }
+                
             }
             catch (Exception)
             {
