@@ -524,7 +524,7 @@ namespace ST
             try
             {
                 addproject b = new addproject(this);
-                b.comID.Text = gridView1.GetFocusedRowCellValue("projectID").ToString();
+                b.comID.Text = "999";
                 b.ShowDialog();
             }
             catch (Exception ee)
@@ -2138,6 +2138,11 @@ private static void SafeDelete(string path)
             {
                 MessageBox.Show("Өгөгдөл байхгүй.");
             }
+        }
+
+        private void simpleButton1_Click_2(object sender, EventArgs e)
+        {
+            AddGeree_Click(sender,  e);
         }
 
 

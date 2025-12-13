@@ -1031,6 +1031,7 @@
     <None Include="bin\Debug\images\salers\1.png" />
     <None Include="Resources\reciept.png" />
     <None Include="Resources\print.png" />
+    <None Include="7.png" />
     <Content Include="logo4fb-copy.ico" />
     <Content Include="logo4fb.ico" />
     <Content Include="unnamed.ico" />

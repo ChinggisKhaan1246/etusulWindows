@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.AddGeree = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
@@ -231,6 +231,7 @@
             this.navBarItem12 = new DevExpress.XtraNavBar.NavBarItem();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printableComponentLink1.ImageCollection)).BeginInit();
@@ -597,6 +598,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.simpleButton1);
             this.groupBox1.Controls.Add(this.projectID1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.Ttext2);
@@ -1116,9 +1118,9 @@
             // 
             this.gridControl2.ContextMenuStrip = this.contextMenuStrip3;
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode2.RelationName = "Level1";
+            gridLevelNode1.RelationName = "Level1";
             this.gridControl2.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode1});
             this.gridControl2.Location = new System.Drawing.Point(0, 0);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
@@ -2291,6 +2293,16 @@
             // 
             this.gridView6.Name = "gridView6";
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Image = global::ST.Properties.Resources._7;
+            this.simpleButton1.Location = new System.Drawing.Point(739, 20);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(107, 32);
+            this.simpleButton1.TabIndex = 16;
+            this.simpleButton1.Text = "Т&өсөл нэмэх";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click_2);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2581,6 +2593,7 @@
         private System.Windows.Forms.ToolStripMenuItem чанарынБаталгааГаргахТухайToolStripMenuItem;
         private DevExpress.XtraGrid.Columns.GridColumn status;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn41;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }
 
